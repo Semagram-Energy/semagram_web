@@ -1,0 +1,29 @@
+{
+  "name": "semagram-site",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "tw-install": "npm install -D tailwindcss",
+    "tw-init": "npx tailwindcss init",
+    "tw-build": "npx tailwindcss -i ./src/css/tailwind.css -o ./assets/css/main.css --watch",
+    "tw-minify": "npx tailwindcss -o ./assets/css/main.min.css --minify",
+    "build-css": "npx tailwindcss -i ./src/css/tailwind.css -o ./assets/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/semagram/semagram-site.git"
+  },
+  "keywords": [
+    "ai",
+    "communication",
+    "platform",
+    "semagram"
+  ],
+  "author": "Semagram Team",
+  "license": "MIT",
+  "description": "Semagram - AI-Powered Communication Platform",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

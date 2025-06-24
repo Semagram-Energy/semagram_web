@@ -1,0 +1,11 @@
+<svg viewBox="20 20 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Flowing grid lines -->
+  <path d="M30 33 Q50 28 70 33" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 57 Q50 52 75 57" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  
+  <path d="M42 23 Q37 50 32 77" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M58 23 Q63 50 68 77" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Terminal command prompt symbol -->
+  <text x="42" y="47" font-family="monospace" font-size="9" fill="white" font-weight="600">&lt;/&gt;</text>
+</svg>
