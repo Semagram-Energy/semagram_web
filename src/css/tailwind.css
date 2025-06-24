@@ -196,11 +196,22 @@
   }
 
   .nav-menu {
-    @apply absolute top-full left-0 w-full bg-background-dark/95 backdrop-blur-sm p-5 rounded-2xl shadow-lg lg:static lg:w-auto lg:bg-transparent lg:p-0 lg:shadow-none;
+    @apply transform transition-transform duration-300 ease-in-out;
+    transform: translateX(100%);
   }
 
+  .menu-show .nav-menu {
+    transform: translateX(0);
+  }
+
+  @screen lg {
+    .nav-menu {
+      transform: none;
+    }
+  }
+  
   .navbar-toggler span {
-    @apply bg-primary;
+    @apply transition-all duration-300;
   }
 
   .section-area {

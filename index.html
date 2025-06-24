@@ -125,7 +125,7 @@
     <!-- Navbar -->
     <header
       id="header"
-      class="header scroll-revealed fixed top-0 left-0 z-50 w-full bg-transparent"
+      class="header scroll-revealed fixed top-0 left-0 z-50 w-full bg-transparent ic-navbar"
     >
       <div class="container">
         <nav class="flex items-center justify-between py-3">
@@ -142,6 +142,7 @@
 
           <!-- Menu -->
           <ul
+            id="nav-menu"
             class="nav-menu fixed top-0 right-0 lg:relative xl:right-auto z-50 flex h-full w-80 lg:w-auto flex-col items-start gap-8 bg-body-light-2 px-10 pt-20 transition-all duration-300 dark:bg-body-dark-2 lg:h-auto lg:flex-row lg:items-center lg:gap-10 lg:bg-transparent lg:p-0 lg:dark:bg-transparent"
             role="menubar"
                 >
@@ -199,23 +200,19 @@
             <div class="lg:hidden">
               <button
                 class="navbar-toggler h-10 w-10"
-                type="button"
-                aria-label="Navbar Toggler"
+                aria-label="Toggle navigation"
                 aria-expanded="false"
+                data-web-toggle="navbar-collapse"
+                data-web-target="nav-menu"
               >
-                <span class="sr-only">Navbar Toggler</span>
+                <span class="block h-0.5 w-6 bg-primary transition-all"></span>
                 <span
-                  class="block h-[2px] w-5 transform bg-primary transition-all duration-300"
+                  class="my-1.5 block h-0.5 w-6 bg-primary transition-all"
                 ></span>
-                <span
-                  class="mt-1 block h-[2px] w-5 transform bg-primary transition-all duration-300"
-                ></span>
-                <span
-                  class="mt-1 block h-[2px] w-5 transform bg-primary transition-all duration-300"
-                ></span>
+                <span class="block h-0.5 w-6 bg-primary transition-all"></span>
               </button>
-              </div>
             </div>
+          </div>
         </nav>
       </div>
     </header>
@@ -807,7 +804,7 @@
                   <a
                     href="mailto:qianzhang@g.harvard.edu"
                     class="inline-block rounded-md bg-primary px-8 py-3 text-center text-base font-medium text-accent hover:bg-opacity-90"
-                    >Contact Us</a
+                    >Request Demo</a
                   >
                 </div>
             </div>

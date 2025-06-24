@@ -106,6 +106,15 @@ pageLink.forEach((link) => {
   });
 });
 
+// Close menu on scroll
+window.addEventListener("scroll", () => {
+  if (navbar.classList.contains("menu-show")) {
+    navbar.classList.remove("menu-show");
+    navbarToggler.setAttribute("aria-expanded", "false");
+    navbarToggler.innerHTML = '<i class="lni lni-menu"></i>';
+  }
+});
+
 // Tabs
 const tabs = document.querySelectorAll(".tabs");
 
