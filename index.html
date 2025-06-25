@@ -231,7 +231,7 @@
         <div class="container relative">
           <div class="-mx-4 flex flex-wrap">
             <div class="w-full px-5">
-              <div class="scroll-revealed mx-auto max-w-[900px] text-center">
+              <div class="scroll-revealed mx-auto max-w-[1100px] text-center">
                 <div class="mb-6">
                   <img src="./assets/img/semagram-icon-white.svg" alt="Semagram Logo" class="inline-block h-16" />
                 </div>
@@ -241,9 +241,9 @@
                   style="min-height: 80px"
                 ></h1>
                 <p
-                  class="mx-auto mb-9 max-w-[1200px] text-base text-primary/80 sm:text-lg sm:leading-relaxed"
+                  class="mx-auto mb-9 max-w-[900px] text-base text-primary/80 sm:text-lg sm:leading-relaxed"
                 >
-                Semagram Energy's Agentic AI solutions empower utilities, grid operators, software providers, and consultants to accelerate productivity and ensure reliability in modern power systems.
+                Semagram Energy's Agentic AI solutions empower utilities, grid operators, and software providers to accelerate efficiency and ensure reliability in modern power systems
                 </p>
                 <ul
                   class="mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-5"
@@ -269,214 +269,300 @@
       <section id="painpoints" class="section-area relative overflow-hidden">
         <!-- Background Image & Overlay -->
         <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('./assets/img/background2.png');"></div>
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
 
         <div class="container relative z-10">
           <!-- Section Title -->
-          <div class="scroll-revealed mx-auto mb-8 max-w-[800px] text-center">
-            <h6 class="mb-3 block text-lg font-semibold text-accent uppercase tracking-wider">The Challenge</h6>
+          <div class="scroll-revealed mx-auto mb-16 max-w-[800px] text-center">
+            <h6 class="mb-3 block text-lg font-semibold text-accent uppercase tracking-wider">The  Challenge</h6>
             <h2 class="mb-8 text-4xl font-bold text-primary lg:text-5xl">
-              The <span class="text-accent">Gridlock of Inefficiency</span> in the Power Industry
-                </h2>
+              What's Causing the <span class="text-accent">Delays?</span>
+            </h2>
             <p class="text-xl text-primary/80 leading-relaxed">
-              Outdated software and workflows trap the entire industry in a cycle of inefficiency.
+              A huge increase in power needs is meeting old, slow systems. This creates a major bottleneck that holds back the entire industry.
             </p>
-              </div>
+          </div>
 
-          <!-- 2x2 Grid Layout with Central Hub -->
-          <div class="relative max-w-5xl mx-auto py-8">
-            <!-- Flowing Circular Connection Lines SVG -->
-            <div class="absolute inset-0 w-full h-full z-10 flex items-center justify-center">
-              <svg class="w-full h-full max-w-4xl max-h-4xl" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
+          <!-- Interactive Vertical Flow Visualization -->
+          <div class="relative flex flex-col items-center gap-8">
+            
+            <!-- Animated Connection Lines SVG -->
+            <div class="absolute inset-0 w-full h-full pointer-events-none z-10">
+              <svg class="w-full h-full" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid meet">
                 <defs>
+                  <!-- Gradient for animated lines -->
+                  <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.8" />
+                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+                    <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.4" />
+                  </linearGradient>
+                  <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+                    <stop offset="50%" style="stop-color:#ef4444;stop-opacity:0.8" />
+                    <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.6" />
+                  </linearGradient>
+                  <!-- Glow filter -->
                   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
                     <feMerge>
                       <feMergeNode in="blur" />
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </filter>
-                  <!-- Paths for the main cycle -->
-                  <path id="path-tl-tr" d="M 170 170 Q 300 80, 430 170" fill="none" />
-                  <path id="path-tr-br" d="M 430 170 Q 520 300, 430 430" fill="none" />
-                  <path id="path-br-bl" d="M 430 430 Q 300 520, 170 430" fill="none" />
-                  <path id="path-bl-tl" d="M 170 430 Q 80 300, 170 170" fill="none" />
                 </defs>
 
-                <!-- Static Paths with Gradient -->
-                <g opacity="0.4" filter="url(#glow)">
-                  <use xlink:href="#path-tl-tr" stroke="url(#lineGradient1)" stroke-width="2" />
-                  <use xlink:href="#path-tr-br" stroke="url(#lineGradient1)" stroke-width="2" />
-                  <use xlink:href="#path-br-bl" stroke="url(#lineGradient1)" stroke-width="2" />
-                  <use xlink:href="#path-bl-tl" stroke="url(#lineGradient1)" stroke-width="2" />
-                </g>
+                <!-- Connection Line 1: Driver to Bottleneck -->
+                <path d="M 400 250 Q 400 350, 400 450" 
+                      stroke="url(#flowGradient1)" 
+                      stroke-width="3" 
+                      fill="none" 
+                      filter="url(#glow)"
+                      stroke-dasharray="8 4"
+                      opacity="0.7">
+                  <animate attributeName="stroke-dashoffset" 
+                           values="0;12;0" 
+                           dur="3s" 
+                           repeatCount="indefinite" />
+                </path>
+
+                <!-- Connection Line 2: Bottleneck to Outcomes -->
+                <path d="M 400 650 Q 400 750, 400 980" 
+                      stroke="url(#flowGradient2)" 
+                      stroke-width="3" 
+                      fill="none" 
+                      filter="url(#glow)"
+                      stroke-dasharray="8 4"
+                      opacity="0.7">
+                  <animate attributeName="stroke-dashoffset" 
+                           values="0;12;0" 
+                           dur="3s" 
+                           repeatCount="indefinite"
+                           begin="0.5s" />
+                </path>
 
                 <!-- Animated Particles -->
-                <g fill="#93c5fd">
-                  <circle r="3">
-                    <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
-                      <mpath xlink:href="#path-tl-tr" />
+                <g fill="#00aaff" opacity="1">
+                  <!-- Fast particles for Driver to Bottleneck (more and faster) -->
+                  <!-- Particle 1 -->
+                  <circle r="6" filter="url(#glow)" fill="#0099ff">
+                    <animateMotion dur="2s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#particle-path-1" />
                     </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" />
                   </circle>
-                  <circle r="3">
-                    <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
-                      <mpath xlink:href="#path-tr-br" />
+                  <!-- Particle 2 -->
+                  <circle r="5" fill="#00bbff" opacity="0">
+                    <animateMotion dur="2.5s" repeatCount="indefinite" rotate="auto" begin="0.5s">
+                      <mpath href="#particle-path-1" />
                     </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
                   </circle>
-                  <circle r="3">
-                    <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
-                      <mpath xlink:href="#path-br-bl" />
+                  <!-- Particle 3 -->
+                  <circle r="5" fill="#0088ff" opacity="0">
+                    <animateMotion dur="1.8s" repeatCount="indefinite" rotate="auto" begin="1s">
+                      <mpath href="#particle-path-1" />
                     </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="1s" />
                   </circle>
-                  <circle r="3">
-                    <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
-                      <mpath xlink:href="#path-bl-tl" />
+                  <!-- Particle 4 -->
+                  <circle r="4" fill="#00ccff" opacity="0">
+                    <animateMotion dur="2.2s" repeatCount="indefinite" rotate="auto" begin="1.5s">
+                      <mpath href="#particle-path-1" />
                     </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.5s" />
+                  </circle>
+                  <!-- Particle 5 -->
+                  <circle r="6" fill="#0077ff" opacity="0">
+                    <animateMotion dur="1.6s" repeatCount="indefinite" rotate="auto" begin="0.3s">
+                      <mpath href="#particle-path-1" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" repeatCount="indefinite" begin="0.3s" />
+                  </circle>
+                  <!-- Particle 6 -->
+                  <circle r="5" fill="#00ddff" opacity="0">
+                    <animateMotion dur="2.8s" repeatCount="indefinite" rotate="auto" begin="2s">
+                      <mpath href="#particle-path-1" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="2s" />
                   </circle>
                 </g>
 
-                <!-- Connections to Center -->
-                <g stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5" filter="url(#glow)">
-                  <line x1="170" y1="170" x2="300" y2="300">
-                    <animate attributeName="stroke-dashoffset" from="0" to="8" dur="1.5s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="430" y1="170" x2="300" y2="300">
-                    <animate attributeName="stroke-dashoffset" from="0" to="8" dur="1.5s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="430" y1="430" x2="300" y2="300">
-                     <animate attributeName="stroke-dashoffset" from="8" to="0" dur="1.5s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="170" y1="430" x2="300" y2="300">
-                     <animate attributeName="stroke-dashoffset" from="8" to="0" dur="1.5s" repeatCount="indefinite" />
-                  </line>
+                <g fill="#ff4444" opacity="1">
+                  <!-- Slower particles for Bottleneck to Outcomes (more but slower) -->
+                  <!-- Particle 1 -->
+                  <circle r="5" filter="url(#glow)" fill="#ff3333" opacity="0">
+                    <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" begin="1s">
+                      <mpath href="#particle-path-2" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="1s" />
+                  </circle>
+                  <!-- Particle 2 -->
+                  <circle r="4" fill="#ff4444" opacity="0">
+                    <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" begin="2s">
+                      <mpath href="#particle-path-2" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite" begin="2s" />
+                  </circle>
+                  <!-- Particle 3 -->
+                  <circle r="3" fill="#ff5555" opacity="0">
+                    <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" begin="3s">
+                      <mpath href="#particle-path-2" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="3s" />
+                  </circle>
+                  <!-- Particle 4 -->
+                  <circle r="4" fill="#ff2222" opacity="0">
+                    <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto" begin="4s">
+                      <mpath href="#particle-path-2" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="6.5s" repeatCount="indefinite" begin="4s" />
+                  </circle>
+                  <!-- Particle 5 -->
+                  <circle r="5" fill="#ff6666" opacity="0">
+                    <animateMotion dur="7.5s" repeatCount="indefinite" rotate="auto" begin="0.5s">
+                      <mpath href="#particle-path-2" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="7.5s" repeatCount="indefinite" begin="0.5s" />
+                  </circle>
+                  <!-- Particle 6 -->
+                  <circle r="3" fill="#ff3333" opacity="0">
+                    <animateMotion dur="8.5s" repeatCount="indefinite" rotate="auto" begin="5s">
+                      <mpath href="#particle-path-2" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="8.5s" repeatCount="indefinite" begin="5s" />
+                  </circle>
+                  <!-- Particle 7 -->
+                  <circle r="4" fill="#ff4444" opacity="0">
+                    <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" begin="1.5s">
+                      <mpath href="#particle-path-2" />
+                    </animateMotion>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="9s" repeatCount="indefinite" begin="1.5s" />
+                  </circle>
                 </g>
+
+                <!-- Hidden paths for particles -->
+                <defs>
+                  <path id="particle-path-1" d="M 400 250 Q 400 350, 400 450" />
+                  <path id="particle-path-2" d="M 400 650 Q 400 750, 400 950" />
+                </defs>
               </svg>
             </div>
-
-            <!-- Grid Container -->
-            <div class="grid grid-cols-2 gap-8 lg:gap-12 relative z-20">
-              
-              <!-- Top Left: Legacy Software -->
-              <div class="scroll-revealed flex justify-center">
-                <div class="group relative w-72">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                  <div class="relative bg-background-dark/80 backdrop-blur-md border border-red-500/20 rounded-2xl p-6 hover:border-red-500/40 transition-all duration-500 hover:transform hover:scale-105">
-                    <div class="text-center mb-4">
-                      <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
-                        <i class="lni lni-code text-3xl text-white"></i>
-                      </div>
-                      <h3 class="text-xl font-bold text-primary">Legacy Software</h3>
-                    </div>
-                    <p class="text-primary/80 text-center leading-relaxed">
-                       Interfaces with complex syntax create barriers to productivity. Engineers struggle with outdated tools that slow down critical grid operations.
-                    </p>
-                </div>
-                </div>
+            
+            <!-- Step 1: The Drivers -->
+            <div class="scroll-revealed w-full max-w-4xl relative z-20" data-interactive-element="driver">
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-primary/80 tracking-wide">The Drivers</h3>
               </div>
-
-              <!-- Top Right: Slow Operations -->
-              <div class="scroll-revealed flex justify-center">
-                <div class="group relative w-72">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-orange-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                  <div class="relative bg-background-dark/80 backdrop-blur-md border border-orange-500/20 rounded-2xl p-6 hover:border-orange-500/40 transition-all duration-500 hover:transform hover:scale-105">
-                    <div class="text-center mb-4">
-                      <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
-                        <i class="lni lni-cogs text-3xl text-white"></i>
+              <div class="group relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-all duration-500"></div>
+                <div class="relative bg-background-dark/80 backdrop-blur-md border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all duration-500 interactive-card">
+                  <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Driver 1: Surging Interconnection -->
+                    <div class="flex-1 text-center md:text-left group">
+                      <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-blue-900/20 transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                          <i class="lni lni-layers text-3xl text-white group-hover:animate-pulse"></i>
+                        </div>
+                        <div>
+                          <h4 class="text-xl font-semibold text-primary group-hover:text-blue-300 transition-colors duration-300">Surging Interconnection</h4>
+                          <p class="text-primary/80">A flood of interconnection requests from data centers and renewables.</p>
+                        </div>
                       </div>
-                      <h3 class="text-xl font-bold text-primary">Slow Workflows</h3>
                     </div>
-                    <p class="text-primary/80 text-center leading-relaxed">
-                      Complex workflows create planning and operational bottlenecks. Grid expansion and maintenance are delayed by inefficient processes.
-                  </p>
-                </div>
-              </div>
-                </div>
-
-              <!-- Bottom Left: Talent Drain -->
-              <div class="scroll-revealed flex justify-center">
-                <div class="group relative w-72">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-purple-500 to-purple-400 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                  <div class="relative bg-background-dark/80 backdrop-blur-md border border-purple-500/20 rounded-2xl p-6 hover:border-purple-500/40 transition-all duration-500 hover:transform hover:scale-105">
-                    <div class="text-center mb-4">
-                      <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
-                        <i class="lni lni-users text-3xl text-white"></i>
+                    <!-- Driver 2: More Grid Codes -->
+                    <div class="flex-1 text-center md:text-left group">
+                      <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-blue-900/20 transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                          <i class="lni lni-book text-3xl text-white group-hover:animate-pulse"></i>
+                        </div>
+                        <div>
+                          <h4 class="text-xl font-semibold text-primary group-hover:text-blue-300 transition-colors duration-300">More Grid Codes</h4>
+                          <p class="text-primary/80">Increasing reliability requirements and compliance standards.</p>
+                        </div>
                       </div>
-                      <h3 class="text-xl font-bold text-primary">Talent Drain</h3>
                     </div>
-                    <p class="text-primary/80 text-center leading-relaxed">
-                      Young engineers lose motivation working with frustrating software and workflows. Talent drain is happening in power industry.
-                  </p>
-                </div>
-              </div>
-                </div>
-
-              <!-- Bottom Right: Rising Costs -->
-              <div class="scroll-revealed flex justify-center">
-                <div class="group relative w-72">
-                  <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-                  <div class="relative bg-background-dark/80 backdrop-blur-md border border-red-600/20 rounded-2xl p-6 hover:border-red-600/40 transition-all duration-500 hover:transform hover:scale-105">
-                    <div class="text-center mb-4">
-                      <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
-                        <i class="lni lni-investment text-3xl text-white"></i>
-                      </div>
-                      <h3 class="text-xl font-bold text-primary">Rising Costs</h3>
-                    </div>
-                    <p class="text-primary/80 text-center leading-relaxed">
-                      These inefficiencies increase pressure on utilities, driving up hiring and consulting costs, and inflating project planning and evaluation expenses.
-                  </p>
-                </div>
-              </div>
-            </div>
-                </div>
-
-            <!-- Central Hub (positioned absolutely to be in the center) -->
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
-              <div class="scroll-revealed">
-                <div class="relative group">
-                  <div class="w-32 h-32 rounded-full border-4 border-accent/30 transition-all duration-500 group-hover:scale-110 group-hover:border-accent/50"></div>
-                  <div class="absolute inset-2 bg-gradient-to-br from-accent/90 to-blue-700 rounded-full flex items-center justify-center shadow-2xl transition-all duration-500 group-hover:shadow-accent/40 group-hover:shadow-2xl">
-                    <div class="text-center text-primary animate-text-pulse">
-                      <i class="lni lni-reload text-3xl mb-1 opacity-80"></i>
-                      <h3 class="text-sm font-bold tracking-wide">The Cycle</h3>
-                </div>
                   </div>
                 </div>
               </div>
             </div>
+            
+            <!-- Arrow Connector -->
+            <div class="scroll-revealed my-4 text-center relative z-20">
+              <i class="lni lni-arrow-down-circle text-5xl text-accent/50 animate-bounce hover:text-accent/80 transition-colors duration-300 cursor-pointer"></i>
+            </div>
+            
+            <!-- Step 2: The Bottleneck -->
+            <div class="scroll-revealed w-full max-w-3xl relative z-20" data-interactive-element="bottleneck">
+              <div class="group relative interactive-card">
+                <div class="absolute -inset-2 bg-gradient-to-br from-accent to-blue-700 rounded-3xl blur opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
+                <div class="relative bg-background-dark/80 backdrop-blur-md border border-accent/30 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 text-center hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-accent/20">
+                  <div class="w-20 h-20 bg-gradient-to-br from-accent to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:rotate-6">
+                    <i class="lni lni-funnel text-4xl text-white group-hover:animate-pulse"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-accent mb-4 group-hover:text-blue-300 transition-colors duration-300">The Bottleneck</h3>
+                  <p class="text-primary/80 text-lg max-3xl mx-auto mb-8">
+                    The combination of aging tools and inefficient processes create gridlock.
+                  </p>
+                  <!-- Internal components of the bottleneck -->
+                  <div class="flex flex-col md:flex-row gap-6 justify-center">
+                    <!-- Outdated Software -->
+                    <div class="flex items-center gap-3 p-4 bg-background-dark/50 rounded-lg border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-background-dark/70">
+                      <i class="lni lni-code text-3xl text-orange-400 flex-shrink-0 hover:animate-pulse"></i>
+                      <div class="text-left">
+                        <h4 class="font-semibold text-primary">Outdated Software</h4>
+                        <p class="text-sm text-primary/70">Clunky and complex interfaces.</p>
+                      </div>
+                    </div>
+                    <!-- Complex Workflows -->
+                    <div class="flex items-center gap-3 p-4 bg-background-dark/50 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-background-dark/70">
+                      <i class="lni lni-cogs text-3xl text-purple-400 flex-shrink-0 hover:animate-spin"></i>
+                      <div class="text-left">
+                        <h4 class="font-semibold text-primary">Complex Workflows</h4>
+                        <p class="text-sm text-primary/70">Slow, manual evaluation processes.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Arrow Connector -->
+            <div class="scroll-revealed my-4 text-center relative z-20">
+              <i class="lni lni-arrow-down-circle text-5xl text-red-500/50 animate-bounce hover:text-red-400/80 transition-colors duration-300 cursor-pointer"></i>
+            </div>
+
+            <!-- Step 3: The Negative Outcomes -->
+            <div class="scroll-revealed w-full max-w-4xl relative z-20" data-interactive-element="outcomes">
+              <div class="bg-red-900/20 border border-red-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-red-500/40 transition-all duration-500 hover:bg-red-900/30 interactive-card">
+                <h3 class="text-2xl font-bold text-red-400 text-center mb-6">The Outcomes</h3>
+                <div class="flex flex-col md:flex-row gap-8">
+                  <!-- Outcome 1 -->
+                  <div class="flex-1 text-center md:text-left group">
+                    <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-red-900/20 transition-all duration-300">
+                      <i class="lni lni-timer text-5xl text-red-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></i>
+                      <div>
+                        <h4 class="text-xl font-semibold text-primary group-hover:text-red-300 transition-colors duration-300">Project Delays & Backlogs</h4>
+                        <p class="text-primary/80">The interconnection queue grows, stalling vital energy projects and slowing the transition to renewables.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Outcome 2 -->
+                  <div class="flex-1 text-center md:text-left group">
+                    <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-red-900/20 transition-all duration-300">
+                      <i class="lni lni-stats-up text-5xl text-red-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></i>
+                      <div>
+                        <h4 class="text-xl font-semibold text-primary group-hover:text-red-300 transition-colors duration-300">Soaring Costs & Inefficiency</h4>
+                        <p class="text-primary/80">Reduced productivity and project overruns drive up operational expenses for the entire industry.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
-
-      <!-- Transition: Break the Cycle -->
-      <div class="relative bg-background-dark">
-        <!-- The angled shape is created using a clip-path. -->
-        <div class="absolute inset-0 bg-gradient-to-b from-background-medium to-background-dark" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);"></div>
-        <section class="relative z-10 py-16">
-        <div class="container">
-                <div class="scroll-revealed text-center">
-                    <!-- Central Icon -->
-                    <div class="mb-8 inline-block rounded-full bg-accent/10 p-4 border-2 border-accent/20 animate-float">
-                        <div class="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-accent to-blue-700 shadow-2xl">
-                            <i class="lni lni-key text-4xl text-white"></i>
-                        </div>
-                    </div>
-                    <!-- Text Content -->
-                    <h2 class="mb-4 text-4xl font-bold text-primary lg:text-5xl">
-                        The <span class="text-accent">Turning Point</span>
-            </h2>
-                    <p class="mx-auto max-w-[900px] text-xl text-primary/80 leading-relaxed">
-                        Our Agentic AI solutions are the key to unlocking a new era of efficiency and reliability.
-                    </p>
-                    <!-- Scroll Down Button -->
-                    <div class="mt-12">
-                        <a href="#solutions" class="ic-page-scroll inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent text-white shadow-lg animate-glow transition-transform duration-300 hover:scale-110">
-                            <i class="lni lni-arrow-down text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-          </div>
 
       <!-- Solutions Section -->
       <section id="solutions" class="section-area relative overflow-hidden bg-gradient-to-br from-background-dark via-background-medium to-background-dark py-20">
@@ -526,7 +612,7 @@
                               </div>
                               
                               <p class="text-primary/90 mb-8 text-lg leading-relaxed">
-                                We help power software companies evolve from Software as a Service to Software as an Outcome, enhancing their tools with intelligent, human-language interfaces that deliver direct results to users.
+                                Create intelligent, human-language interfaces for the power industry by combining deep domain know-how and agentic intelligence track record
                               </p>
                                            <!-- Feature tags -->
                                            <div class="flex flex-wrap gap-3 mb-8">
@@ -566,7 +652,7 @@
                               </div>
                               
                               <p class="text-primary/90 mb-6 text-lg leading-relaxed">
-                                We help utilities, and system operators automate complex planning and operational processes through intelligent, agentic workflows, improving efficiency, accuracy, and adaptability across the grid.
+                                Streamline complex workflows in the power industry using deep domain expertise and intelligent automation
                               </p>
                               
                               <!-- Feature tags -->
@@ -616,10 +702,11 @@
                                   <div class="w-20 h-20 mx-auto bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
                                       <i class="lni lni-consulting text-3xl text-white"></i>
                                   </div>
-                                  <div class="absolute -inset-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                  <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
                               </div>
-                              <h4 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 mb-4">Consultant Service</h4>
-                              <p class="text-primary/80">Strategic guidance and expert analysis</p>
+                              <h4 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 mb-4 leading-relaxed">Indentify Existing Workflow Bottlenecks Through Tailored Consulting Arrangements
+                                </h4>
+                        
                           </div>
                       </div>
                       
@@ -631,10 +718,9 @@
                                   <div class="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:-rotate-12 group-hover:scale-110 transition-all duration-500">
                                       <i class="lni lni-rocket text-3xl text-white"></i>
                                   </div>
-                                  <div class="absolute -inset-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                  <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
                               </div>
-                              <h4 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4">Deployment Service</h4>
-                              <p class="text-primary/80">Seamless implementation and go-live</p>
+                              <h4 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4 leading-relaxed">Deploy Cloud-based or Local Agentic AI Solutions Seamlessly Integrated into Existing Workflows</h4>
                           </div>
                       </div>
                       
@@ -646,10 +732,9 @@
                                   <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
                                       <i class="lni lni-cog text-3xl text-white"></i>
                                   </div>
-                                  <div class="absolute -inset-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                  <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
                               </div>
-                              <h4 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">Maintenance Service</h4>
-                              <p class="text-primary/80">Ongoing support and update with latest AI models</p>
+                              <h4 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4 leading-relaxed">Continuously Update with Cutting-edge Foundational Models Tailored to Evolving Workflow Needs</h4>
                           </div>
                       </div>
                   </div>
@@ -660,20 +745,17 @@
       <!-- Community Section -->
       <section id="community" class="section-area relative bg-gradient-to-br from-background-dark to-background-medium">
         <div class="container">
-          <div class="scroll-revealed mx-auto mb-12 max-w-[800px] text-center">
+          <div class="scroll-revealed mx-auto mb-12 max-w-[900px] text-center">
             <h6 class="mb-2 block text-3xl font-semibold text-accent">
               Our Ecosystem
             </h6>
             <div class="mb-3">
               <img src="./assets/img/poweragent_logo.png" alt="PowerAgent Logo" class="inline-block h-32 mb-0" />
             </div>
-         
-            <h2 class="mb-6 text-4xl font-bold text-primary">
-              Open-Source AI Community for Power Systems
-                    </h2>
             <p class="text-secondary">
-              The first open-source community dedicated to accelerating the development of LLM-powered tools and Agentic AI solutions in the power systems domain.
+            Building on the Success of the First Open-Source Agentic AI Community for Power Industry
             </p>
+     
                   </div>
           <div class="scroll-revealed mx-auto max-w-[500px] text-center">
               <a
@@ -693,13 +775,13 @@
       <!-- Clients section -->
       <section id="clients" class="section-area bg-background-light pt-10 pb-20">
         <div class="container">
-          <div class="scroll-revealed mx-auto mb-12 max-w-[550px] text-center">
+          <div class="scroll-revealed mx-auto mb-12 max-w-[1000px] text-center">
             <h2 class="mb-6 text-3xl font-bold text-primary">
               Trusted by Engineers at
             </h2>
             <p class="text-secondary">
               Our solutions are built on combined experience from
-              leading software, utilities, consulting, and tech companies.
+              leading utilities, software, and consulting companies.
             </p>
           </div>
           <div class="mx-auto max-w-3xl">
@@ -709,19 +791,19 @@
               <img
                 src="./assets/img/brand/exelon.png"
                 alt="Exelon Logo"
-                style="max-height: 60px; max-width: 200px; height: auto; width: auto;"
+                style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
                 class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
               />
               <img
               src="./assets/img/brand/isone.png"
               alt="ISO New England Logo"
-              style="max-height: 60px; max-width: 200px; height: auto; width: auto;"
+              style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
               class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
             />
               <img
                 src="./assets/img/brand/technip.png"
                 alt="TechnipFMC Logo"
-                style="max-height: 60px; max-width: 200px; height: auto; width: auto;"
+                style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
                 class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
               />
                 </div>
@@ -732,34 +814,18 @@
       <!-- Team section -->
       <section id="team" class="section-area bg-gradient-to-br from-background-dark to-background-medium">
         <div class="container">
-          <div class="scroll-revealed mx-auto mb-12 max-w-[550px] text-center">
+          <div class="scroll-revealed mx-auto mb-12 max-w-[800px] text-center">
             <h6 class="mb-2 block text-2xl font-semibold text-accent">
               Our Team
             </h6>
             <h2 class="mb-6 text-3xl font-bold text-primary">Meet Our Founders</h2>
             <p class="text-secondary">
-              We are a team of passionate engineers, researchers, and
-              industry experts dedicated to modernizing the power grid.
+              We are a team of experienced engineers, researchers, and
+              industry experts with deep know-how to optimize the efficiency of the power industry.
             </p>
           </div>
           <div class="flex justify-center">
-            <div class="scroll-revealed col-12 sm:col-6 lg:col-3 px-4">
-              <div class="group text-center">
-                <div
-                  class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full"
-                >
-                  <img
-                    src="./assets/img/team/qianzhang.jpg"
-                    alt="Team member"
-                    class="h-full w-full object-cover"
-                      />
-                    </div>
-                <h4 class="mb-2 text-xl font-medium">
-                  <a href="https://seas.harvard.edu/person/qian-zhang" target="_blank" rel="noopener noreferrer" class="hover:underline">Qian Zhang</a>
-                </h4>
-                <p class="text-secondary">Co-founder</p>
-                </div>
-              </div>
+
             <div class="scroll-revealed col-12 sm:col-6 lg:col-3 px-4">
               <div class="group text-center">
                 <div
@@ -777,6 +843,24 @@
                 <p class="text-secondary">Co-founder</p>
                 </div>
               </div>
+
+              <div class="scroll-revealed col-12 sm:col-6 lg:col-3 px-4">
+                <div class="group text-center">
+                  <div
+                    class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full"
+                  >
+                    <img
+                      src="./assets/img/team/qianzhang.jpg"
+                      alt="Team member"
+                      class="h-full w-full object-cover"
+                        />
+                      </div>
+                  <h4 class="mb-2 text-xl font-medium">
+                    <a href="https://www.linkedin.com/in/qian-zhang-75323111b/" target="_blank" rel="noopener noreferrer" class="hover:underline">Qian Zhang</a>
+                  </h4>
+                  <p class="text-secondary">Co-founder</p>
+                  </div>
+                </div>
           </div>
         </div>
       </section>
@@ -923,7 +1007,7 @@
 
       // Initialize streaming text on page load
       document.addEventListener('DOMContentLoaded', function() {
-        streamText('streaming-text', 'Bringing Agentic Intelligence to Power Grids', 80);
+        streamText('streaming-text', 'Agentic Intelligence to Accelerate Grids Planning and Operation', 80);
       });
 
       // Scroll Reveal
