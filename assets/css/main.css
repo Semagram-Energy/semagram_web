@@ -1588,10 +1588,6 @@ p + p{
   background-color: rgb(127 29 29 / 0.2);
 }
 
-.bg-transparent{
-  background-color: transparent;
-}
-
 .bg-white\/10{
   background-color: rgb(255 255 255 / 0.1);
 }
@@ -2792,13 +2788,5 @@ p + p{
 @media (min-width: 1280px){
   .xl\:right-auto{
     right: auto;
-  }
-}
-
-@media (min-width: 1024px){
-  @media (prefers-color-scheme: dark){
-    .lg\:dark\:bg-transparent{
-      background-color: transparent;
-    }
   }
 }
