@@ -1113,6 +1113,10 @@ p + p{
   margin-bottom: 2.25rem;
 }
 
+.mt-0{
+  margin-top: 0px;
+}
+
 .mt-32{
   margin-top: 8rem;
 }
