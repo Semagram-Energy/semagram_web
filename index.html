@@ -1,915 +1,886 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Copyright" content="Semagram" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Semagram Team" />
-    <meta name="rating" content="general" />
-    <meta name="language" content="English" />
-    <meta name="application-name" content="Semagram" />
-    <meta
-      name="description"
-      content="Semagram Energy - Bringing Agentic Intelligence to Power Grids"
-    />
-    <meta name="keywords" content="ai, energy, power grids, automation, intelligence, semagram" />
-    <meta
-      name="twitter:title"
-      content="Semagram Energy | Agentic Intelligence for Power Grids"
-    />
-    <meta
-      name="twitter:description"
-      content="Semagram Energy - Bringing Agentic Intelligence to Power Grids"
-    />
-    <meta name="twitter:image" content="./assets/img/semagram-cover.png" />
-    <meta
-      content="Semagram Energy | Agentic Intelligence for Power Grids"
-      property="og:title"
-    />
-    <meta content="Semagram Energy" property="og:site_name" />
-    <meta
-      content="Semagram Energy - Bringing Agentic Intelligence to Power Grids"
-      property="og:description"
-    />
-    <meta content="./assets/img/semagram-cover.png" property="og:image" />
-    <meta content="https://semagram.energy" property="og:url" />
-    <meta content="website" property="og:type" />
 
-    <meta name="msapplication-TileColor" content="#0f172a" />
-    <meta
-      name="msapplication-TileImage"
-      content="./assets/favicon/mstile-144x144.png"
-    />
-    <meta name="theme-color" content="#0f172a" />
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="Copyright" content="Semagram" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Semagram Team" />
+  <meta name="rating" content="general" />
+  <meta name="language" content="English" />
+  <meta name="application-name" content="Semagram" />
+  <meta name="description" content="Semagram Energy - Bringing Agentic Intelligence to Power Grids" />
+  <meta name="keywords" content="ai, energy, power grids, automation, intelligence, semagram" />
+  <meta name="twitter:title" content="Semagram Energy | Agentic Intelligence for Power Grids" />
+  <meta name="twitter:description" content="Semagram Energy - Bringing Agentic Intelligence to Power Grids" />
+  <meta name="twitter:image" content="./assets/img/semagram-cover.png" />
+  <meta content="Semagram Energy | Agentic Intelligence for Power Grids" property="og:title" />
+  <meta content="Semagram Energy" property="og:site_name" />
+  <meta content="Semagram Energy - Bringing Agentic Intelligence to Power Grids" property="og:description" />
+  <meta content="./assets/img/semagram-cover.png" property="og:image" />
+  <meta content="https://semagram.energy" property="og:url" />
+  <meta content="website" property="og:type" />
 
-    <!-- Page title -->
-    <title>Semagram Energy | Agentic Intelligence for Power Grids</title>
+  <meta name="msapplication-TileColor" content="#0f172a" />
+  <meta name="msapplication-TileImage" content="./assets/favicon/mstile-144x144.png" />
+  <meta name="theme-color" content="#0f172a" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://semagram.com" />
+  <!-- Page title -->
+  <title>Semagram Energy | Agentic Intelligence for Power Grids</title>
 
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="194x194"
-      href="./assets/favicon/favicon-194x194.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="./assets/favicon/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./assets/favicon/site.webmanifest.json" />
-    <link
-      rel="mask-icon"
-      href="./assets/favicon/safari-pinned-tab.svg"
-      color="#1e293b"
-    />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://semagram.com" />
 
-    <!-- CSS Plugins -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
-    />
-    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="194x194" href="./assets/favicon/favicon-194x194.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest.json" />
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#1e293b" />
 
-    <link rel="stylesheet" href="./assets/css/main.css" />
-  </head>
-  <body class="bg-background-dark text-primary">
-    <!-- Page loading -->
-    <div
-      class="page-loading fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-center justify-center bg-primary-light-1 dark:bg-primary-dark-1 opacity-100 visible pointer-events-auto"
-      role="status"
-      aria-live="polite"
-      aria-atomic="true"
-      aria-label="Loading..."
-    >
-      <div class="grid-loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <!-- CSS Plugins -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+
+<body class="bg-background-dark text-primary">
+  <!-- Page loading -->
+  <div
+    class="page-loading fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-center justify-center bg-primary-light-1 dark:bg-primary-dark-1 opacity-100 visible pointer-events-auto"
+    role="status" aria-live="polite" aria-atomic="true" aria-label="Loading...">
+    <div class="grid-loader">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+  </div>
 
-    <!-- Navbar -->
-    <header
-      id="header"
-      class="header scroll-revealed fixed top-0 left-0 z-50 w-full bg-background-dark ic-navbar"
-    >
-      <div class="container">
-        <nav class="flex items-center justify-between py-3">
-          <!-- Logo -->
-          <a href="index.html" class="w-[150px]">
-            <figure class="w-full">
-              <img
-                src="./assets/img/semagram-text-white.png"
-                alt="Logo"
-                class="w-full"
-              />
-            </figure>
-          </a>
+  <!-- Navbar -->
+  <header id="header" class="header scroll-revealed fixed top-0 left-0 z-50 w-full bg-background-dark ic-navbar">
+    <div class="container">
+      <nav class="flex items-center justify-between py-3">
+        <!-- Logo -->
+        <a href="index.html" class="w-[150px]">
+          <figure class="w-full">
+            <img src="./assets/img/semagram-text-white.png" alt="Logo" class="w-full" />
+          </figure>
+        </a>
 
-          <!-- Menu -->
-          <ul
-            id="nav-menu"
-            class="nav-menu fixed top-0 right-0 lg:relative xl:right-auto z-50 flex h-full w-80 lg:w-auto flex-col items-start gap-8 bg-background-dark px-10 pt-20 transition-all duration-300 lg:h-auto lg:flex-row lg:items-center lg:gap-10 lg:bg-transparent lg:p-0"
-            role="menubar"
-                >
-                  <li class="group relative">
-                    <a
-                href="#painpoints"
-                class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-                      role="menuitem"
-                >Pain Points</a
-                    >
-                  </li>
-                  <li class="group relative">
-                    <a
-                href="#solutions"
-                class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-                      role="menuitem"
-                >Solutions</a
-                    >
-                  </li>
-                  <li class="group relative">
-                    <a
-                href="#community"
-                class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-                      role="menuitem"
-                >Community</a
-                    >
-                  </li>
-                  <li class="group relative">
-                    <a
-                      href="#team"
-                class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-                      role="menuitem"
-                      >Team</a
-                    >
-                  </li>
-                  <li class="group relative">
-                    <a
-                      href="#contact"
-                class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-                      role="menuitem"
-                      >Contact</a
-                    >
-                  </li>
-                </ul>
+        <!-- Menu -->
+        <ul id="nav-menu"
+          class="nav-menu fixed top-0 right-0 lg:relative xl:right-auto z-50 flex h-full w-80 lg:w-auto flex-col items-start gap-8 bg-background-dark px-10 pt-20 transition-all duration-300 lg:h-auto lg:flex-row lg:items-center lg:gap-10 lg:bg-transparent lg:p-0"
+          role="menubar">
+          <li class="group relative">
+            <a href="#painpoints"
+              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              role="menuitem">Pain Points</a>
+          </li>
+          <li class="group relative">
+            <a href="#solutions"
+              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              role="menuitem">Solutions</a>
+          </li>
+          <li class="group relative">
+            <a href="#community"
+              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              role="menuitem">Community</a>
+          </li>
+          <li class="group relative">
+            <a href="#team"
+              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              role="menuitem">Team</a>
+          </li>
+          <li class="group relative">
+            <a href="#contact"
+              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              role="menuitem">Contact</a>
+          </li>
+        </ul>
 
-          <!-- Action buttons -->
-          <div class="flex items-center gap-2">
-                <!-- <a
+        <!-- Action buttons -->
+        <div class="flex items-center gap-2">
+          <!-- <a
                   href="mailto:contact@semagram.energy"
               class="hidden items-center justify-center rounded-md bg-accent px-5 py-2 text-center text-base font-medium text-primary shadow-md hover:bg-opacity-90 sm:inline-flex"
                   role="button"
               >Request Demo</a
             > -->
 
-            <div class="lg:hidden">
-              <button
-                class="navbar-toggler h-10 w-10"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-                data-web-toggle="navbar-collapse"
-                data-web-target="nav-menu"
-              >
-                <span class="block h-0.5 w-6 bg-primary transition-all"></span>
-                <span
-                  class="my-1.5 block h-0.5 w-6 bg-primary transition-all"
-                ></span>
-                <span class="block h-0.5 w-6 bg-primary transition-all"></span>
-              </button>
+          <div class="lg:hidden">
+            <button class="navbar-toggler h-10 w-10" aria-label="Toggle navigation" aria-expanded="false"
+              data-web-toggle="navbar-collapse" data-web-target="nav-menu">
+              <span class="block h-0.5 w-6 bg-primary transition-all"></span>
+              <span class="my-1.5 block h-0.5 w-6 bg-primary transition-all"></span>
+              <span class="block h-0.5 w-6 bg-primary transition-all"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main relative">
+    <!-- Hero section -->
+    <section id="home"
+      class="relative overflow-hidden bg-background-light pt-[120px] pb-[80px] lg:pt-[150px] lg:pb-[100px]">
+      <div class="absolute inset-0 bg-cover bg-top animate-zoom-in-out"
+        style="background-image: url('./assets/img/background.jpg')"></div>
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="container relative">
+        <div class="-mx-4 flex flex-wrap">
+          <div class="w-full px-5">
+            <div class="scroll-revealed mx-auto max-w-[1100px] text-center">
+              <div class="mb-6">
+                <img src="./assets/img/semagram-icon-white.svg" alt="Semagram Logo" class="inline-block h-16" />
               </div>
+              <h1 id="streaming-text"
+                class="mb-6 text-4xl font-extrabold leading-tight text-primary sm:text-5xl lg:text-6xl"
+                style="min-height: 80px"></h1>
+              <p class="mx-auto mb-9 max-w-[900px] text-base text-primary/80 sm:text-lg sm:leading-relaxed">
+                Semagram Energy's Agentic AI solutions empower utilities, grid operators, and software providers to
+                accelerate efficiency and ensure reliability in modern power systems
+              </p>
+              <ul class="mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-5">
+                <li>
+                  <a href="#solutions"
+                    class="flex items-center gap-4 rounded-md bg-white/10 px-5 py-3 text-base font-medium text-primary hover:bg-white/20 md:px-7 md:py-[14px]"
+                    role="button">
+                    <i class="lni lni-play text-accent"></i>
+                    <span>Learn More</span>
+                  </a>
+                </li>
+              </ul>
             </div>
-        </nav>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main class="main relative">
-      <!-- Hero section -->
-      <section
-        id="home"
-        class="relative overflow-hidden bg-background-light pt-[120px] pb-[80px] lg:pt-[150px] lg:pb-[100px]"
-      >
-        <div
-          class="absolute inset-0 bg-cover bg-top animate-zoom-in-out"
-          style="background-image: url('./assets/img/background.jpg')"
-        ></div>
-        <div class="absolute inset-0 bg-black/50"></div>
-        <div class="container relative">
-          <div class="-mx-4 flex flex-wrap">
-            <div class="w-full px-5">
-              <div class="scroll-revealed mx-auto max-w-[1100px] text-center">
-                <div class="mb-6">
-                  <img src="./assets/img/semagram-icon-white.svg" alt="Semagram Logo" class="inline-block h-16" />
-                </div>
-                <h1
-                  id="streaming-text"
-                  class="mb-6 text-4xl font-extrabold leading-tight text-primary sm:text-5xl lg:text-6xl"
-                  style="min-height: 80px"
-                ></h1>
-                <p
-                  class="mx-auto mb-9 max-w-[900px] text-base text-primary/80 sm:text-lg sm:leading-relaxed"
-                >
-                Semagram Energy's Agentic AI solutions empower utilities, grid operators, and software providers to accelerate efficiency and ensure reliability in modern power systems
-                </p>
-                <ul
-                  class="mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-5"
-                >
-                  <li>
-                    <a
-                      href="#solutions"
-                      class="flex items-center gap-4 rounded-md bg-white/10 px-5 py-3 text-base font-medium text-primary hover:bg-white/20 md:px-7 md:py-[14px]"
-                      role="button"
-                    >
-                      <i class="lni lni-play text-accent"></i>
-                      <span>Learn More</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <!-- Pain Points section -->
+    <section id="painpoints" class="section-area relative overflow-hidden">
+      <!-- Background Image & Overlay -->
+      <div class="absolute inset-0 bg-cover bg-center bg-fixed"
+        style="background-image: url('./assets/img/background2.png');"></div>
+      <div class="absolute inset-0 bg-background-dark/70 backdrop-blur-md"></div>
+
+      <div class="container relative z-10">
+        <!-- Section Title -->
+        <div class="scroll-revealed mx-auto mb-16 max-w-[800px] text-center">
+          <h6 class="mb-3 block text-lg font-semibold text-accent uppercase tracking-wider">The Challenge</h6>
+          <h2 class="mb-8 text-4xl font-bold text-primary lg:text-5xl">
+            What's Causing the <span class="text-accent">Delays?</span>
+          </h2>
+          <p class="text-xl text-primary/80 leading-relaxed">
+            A huge increase in power needs is meeting old, slow systems. This creates a major bottleneck that holds back
+            the entire industry.
+          </p>
         </div>
-      </section>
 
-      <!-- Pain Points section -->
-      <section id="painpoints" class="section-area relative overflow-hidden">
-        <!-- Background Image & Overlay -->
-        <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('./assets/img/background2.png');"></div>
-        <div class="absolute inset-0 bg-background-dark/70 backdrop-blur-md"></div>
+        <!-- Interactive Vertical Flow Visualization -->
+        <div class="relative flex flex-col items-center gap-8">
 
-        <div class="container relative z-10">
-          <!-- Section Title -->
-          <div class="scroll-revealed mx-auto mb-16 max-w-[800px] text-center">
-            <h6 class="mb-3 block text-lg font-semibold text-accent uppercase tracking-wider">The  Challenge</h6>
-            <h2 class="mb-8 text-4xl font-bold text-primary lg:text-5xl">
-              What's Causing the <span class="text-accent">Delays?</span>
-            </h2>
-            <p class="text-xl text-primary/80 leading-relaxed">
-              A huge increase in power needs is meeting old, slow systems. This creates a major bottleneck that holds back the entire industry.
-            </p>
+          <!-- Animated Connection Lines SVG -->
+          <div class="absolute inset-0 w-full h-full pointer-events-none z-10">
+            <svg class="w-full h-full" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid meet">
+              <defs>
+                <!-- Gradient for animated lines -->
+                <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.8" />
+                  <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+                  <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.4" />
+                </linearGradient>
+                <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+                  <stop offset="50%" style="stop-color:#ef4444;stop-opacity:0.8" />
+                  <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.6" />
+                </linearGradient>
+                <!-- Glow filter -->
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Connection Line 1: Driver to Bottleneck -->
+              <path d="M 400 250 Q 400 350, 400 450" stroke="url(#flowGradient1)" stroke-width="3" fill="none"
+                filter="url(#glow)" stroke-dasharray="8 4" opacity="0.7">
+                <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3s" repeatCount="indefinite" />
+              </path>
+
+              <!-- Connection Line 2: Bottleneck to Outcomes -->
+              <path d="M 400 650 Q 400 750, 400 980" stroke="url(#flowGradient2)" stroke-width="3" fill="none"
+                filter="url(#glow)" stroke-dasharray="8 4" opacity="0.7">
+                <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3s" repeatCount="indefinite"
+                  begin="0.5s" />
+              </path>
+
+              <!-- Animated Particles -->
+              <g fill="#00aaff" opacity="1">
+                <!-- Fast particles for Driver to Bottleneck (more and faster) -->
+                <!-- Particle 1 -->
+                <circle r="6" filter="url(#glow)" fill="#0099ff">
+                  <animateMotion dur="2s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#particle-path-1" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" />
+                </circle>
+                <!-- Particle 2 -->
+                <circle r="5" fill="#00bbff" opacity="0">
+                  <animateMotion dur="2.5s" repeatCount="indefinite" rotate="auto" begin="0.5s">
+                    <mpath href="#particle-path-1" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+                </circle>
+                <!-- Particle 3 -->
+                <circle r="5" fill="#0088ff" opacity="0">
+                  <animateMotion dur="1.8s" repeatCount="indefinite" rotate="auto" begin="1s">
+                    <mpath href="#particle-path-1" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="1s" />
+                </circle>
+                <!-- Particle 4 -->
+                <circle r="4" fill="#00ccff" opacity="0">
+                  <animateMotion dur="2.2s" repeatCount="indefinite" rotate="auto" begin="1.5s">
+                    <mpath href="#particle-path-1" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.5s" />
+                </circle>
+                <!-- Particle 5 -->
+                <circle r="6" fill="#0077ff" opacity="0">
+                  <animateMotion dur="1.6s" repeatCount="indefinite" rotate="auto" begin="0.3s">
+                    <mpath href="#particle-path-1" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" repeatCount="indefinite" begin="0.3s" />
+                </circle>
+                <!-- Particle 6 -->
+                <circle r="5" fill="#00ddff" opacity="0">
+                  <animateMotion dur="2.8s" repeatCount="indefinite" rotate="auto" begin="2s">
+                    <mpath href="#particle-path-1" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="2s" />
+                </circle>
+              </g>
+
+              <g fill="#ff4444" opacity="1">
+                <!-- Slower particles for Bottleneck to Outcomes (more but slower) -->
+                <!-- Particle 1 -->
+                <circle r="5" filter="url(#glow)" fill="#ff3333" opacity="0">
+                  <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" begin="1s">
+                    <mpath href="#particle-path-2" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="1s" />
+                </circle>
+                <!-- Particle 2 -->
+                <circle r="4" fill="#ff4444" opacity="0">
+                  <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" begin="2s">
+                    <mpath href="#particle-path-2" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite" begin="2s" />
+                </circle>
+                <!-- Particle 3 -->
+                <circle r="3" fill="#ff5555" opacity="0">
+                  <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" begin="3s">
+                    <mpath href="#particle-path-2" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="3s" />
+                </circle>
+                <!-- Particle 4 -->
+                <circle r="4" fill="#ff2222" opacity="0">
+                  <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto" begin="4s">
+                    <mpath href="#particle-path-2" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="6.5s" repeatCount="indefinite" begin="4s" />
+                </circle>
+                <!-- Particle 5 -->
+                <circle r="5" fill="#ff6666" opacity="0">
+                  <animateMotion dur="7.5s" repeatCount="indefinite" rotate="auto" begin="0.5s">
+                    <mpath href="#particle-path-2" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="7.5s" repeatCount="indefinite" begin="0.5s" />
+                </circle>
+                <!-- Particle 6 -->
+                <circle r="3" fill="#ff3333" opacity="0">
+                  <animateMotion dur="8.5s" repeatCount="indefinite" rotate="auto" begin="5s">
+                    <mpath href="#particle-path-2" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="8.5s" repeatCount="indefinite" begin="5s" />
+                </circle>
+                <!-- Particle 7 -->
+                <circle r="4" fill="#ff4444" opacity="0">
+                  <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" begin="1.5s">
+                    <mpath href="#particle-path-2" />
+                  </animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" dur="9s" repeatCount="indefinite" begin="1.5s" />
+                </circle>
+              </g>
+
+              <!-- Hidden paths for particles -->
+              <defs>
+                <path id="particle-path-1" d="M 400 250 Q 400 350, 400 450" />
+                <path id="particle-path-2" d="M 400 650 Q 400 750, 400 950" />
+              </defs>
+            </svg>
           </div>
 
-          <!-- Interactive Vertical Flow Visualization -->
-          <div class="relative flex flex-col items-center gap-8">
-            
-            <!-- Animated Connection Lines SVG -->
-            <div class="absolute inset-0 w-full h-full pointer-events-none z-10">
-              <svg class="w-full h-full" viewBox="0 0 800 1200" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <!-- Gradient for animated lines -->
-                  <linearGradient id="flowGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.8" />
-                    <stop offset="50%" style="stop-color:#06b6d4;stop-opacity:0.6" />
-                    <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.4" />
-                  </linearGradient>
-                  <linearGradient id="flowGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.6" />
-                    <stop offset="50%" style="stop-color:#ef4444;stop-opacity:0.8" />
-                    <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.6" />
-                  </linearGradient>
-                  <!-- Glow filter -->
-                  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                <!-- Connection Line 1: Driver to Bottleneck -->
-                <path d="M 400 250 Q 400 350, 400 450" 
-                      stroke="url(#flowGradient1)" 
-                      stroke-width="3" 
-                      fill="none" 
-                      filter="url(#glow)"
-                      stroke-dasharray="8 4"
-                      opacity="0.7">
-                  <animate attributeName="stroke-dashoffset" 
-                           values="0;12;0" 
-                           dur="3s" 
-                           repeatCount="indefinite" />
-                </path>
-
-                <!-- Connection Line 2: Bottleneck to Outcomes -->
-                <path d="M 400 650 Q 400 750, 400 980" 
-                      stroke="url(#flowGradient2)" 
-                      stroke-width="3" 
-                      fill="none" 
-                      filter="url(#glow)"
-                      stroke-dasharray="8 4"
-                      opacity="0.7">
-                  <animate attributeName="stroke-dashoffset" 
-                           values="0;12;0" 
-                           dur="3s" 
-                           repeatCount="indefinite"
-                           begin="0.5s" />
-                </path>
-
-                <!-- Animated Particles -->
-                <g fill="#00aaff" opacity="1">
-                  <!-- Fast particles for Driver to Bottleneck (more and faster) -->
-                  <!-- Particle 1 -->
-                  <circle r="6" filter="url(#glow)" fill="#0099ff">
-                    <animateMotion dur="2s" repeatCount="indefinite" rotate="auto">
-                      <mpath href="#particle-path-1" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite" />
-                  </circle>
-                  <!-- Particle 2 -->
-                  <circle r="5" fill="#00bbff" opacity="0">
-                    <animateMotion dur="2.5s" repeatCount="indefinite" rotate="auto" begin="0.5s">
-                      <mpath href="#particle-path-1" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
-                  </circle>
-                  <!-- Particle 3 -->
-                  <circle r="5" fill="#0088ff" opacity="0">
-                    <animateMotion dur="1.8s" repeatCount="indefinite" rotate="auto" begin="1s">
-                      <mpath href="#particle-path-1" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="1s" />
-                  </circle>
-                  <!-- Particle 4 -->
-                  <circle r="4" fill="#00ccff" opacity="0">
-                    <animateMotion dur="2.2s" repeatCount="indefinite" rotate="auto" begin="1.5s">
-                      <mpath href="#particle-path-1" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.5s" />
-                  </circle>
-                  <!-- Particle 5 -->
-                  <circle r="6" fill="#0077ff" opacity="0">
-                    <animateMotion dur="1.6s" repeatCount="indefinite" rotate="auto" begin="0.3s">
-                      <mpath href="#particle-path-1" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" repeatCount="indefinite" begin="0.3s" />
-                  </circle>
-                  <!-- Particle 6 -->
-                  <circle r="5" fill="#00ddff" opacity="0">
-                    <animateMotion dur="2.8s" repeatCount="indefinite" rotate="auto" begin="2s">
-                      <mpath href="#particle-path-1" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="2s" />
-                  </circle>
-                </g>
-
-                <g fill="#ff4444" opacity="1">
-                  <!-- Slower particles for Bottleneck to Outcomes (more but slower) -->
-                  <!-- Particle 1 -->
-                  <circle r="5" filter="url(#glow)" fill="#ff3333" opacity="0">
-                    <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" begin="1s">
-                      <mpath href="#particle-path-2" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" begin="1s" />
-                  </circle>
-                  <!-- Particle 2 -->
-                  <circle r="4" fill="#ff4444" opacity="0">
-                    <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" begin="2s">
-                      <mpath href="#particle-path-2" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite" begin="2s" />
-                  </circle>
-                  <!-- Particle 3 -->
-                  <circle r="3" fill="#ff5555" opacity="0">
-                    <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" begin="3s">
-                      <mpath href="#particle-path-2" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" begin="3s" />
-                  </circle>
-                  <!-- Particle 4 -->
-                  <circle r="4" fill="#ff2222" opacity="0">
-                    <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto" begin="4s">
-                      <mpath href="#particle-path-2" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="6.5s" repeatCount="indefinite" begin="4s" />
-                  </circle>
-                  <!-- Particle 5 -->
-                  <circle r="5" fill="#ff6666" opacity="0">
-                    <animateMotion dur="7.5s" repeatCount="indefinite" rotate="auto" begin="0.5s">
-                      <mpath href="#particle-path-2" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="7.5s" repeatCount="indefinite" begin="0.5s" />
-                  </circle>
-                  <!-- Particle 6 -->
-                  <circle r="3" fill="#ff3333" opacity="0">
-                    <animateMotion dur="8.5s" repeatCount="indefinite" rotate="auto" begin="5s">
-                      <mpath href="#particle-path-2" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="8.5s" repeatCount="indefinite" begin="5s" />
-                  </circle>
-                  <!-- Particle 7 -->
-                  <circle r="4" fill="#ff4444" opacity="0">
-                    <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" begin="1.5s">
-                      <mpath href="#particle-path-2" />
-                    </animateMotion>
-                    <animate attributeName="opacity" values="0;1;1;0" dur="9s" repeatCount="indefinite" begin="1.5s" />
-                  </circle>
-                </g>
-
-                <!-- Hidden paths for particles -->
-                <defs>
-                  <path id="particle-path-1" d="M 400 250 Q 400 350, 400 450" />
-                  <path id="particle-path-2" d="M 400 650 Q 400 750, 400 950" />
-                </defs>
-              </svg>
+          <!-- Step 1: The Drivers -->
+          <div class="scroll-revealed w-full max-w-4xl relative z-20" data-interactive-element="driver">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-primary/80 tracking-wide">The Drivers</h3>
             </div>
-            
-            <!-- Step 1: The Drivers -->
-            <div class="scroll-revealed w-full max-w-4xl relative z-20" data-interactive-element="driver">
-              <div class="text-center mb-6">
-                <h3 class="text-2xl font-bold text-primary/80 tracking-wide">The Drivers</h3>
+            <div class="group relative">
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-all duration-500">
               </div>
-              <div class="group relative">
-                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition-all duration-500"></div>
-                <div class="relative bg-background-dark/80 backdrop-blur-md border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all duration-500 interactive-card">
-                  <div class="flex flex-col md:flex-row gap-8">
-                    <!-- Driver 1: Surging Interconnection -->
-                    <div class="flex-1 text-center md:text-left group">
-                      <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-blue-900/20 transition-all duration-300">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                          <i class="lni lni-layers text-3xl text-white group-hover:animate-pulse"></i>
-                        </div>
-                        <div>
-                          <h4 class="text-xl font-semibold text-primary group-hover:text-blue-300 transition-colors duration-300">Surging Interconnection</h4>
-                          <p class="text-primary/80">A flood of interconnection requests from data centers and renewables.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Driver 2: More Grid Codes -->
-                    <div class="flex-1 text-center md:text-left group">
-                      <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-blue-900/20 transition-all duration-300">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                          <i class="lni lni-book text-3xl text-white group-hover:animate-pulse"></i>
-                        </div>
-                        <div>
-                          <h4 class="text-xl font-semibold text-primary group-hover:text-blue-300 transition-colors duration-300">More Grid Codes</h4>
-                          <p class="text-primary/80">Increasing reliability requirements and compliance standards.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Arrow Connector -->
-            <div class="scroll-revealed my-4 text-center relative z-20">
-              <i class="lni lni-arrow-down-circle text-5xl text-accent/50 animate-bounce hover:text-accent/80 transition-colors duration-300 cursor-pointer"></i>
-            </div>
-            
-            <!-- Step 2: The Bottleneck -->
-            <div class="scroll-revealed w-full max-w-3xl relative z-20" data-interactive-element="bottleneck">
-              <div class="group relative interactive-card">
-                <div class="absolute -inset-2 bg-gradient-to-br from-accent to-blue-700 rounded-3xl blur opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
-                <div class="relative bg-background-dark/80 backdrop-blur-md border border-accent/30 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 text-center hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-accent/20">
-                  <div class="w-20 h-20 bg-gradient-to-br from-accent to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:rotate-6">
-                    <i class="lni lni-funnel text-4xl text-white group-hover:animate-pulse"></i>
-                  </div>
-                  <h3 class="text-2xl font-bold text-accent mb-4 group-hover:text-blue-300 transition-colors duration-300">The Bottleneck</h3>
-                  <p class="text-primary/80 text-lg max-3xl mx-auto mb-8">
-                    The combination of aging tools and inefficient processes create gridlock.
-                  </p>
-                  <!-- Internal components of the bottleneck -->
-                  <div class="flex flex-col md:flex-row gap-6 justify-center">
-                    <!-- Outdated Software -->
-                    <div class="flex items-center gap-3 p-4 bg-background-dark/50 rounded-lg border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-background-dark/70">
-                      <i class="lni lni-code text-3xl text-orange-400 flex-shrink-0 hover:animate-pulse"></i>
-                      <div class="text-left">
-                        <h4 class="font-semibold text-primary">Outdated Software</h4>
-                        <p class="text-sm text-primary/70">Clunky and complex interfaces.</p>
-                      </div>
-                    </div>
-                    <!-- Complex Workflows -->
-                    <div class="flex items-center gap-3 p-4 bg-background-dark/50 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-background-dark/70">
-                      <i class="lni lni-cogs text-3xl text-purple-400 flex-shrink-0 hover:animate-spin"></i>
-                      <div class="text-left">
-                        <h4 class="font-semibold text-primary">Complex Workflows</h4>
-                        <p class="text-sm text-primary/70">Slow, manual evaluation processes.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Arrow Connector -->
-            <div class="scroll-revealed my-4 text-center relative z-20">
-              <i class="lni lni-arrow-down-circle text-5xl text-red-500/50 animate-bounce hover:text-red-400/80 transition-colors duration-300 cursor-pointer"></i>
-            </div>
-
-            <!-- Step 3: The Negative Outcomes -->
-            <div class="scroll-revealed w-full max-w-4xl relative z-20" data-interactive-element="outcomes">
-              <div class="bg-red-900/20 border border-red-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-red-500/40 transition-all duration-500 hover:bg-red-900/30 interactive-card">
-                <h3 class="text-2xl font-bold text-red-400 text-center mb-6">The Outcomes</h3>
+              <div
+                class="relative bg-background-dark/80 backdrop-blur-md border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/40 transition-all duration-500 interactive-card">
                 <div class="flex flex-col md:flex-row gap-8">
-                  <!-- Outcome 1 -->
+                  <!-- Driver 1: Surging Interconnection -->
                   <div class="flex-1 text-center md:text-left group">
-                    <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-red-900/20 transition-all duration-300">
-                      <i class="lni lni-timer text-5xl text-red-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></i>
+                    <div
+                      class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-blue-900/20 transition-all duration-300">
+                      <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="lni lni-layers text-3xl text-white group-hover:animate-pulse"></i>
+                      </div>
                       <div>
-                        <h4 class="text-xl font-semibold text-primary group-hover:text-red-300 transition-colors duration-300">Project Delays & Backlogs</h4>
-                        <p class="text-primary/80">The interconnection queue grows, stalling vital energy projects and slowing the transition to renewables.</p>
+                        <h4
+                          class="text-xl font-semibold text-primary group-hover:text-blue-300 transition-colors duration-300">
+                          Surging Interconnection</h4>
+                        <p class="text-primary/80">A flood of interconnection requests from data centers and renewables.
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <!-- Outcome 2 -->
+                  <!-- Driver 2: More Grid Codes -->
                   <div class="flex-1 text-center md:text-left group">
-                    <div class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-red-900/20 transition-all duration-300">
-                      <i class="lni lni-stats-up text-5xl text-red-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></i>
+                    <div
+                      class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-blue-900/20 transition-all duration-300">
+                      <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="lni lni-book text-3xl text-white group-hover:animate-pulse"></i>
+                      </div>
                       <div>
-                        <h4 class="text-xl font-semibold text-primary group-hover:text-red-300 transition-colors duration-300">Soaring Costs & Inefficiency</h4>
-                        <p class="text-primary/80">Reduced productivity and project overruns drive up operational expenses for the entire industry.</p>
+                        <h4
+                          class="text-xl font-semibold text-primary group-hover:text-blue-300 transition-colors duration-300">
+                          More Grid Codes</h4>
+                        <p class="text-primary/80">Increasing reliability requirements and compliance standards.</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Solutions Section -->
-      <section id="solutions" class="section-area relative overflow-hidden bg-gradient-to-br from-background-dark via-background-medium to-background-dark py-20">
-          <!-- Animated background elements -->
-          <div class="absolute inset-0 overflow-hidden pointer-events-none">
-              <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-              <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-accent/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-              <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-accent/10 rounded-full blur-3xl animate-spin" style="animation-duration: 20s;"></div>
           </div>
 
-          <div class="container relative z-10">
-              <!-- Section Title with enhanced effects -->
-              <div class="scroll-revealed mx-auto mb-20 max-w-[1000px] text-center">
-                  <div class="relative inline-block mb-4">
-                      <h6 class="mb-3 block text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-accent uppercase tracking-wider animate-pulse">
-                          Our Solutions
-                      </h6>
-                      <div class="absolute -inset-1 bg-gradient-to-r from-accent to-blue-500 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
-                  </div>
-                  <h2 class="mb-8 text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white leading-normal">
-                      Agentic OS & Workflows
-                  </h2>
+          <!-- Arrow Connector -->
+          <div class="scroll-revealed my-4 text-center relative z-20">
+            <i
+              class="lni lni-arrow-down-circle text-5xl text-accent/50 animate-bounce hover:text-accent/80 transition-colors duration-300 cursor-pointer"></i>
+          </div>
+
+          <!-- Step 2: The Bottleneck -->
+          <div class="scroll-revealed w-full max-w-3xl relative z-20" data-interactive-element="bottleneck">
+            <div class="group relative interactive-card">
+              <div
+                class="absolute -inset-2 bg-gradient-to-br from-accent to-blue-700 rounded-3xl blur opacity-30 group-hover:opacity-60 transition-all duration-500">
               </div>
-
-              <!-- Solutions Grid with 3D Effects -->
-              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch perspective-1000">
-                  
-                  <!-- SemaOS Card with Enhanced 3D Effects -->
-                  <div class="scroll-revealed group relative transform-gpu transition-all duration-700 hover:scale-105 hover:rotate-1">
-                      <!-- Animated border -->
-                      <div class="absolute -inset-1 bg-gradient-to-r from-accent via-blue-500 to-accent rounded-3xl blur-sm opacity-25 group-hover:opacity-75 transition duration-1000 animate-gradient-x"></div>
-                      
-                      <!-- Main card -->
-                      <div class="relative bg-gradient-to-br from-background-light/90 via-background-light/70 to-background-light/90 backdrop-blur-xl border border-white/20 rounded-3xl p-10 h-full flex flex-col transform transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-accent/25">
-                          <!-- Floating icon -->
-                          <div class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-accent to-blue-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
-                              <i class="lni lni-grid-alt text-2xl text-white"></i>
-                          </div>
-                          
-                          <div class="flex-grow">
-                              <div class="mb-8">
-                                  <h3 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400 mb-3">SemaOS</h3>
-                                  <div class="relative">
-                                      <p class="text-xl text-accent font-bold tracking-wide">Agentic Operating System</p>
-                                      <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent to-blue-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                                  </div>
-                              </div>
-                              
-                              <p class="text-primary/90 mb-8 text-lg leading-relaxed">
-                                Create intelligent, human-language interfaces for the power industry by combining deep domain know-how and agentic intelligence track record
-                              </p>
-                                           <!-- Feature tags -->
-                                           <div class="flex flex-wrap gap-3 mb-8">
-                                            <a href="https://rittikajindal.medium.com/software-3-0-is-here-andrej-karpathys-vision-for-ai-llms-and-agents-06fad757b0a4" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-accent/20 border border-purple-500/30 rounded-full text-sm text-purple-300 font-medium transform hover:scale-105 transition-transform duration-300 cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/30 hover:to-accent/30">Software 3.0</a>
-                                            <span class="px-4 py-2 bg-gradient-to-r from-accent/20 to-blue-500/20 border border-accent/30 rounded-full text-sm text-blue-300 font-medium transform hover:scale-105 transition-transform duration-300">Simulation Automation</span>
-                                            <span class="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-accent/20 border border-blue-500/30 rounded-full text-sm text-accent font-medium transform hover:scale-105 transition-transform duration-300">From Chat to Report</span>
-                                        </div>
-                              
-                              <!-- Enhanced image container -->
-                              <div class="relative rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
-                                  <div class="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                  <img src="./assets/img/semaos.png" alt="SemaOS Interface" class="w-full h-auto object-contain bg-white/5 rounded-xl transform group-hover:scale-105 transition-transform duration-700">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-                  <!-- SemaWF Card with Enhanced 3D Effects -->
-                  <div class="scroll-revealed group relative transform-gpu transition-all duration-700 hover:scale-105 hover:-rotate-1" style="animation-delay: 0.2s;">
-                      <!-- Animated border -->
-                      <div class="absolute -inset-1 bg-gradient-to-r from-purple-500 via-accent to-blue-500 rounded-3xl blur-sm opacity-25 group-hover:opacity-75 transition duration-1000 animate-gradient-x" style="animation-delay: 1s;"></div>
-                      
-                      <!-- Main card -->
-                      <div class="relative bg-gradient-to-br from-background-light/90 via-background-light/70 to-background-light/90 backdrop-blur-xl border border-white/20 rounded-3xl p-10 h-full flex flex-col transform transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/25">
-                          <!-- Floating icon -->
-                          <div class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-purple-500 to-accent rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:-rotate-12 group-hover:scale-110 transition-all duration-500">
-                              <i class="lni lni-cogs text-2xl text-white"></i>
-                          </div>
-                          
-                          <div class="flex-grow">
-                              <div class="mb-8">
-                                  <h3 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent mb-3">SemaWF</h3>
-                                  <div class="relative">
-                                      <p class="text-xl text-purple-400 font-bold tracking-wide">Agentic Workflows</p>
-                                      <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                                  </div>
-                              </div>
-                              
-                              <p class="text-primary/90 mb-6 text-lg leading-relaxed">
-                                Streamline complex workflows in the power industry using deep domain expertise and intelligent automation
-                              </p>
-                              
-                              <!-- Feature tags -->
-                              <div class="flex flex-wrap gap-3 mb-8">
-                                  <span class="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-accent/20 border border-purple-500/30 rounded-full text-sm text-purple-300 font-medium transform hover:scale-105 transition-transform duration-300">Transmission Planning</span>
-                                  <a href="https://youtu.be/TbrWIhaqdKk" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gradient-to-r from-accent/20 to-blue-500/20 border border-accent/30 rounded-full text-sm text-blue-300 font-medium transform hover:scale-105 transition-transform duration-300 cursor-pointer hover:bg-gradient-to-r hover:from-accent/30 hover:to-blue-500/30">Datacenter Interconnection</a>
-                                  <span class="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-accent/20 border border-blue-500/30 rounded-full text-sm text-accent font-medium transform hover:scale-105 transition-transform duration-300">Renewable Integration</span>
-                              </div>
-                              
-                              <!-- Enhanced video container -->
-                              <div class="relative rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
-                                  <div class="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                  <div class="aspect-video">
-                                      <iframe class="w-full h-full transform group-hover:scale-105 transition-transform duration-700" src="https://www.youtube.com/embed/TbrWIhaqdKk" title="SemaWF Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <!-- Services Section with Innovative Layout -->
-              <div class="mt-32 relative">
-                  <!-- Section divider with animated line -->
-                  <div class="flex items-center justify-center mb-16">
-                      <div class="h-px bg-gradient-to-r from-transparent via-accent to-transparent w-full max-w-md"></div>
-                      <div class="mx-8 w-4 h-4 bg-gradient-to-r from-accent to-blue-500 rounded-full animate-pulse"></div>
-                      <div class="h-px bg-gradient-to-r from-transparent via-accent to-transparent w-full max-w-md"></div>
-                  </div>
-                  
-                  <div class="scroll-revealed mx-auto mb-16 max-w-[900px] text-center">
-                      <h3 class="mb-6 text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white">
-                          End-to-End Services
-                      </h3>
-                      <p class="text-xl text-primary/80 leading-relaxed">
-                          Comprehensive support from consultation to maintenance, ensuring your success at every step
-                      </p>
-                  </div>
-                  
-                  <!-- Services Grid with Staggered Animation -->
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                      <!-- Consultant Service -->
-                      <div class="scroll-revealed group relative transform transition-all duration-500 hover:scale-105" style="animation-delay: 0.1s;">
-                          <div class="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-1000"></div>
-                          <div class="relative bg-gradient-to-br from-background-light/50 to-background-light/30 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center transform transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
-                              <div class="mb-6 relative">
-                                  <div class="w-20 h-20 mx-auto bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
-                                      <i class="lni lni-consulting text-3xl text-white"></i>
-                                  </div>
-                                  <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                              </div>
-                              <h4 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 mb-4 leading-relaxed">Indentify Existing Workflow Bottlenecks Through Tailored Consulting Arrangements
-                                </h4>
-                        
-                          </div>
-                      </div>
-                      
-                      <!-- Deployment Service -->
-                      <div class="scroll-revealed group relative transform transition-all duration-500 hover:scale-105" style="animation-delay: 0.2s;">
-                          <div class="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-1000"></div>
-                          <div class="relative bg-gradient-to-br from-background-light/50 to-background-light/30 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center transform transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
-                              <div class="mb-6 relative">
-                                  <div class="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:-rotate-12 group-hover:scale-110 transition-all duration-500">
-                                      <i class="lni lni-rocket text-3xl text-white"></i>
-                                  </div>
-                                  <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                              </div>
-                              <h4 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4 leading-relaxed">Deploy Cloud-based or Local Agentic AI Solutions Seamlessly Integrated into Existing Workflows</h4>
-                          </div>
-                      </div>
-                      
-                      <!-- Maintenance Service -->
-                      <div class="scroll-revealed group relative transform transition-all duration-500 hover:scale-105" style="animation-delay: 0.3s;">
-                          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-1000"></div>
-                          <div class="relative bg-gradient-to-br from-background-light/50 to-background-light/30 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center transform transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
-                              <div class="mb-6 relative">
-                                  <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
-                                      <i class="lni lni-cog text-3xl text-white"></i>
-                                  </div>
-                                  <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                              </div>
-                              <h4 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4 leading-relaxed">Continuously Update with Cutting-edge Foundational Models Tailored to Evolving Workflow Needs</h4>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <!-- Community Section -->
-      <section id="community" class="section-area relative bg-gradient-to-br from-background-dark to-background-medium">
-        <div class="container">
-          <div class="scroll-revealed mx-auto mb-12 max-w-[900px] text-center">
-            <h6 class="mb-2 block text-3xl font-semibold text-accent">
-              Our Ecosystem
-            </h6>
-            <div class="mb-3">
-              <img src="./assets/img/poweragent_logo.png" alt="PowerAgent Logo" class="inline-block h-32 mb-0" />
-            </div>
-            <p class="text-secondary">
-            Building on the Success of the First Open-Source Agentic AI Community for Power Industry
-            </p>
-     
-                  </div>
-          <div class="scroll-revealed mx-auto max-w-[500px] text-center">
-              <a
-                href="https://power-agent.github.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-7 py-3 text-center text-base font-medium text-primary shadow-lg hover:bg-opacity-90"
-                role="button"
-              >
-                <i class="lni lni-github-original"></i>
-                <span>View on GitHub</span>
-              </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Clients section -->
-      <section id="clients" class="section-area bg-background-light pt-10 pb-20">
-        <div class="container">
-          <div class="scroll-revealed mx-auto mb-12 max-w-[1000px] text-center">
-            <h2 class="mb-6 text-3xl font-bold text-primary">
-              Trusted by Engineers at
-            </h2>
-            <p class="text-secondary">
-              Our solutions are built on combined experience from
-              leading utilities, software, and consulting companies.
-            </p>
-          </div>
-          <div class="mx-auto max-w-4xl">
-            <div
-              class="scroll-revealed grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-x-12"
-            >
-              <img
-                src="./assets/img/brand/ercot.png"
-                alt="ERCOT Logo"
-                style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
-                class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-              />
-              <img
-                src="./assets/img/brand/isone.png"
-                alt="ISO New England Logo"
-                style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
-                class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-              />
-              <img
-                src="./assets/img/brand/centerpoint.png"
-                alt="Centerpoint Logo"
-                style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
-                class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Team section -->
-      <section id="team" class="section-area bg-gradient-to-br from-background-dark to-background-medium">
-        <div class="container">
-          <div class="scroll-revealed mx-auto mb-12 max-w-[800px] text-center">
-            <h6 class="mb-2 block text-2xl font-semibold text-accent">
-              Our Team
-            </h6>
-            <h2 class="mb-6 text-3xl font-bold text-primary">Meet Our Core Team Members</h2>
-            <p class="text-secondary">
-              We are a team of experienced engineers, researchers, and
-              industry experts with deep know-how to optimize the efficiency of the power industry.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 gap-12 md:grid-cols-3 max-w-4xl mx-auto">
-            <div class="scroll-revealed">
-              <div class="group text-center">
+              <div
+                class="relative bg-background-dark/80 backdrop-blur-md border border-accent/30 rounded-2xl p-8 hover:border-accent/60 transition-all duration-500 text-center hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-accent/20">
                 <div
-                  class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full"
-                >
-                  <img
-                    src="./assets/img/team/lexie.jpg"
-                    alt="Team member"
-                    class="h-full w-full object-cover"
-                  />
+                  class="w-20 h-20 bg-gradient-to-br from-accent to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:rotate-6">
+                  <i class="lni lni-funnel text-4xl text-white group-hover:animate-pulse"></i>
                 </div>
-                <h4 class="mb-2 text-xl font-medium">
-                  <a href="https://seas.harvard.edu/person/le-xie" target="_blank" rel="noopener noreferrer" class="hover:underline">Le Xie</a>
-                </h4>
-              </div>
-            </div>
-
-            <div class="scroll-revealed">
-              <div class="group text-center">
-                <div
-                  class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full"
-                >
-                  <img
-                    src="./assets/img/team/qianzhang.jpg"
-                    alt="Team member"
-                    class="h-full w-full object-cover"
-                  />
-                </div>
-                <h4 class="mb-2 text-xl font-medium">
-                  <a href="https://www.linkedin.com/in/qian-zhang-75323111b/" target="_blank" rel="noopener noreferrer" class="hover:underline">Qian Zhang</a>
-                </h4>
-              </div>
-            </div>
-
-            <div class="scroll-revealed">
-              <div class="group text-center">
-                <div
-                  class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full"
-                >
-                  <img
-                    src="./assets/img/team/karina.jpg"
-                    alt="Team member"
-                    class="h-full w-full object-cover"
-                  />
-                </div>
-                <h4 class="mb-2 text-xl font-medium">
-                  <a href="https://www.linkedin.com/in/karina-chung" target="_blank" rel="noopener noreferrer" class="hover:underline">Karina Chung</a>
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call action section -->
-      <section id="contact" class="bg-background-light py-20">
-        <div class="container">
-          <div
-            class="scroll-revealed relative z-10 overflow-hidden rounded-xl bg-accent px-8 py-12 lg:px-10"
-          >
-            <div class="-mx-4 flex flex-wrap items-center">
-              <div class="w-full px-4 lg:w-2/3">
-                <h2
-                  class="mb-6 text-2xl font-bold leading-tight text-primary sm:text-3xl"
-                >
-                  Ready to Bring Agentic Intelligence to Your Organization?
-                </h2>
-                <p class="text-base text-primary/80">
-                  Share your pain points with our experts to see how Semagram Energy
-                  can transform your solutions and services.
+                <h3
+                  class="text-2xl font-bold text-accent mb-4 group-hover:text-blue-300 transition-colors duration-300">
+                  The Bottleneck</h3>
+                <p class="text-primary/80 text-lg max-3xl mx-auto mb-8">
+                  The combination of aging tools and inefficient processes create gridlock.
                 </p>
+                <!-- Internal components of the bottleneck -->
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                  <!-- Outdated Software -->
+                  <div
+                    class="flex items-center gap-3 p-4 bg-background-dark/50 rounded-lg border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-background-dark/70">
+                    <i class="lni lni-code text-3xl text-orange-400 flex-shrink-0 hover:animate-pulse"></i>
+                    <div class="text-left">
+                      <h4 class="font-semibold text-primary">Outdated Software</h4>
+                      <p class="text-sm text-primary/70">Clunky and complex interfaces.</p>
+                    </div>
+                  </div>
+                  <!-- Complex Workflows -->
+                  <div
+                    class="flex items-center gap-3 p-4 bg-background-dark/50 rounded-lg border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105 hover:bg-background-dark/70">
+                    <i class="lni lni-cogs text-3xl text-purple-400 flex-shrink-0 hover:animate-spin"></i>
+                    <div class="text-left">
+                      <h4 class="font-semibold text-primary">Complex Workflows</h4>
+                      <p class="text-sm text-primary/70">Slow, manual evaluation processes.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="w-full px-4 lg:w-1/3">
-                <div class="mt-8 text-center lg:mt-0 lg:text-right">
-                  <a
-                    href="mailto:contact@semagram.energy"
-                    class="inline-block rounded-md bg-primary px-8 py-3 text-center text-base font-medium text-accent hover:bg-opacity-90"
-                    >Contact Us</a
-                  >
-                </div>
             </div>
+          </div>
+
+          <!-- Arrow Connector -->
+          <div class="scroll-revealed my-4 text-center relative z-20">
+            <i
+              class="lni lni-arrow-down-circle text-5xl text-red-500/50 animate-bounce hover:text-red-400/80 transition-colors duration-300 cursor-pointer"></i>
+          </div>
+
+          <!-- Step 3: The Negative Outcomes -->
+          <div class="scroll-revealed w-full max-w-4xl relative z-20" data-interactive-element="outcomes">
+            <div
+              class="bg-red-900/20 border border-red-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-red-500/40 transition-all duration-500 hover:bg-red-900/30 interactive-card">
+              <h3 class="text-2xl font-bold text-red-400 text-center mb-6">The Outcomes</h3>
+              <div class="flex flex-col md:flex-row gap-8">
+                <!-- Outcome 1 -->
+                <div class="flex-1 text-center md:text-left group">
+                  <div
+                    class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-red-900/20 transition-all duration-300">
+                    <i
+                      class="lni lni-timer text-5xl text-red-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></i>
+                    <div>
+                      <h4
+                        class="text-xl font-semibold text-primary group-hover:text-red-300 transition-colors duration-300">
+                        Project Delays & Backlogs</h4>
+                      <p class="text-primary/80">The interconnection queue grows, stalling vital energy projects and
+                        slowing the transition to renewables.</p>
+                    </div>
+                  </div>
                 </div>
+                <!-- Outcome 2 -->
+                <div class="flex-1 text-center md:text-left group">
+                  <div
+                    class="flex flex-col md:flex-row items-center gap-4 p-4 rounded-lg hover:bg-red-900/20 transition-all duration-300">
+                    <i
+                      class="lni lni-stats-up text-5xl text-red-400 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></i>
+                    <div>
+                      <h4
+                        class="text-xl font-semibold text-primary group-hover:text-red-300 transition-colors duration-300">
+                        Soaring Costs & Inefficiency</h4>
+                      <p class="text-primary/80">Reduced productivity and project overruns drive up operational expenses
+                        for the entire industry.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions"
+      class="section-area relative overflow-hidden bg-gradient-to-br from-background-dark via-background-medium to-background-dark py-20">
+      <!-- Animated background elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-r from-accent/20 to-blue-500/20 rounded-full blur-3xl animate-pulse">
+        </div>
+        <div
+          class="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-accent/20 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 2s;"></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-accent/10 rounded-full blur-3xl animate-spin"
+          style="animation-duration: 20s;"></div>
+      </div>
+
+      <div class="container relative z-10">
+        <!-- Section Title with enhanced effects -->
+        <div class="scroll-revealed mx-auto mb-20 max-w-[1000px] text-center">
+          <div class="relative inline-block mb-4">
+            <h6
+              class="mb-3 block text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent via-blue-400 to-accent uppercase tracking-wider animate-pulse">
+              Our Solutions
+            </h6>
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-accent to-blue-500 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000">
+            </div>
+          </div>
+          <h2
+            class="mb-8 text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white leading-normal">
+            Agentic OS & Workflows
+          </h2>
+        </div>
+
+        <!-- Solutions Grid with 3D Effects -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch perspective-1000">
+
+          <!-- SemaOS Card with Enhanced 3D Effects -->
+          <div
+            class="scroll-revealed group relative transform-gpu transition-all duration-700 hover:scale-105 hover:rotate-1">
+            <!-- Animated border -->
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-accent via-blue-500 to-accent rounded-3xl blur-sm opacity-25 group-hover:opacity-75 transition duration-1000 animate-gradient-x">
+            </div>
+
+            <!-- Main card -->
+            <div
+              class="relative bg-gradient-to-br from-background-light/90 via-background-light/70 to-background-light/90 backdrop-blur-xl border border-white/20 rounded-3xl p-10 h-full flex flex-col transform transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-accent/25">
+              <!-- Floating icon -->
+              <div
+                class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-accent to-blue-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
+                <i class="lni lni-grid-alt text-2xl text-white"></i>
+              </div>
+
+              <div class="flex-grow">
+                <div class="mb-8">
+                  <h3
+                    class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400 mb-3">
+                    SemaOS</h3>
+                  <div class="relative">
+                    <p class="text-xl text-accent font-bold tracking-wide">Agentic Operating System</p>
+                    <div
+                      class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent to-blue-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                    </div>
+                  </div>
+                </div>
+
+                <p class="text-primary/90 mb-8 text-lg leading-relaxed">
+                  Create intelligent, human-language interfaces for the power industry by combining deep domain know-how
+                  and agentic intelligence track record
+                </p>
+                <!-- Feature tags -->
+                <div class="flex flex-wrap gap-3 mb-8">
+                  <a href="https://rittikajindal.medium.com/software-3-0-is-here-andrej-karpathys-vision-for-ai-llms-and-agents-06fad757b0a4"
+                    target="_blank" rel="noopener noreferrer"
+                    class="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-accent/20 border border-purple-500/30 rounded-full text-sm text-purple-300 font-medium transform hover:scale-105 transition-transform duration-300 cursor-pointer hover:bg-gradient-to-r hover:from-purple-500/30 hover:to-accent/30">Software
+                    3.0</a>
+                  <span
+                    class="px-4 py-2 bg-gradient-to-r from-accent/20 to-blue-500/20 border border-accent/30 rounded-full text-sm text-blue-300 font-medium transform hover:scale-105 transition-transform duration-300">Simulation
+                    Automation</span>
+                  <span
+                    class="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-accent/20 border border-blue-500/30 rounded-full text-sm text-accent font-medium transform hover:scale-105 transition-transform duration-300">From
+                    Chat to Report</span>
+                </div>
+
+                <!-- Enhanced image container -->
+                <div
+                  class="relative rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  </div>
+                  <img src="./assets/img/semaos.png" alt="SemaOS Interface"
+                    class="w-full h-auto object-contain bg-white/5 rounded-xl transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SemaWF Card with Enhanced 3D Effects -->
+          <div
+            class="scroll-revealed group relative transform-gpu transition-all duration-700 hover:scale-105 hover:-rotate-1"
+            style="animation-delay: 0.2s;">
+            <!-- Animated border -->
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-purple-500 via-accent to-blue-500 rounded-3xl blur-sm opacity-25 group-hover:opacity-75 transition duration-1000 animate-gradient-x"
+              style="animation-delay: 1s;"></div>
+
+            <!-- Main card -->
+            <div
+              class="relative bg-gradient-to-br from-background-light/90 via-background-light/70 to-background-light/90 backdrop-blur-xl border border-white/20 rounded-3xl p-10 h-full flex flex-col transform transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-purple-500/25">
+              <!-- Floating icon -->
+              <div
+                class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-purple-500 to-accent rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:-rotate-12 group-hover:scale-110 transition-all duration-500">
+                <i class="lni lni-cogs text-2xl text-white"></i>
+              </div>
+
+              <div class="flex-grow">
+                <div class="mb-8">
+                  <h3
+                    class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-accent mb-3">
+                    SemaWF</h3>
+                  <div class="relative">
+                    <p class="text-xl text-purple-400 font-bold tracking-wide">Agentic Workflows</p>
+                    <div
+                      class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+                    </div>
+                  </div>
+                </div>
+
+                <p class="text-primary/90 mb-6 text-lg leading-relaxed">
+                  Streamline complex workflows in the power industry using deep domain expertise and intelligent
+                  automation
+                </p>
+
+                <!-- Feature tags -->
+                <div class="flex flex-wrap gap-3 mb-8">
+                  <span
+                    class="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-accent/20 border border-purple-500/30 rounded-full text-sm text-purple-300 font-medium transform hover:scale-105 transition-transform duration-300">Transmission
+                    Planning</span>
+                  <a href="https://youtu.be/TbrWIhaqdKk" target="_blank" rel="noopener noreferrer"
+                    class="px-4 py-2 bg-gradient-to-r from-accent/20 to-blue-500/20 border border-accent/30 rounded-full text-sm text-blue-300 font-medium transform hover:scale-105 transition-transform duration-300 cursor-pointer hover:bg-gradient-to-r hover:from-accent/30 hover:to-blue-500/30">Datacenter
+                    Interconnection</a>
+                  <span
+                    class="px-4 py-2 bg-gradient-to-r from-blue-500/20 to-accent/20 border border-blue-500/30 rounded-full text-sm text-accent font-medium transform hover:scale-105 transition-transform duration-300">Renewable
+                    Integration</span>
+                </div>
+
+                <!-- Enhanced video container -->
+                <div
+                  class="relative rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl transform group-hover:scale-105 transition-all duration-500">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  </div>
+                  <div class="aspect-video">
+                    <iframe class="w-full h-full transform group-hover:scale-105 transition-transform duration-700"
+                      src="https://www.youtube.com/embed/TbrWIhaqdKk" title="SemaWF Demo" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+
+        <!-- Services Section with Innovative Layout -->
+        <div class="mt-32 relative">
+          <!-- Section divider with animated line -->
+          <div class="flex items-center justify-center mb-16">
+            <div class="h-px bg-gradient-to-r from-transparent via-accent to-transparent w-full max-w-md"></div>
+            <div class="mx-8 w-4 h-4 bg-gradient-to-r from-accent to-blue-500 rounded-full animate-pulse"></div>
+            <div class="h-px bg-gradient-to-r from-transparent via-accent to-transparent w-full max-w-md"></div>
+          </div>
+
+          <div class="scroll-revealed mx-auto mb-16 max-w-[900px] text-center">
+            <h3
+              class="mb-6 text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-accent to-white">
+              End-to-End Services
+            </h3>
+            <p class="text-xl text-primary/80 leading-relaxed">
+              Comprehensive support from consultation to maintenance, ensuring your success at every step
+            </p>
+          </div>
+
+          <!-- Services Grid with Staggered Animation -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Consultant Service -->
+            <div class="scroll-revealed group relative transform transition-all duration-500 hover:scale-105"
+              style="animation-delay: 0.1s;">
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-1000">
+              </div>
+              <div
+                class="relative bg-gradient-to-br from-background-light/50 to-background-light/30 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center transform transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20">
+                <div class="mb-6 relative">
+                  <div
+                    class="w-20 h-20 mx-auto bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
+                    <i class="lni lni-consulting text-3xl text-white"></i>
+                  </div>
+                  <div
+                    class="absolute -inset-2 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  </div>
+                </div>
+                <h4
+                  class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400 mb-4 leading-relaxed">
+                  Indentify Existing Workflow Bottlenecks Through Tailored Consulting Arrangements
+                </h4>
+
+              </div>
+            </div>
+
+            <!-- Deployment Service -->
+            <div class="scroll-revealed group relative transform transition-all duration-500 hover:scale-105"
+              style="animation-delay: 0.2s;">
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-1000">
+              </div>
+              <div
+                class="relative bg-gradient-to-br from-background-light/50 to-background-light/30 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center transform transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+                <div class="mb-6 relative">
+                  <div
+                    class="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:-rotate-12 group-hover:scale-110 transition-all duration-500">
+                    <i class="lni lni-rocket text-3xl text-white"></i>
+                  </div>
+                  <div
+                    class="absolute -inset-2 rounded-full bg-gradient-to-r from-green-500/20 to-emerald-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  </div>
+                </div>
+                <h4
+                  class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-4 leading-relaxed">
+                  Deploy Cloud-based or Local Agentic AI Solutions Seamlessly Integrated into Existing Workflows</h4>
+              </div>
+            </div>
+
+            <!-- Maintenance Service -->
+            <div class="scroll-revealed group relative transform transition-all duration-500 hover:scale-105"
+              style="animation-delay: 0.3s;">
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-20 group-hover:opacity-60 transition duration-1000">
+              </div>
+              <div
+                class="relative bg-gradient-to-br from-background-light/50 to-background-light/30 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center transform transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div class="mb-6 relative">
+                  <div
+                    class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500">
+                    <i class="lni lni-cog text-3xl text-white"></i>
+                  </div>
+                  <div
+                    class="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  </div>
+                </div>
+                <h4
+                  class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4 leading-relaxed">
+                  Continuously Update with Cutting-edge Foundational Models Tailored to Evolving Workflow Needs</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="section-area relative bg-gradient-to-br from-background-dark to-background-medium">
+      <div class="container">
+        <div class="scroll-revealed mx-auto mb-12 max-w-[900px] text-center">
+          <h6 class="mb-2 block text-3xl font-semibold text-accent">
+            Our Ecosystem
+          </h6>
+          <div class="mb-3">
+            <img src="./assets/img/poweragent_logo.png" alt="PowerAgent Logo" class="inline-block h-32 mb-0" />
+          </div>
+          <p class="text-secondary">
+            Building on the Success of the First Open-Source Agentic AI Community for Power Industry
+          </p>
+
+        </div>
+        <div class="scroll-revealed mx-auto max-w-[500px] text-center">
+          <a href="https://power-agent.github.io/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-7 py-3 text-center text-base font-medium text-primary shadow-lg hover:bg-opacity-90"
+            role="button">
+            <i class="lni lni-github-original"></i>
+            <span>View on GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients section -->
+    <section id="clients" class="section-area bg-background-light pt-10 pb-20">
+      <div class="container">
+        <div class="scroll-revealed mx-auto mb-12 max-w-[1000px] text-center">
+          <h2 class="mb-6 text-3xl font-bold text-primary">
+            Trusted by Engineers at
+          </h2>
+          <p class="text-secondary">
+            Our solutions are built on combined experience from
+            leading utilities, software, and consulting companies.
+          </p>
+        </div>
+        <div class="mx-auto max-w-4xl">
+          <div class="scroll-revealed grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 md:gap-x-12">
+            <img src="./assets/img/brand/ercot.png" alt="ERCOT Logo"
+              style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
+              class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0" />
+            <img src="./assets/img/brand/isone.png" alt="ISO New England Logo"
+              style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
+              class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0" />
+            <img src="./assets/img/brand/centerpoint.png" alt="Centerpoint Logo"
+              style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
+              class="object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team section -->
+    <section id="team" class="section-area bg-gradient-to-br from-background-dark to-background-medium">
+      <div class="container">
+        <div class="scroll-revealed mx-auto mb-12 max-w-[800px] text-center">
+          <h6 class="mb-2 block text-2xl font-semibold text-accent">
+            Our Team
+          </h6>
+          <h2 class="mb-6 text-3xl font-bold text-primary">Meet Our Core Team Members</h2>
+          <p class="text-secondary">
+            We are a team of experienced engineers, researchers, and
+            industry experts with deep know-how to optimize the efficiency of the power industry.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-3 max-w-4xl mx-auto">
+          <div class="scroll-revealed">
+            <div class="group text-center">
+              <div class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full">
+                <img src="./assets/img/team/qianzhang.jpg" alt="Team member" class="h-full w-full object-cover" />
+              </div>
+              <h4 class="mb-2 text-xl font-medium">
+                <a href="https://www.linkedin.com/in/qian-zhang-harvard/" target="_blank" rel="noopener noreferrer"
+                  class="hover:underline">Qian Zhang</a>
+              </h4>
+            </div>
+          </div>
+
+          <div class="scroll-revealed">
+            <div class="group text-center">
+              <div class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full">
+                <img src="./assets/img/team/karina.jpg" alt="Team member" class="h-full w-full object-cover" />
+              </div>
+              <h4 class="mb-2 text-xl font-medium">
+                <a href="https://www.linkedin.com/in/karina-chung" target="_blank" rel="noopener noreferrer"
+                  class="hover:underline">Karina Chung</a>
+              </h4>
+            </div>
+          </div>
+
+          <div class="scroll-revealed">
+            <div class="group text-center">
+              <div class="relative mx-auto mb-6 h-[150px] w-[150px] overflow-hidden rounded-full">
+                <img src="./assets/img/team/skyler.jpeg" alt="Team member" class="h-full w-full object-cover" />
+              </div>
+              <h4 class="mb-2 text-xl font-medium">
+                <a href="https://www.linkedin.com/in/skylerliu/" target="_blank" rel="noopener noreferrer"
+                  class="hover:underline">Skyler Liu</a>
+              </h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Call action section -->
+    <section id="contact" class="bg-background-light py-20">
+      <div class="container">
+        <div class="scroll-revealed relative z-10 overflow-hidden rounded-xl bg-accent px-8 py-12 lg:px-10">
+          <div class="-mx-4 flex flex-wrap items-center">
+            <div class="w-full px-4 lg:w-2/3">
+              <h2 class="mb-6 text-2xl font-bold leading-tight text-primary sm:text-3xl">
+                Ready to Bring Agentic Intelligence to Your Organization?
+              </h2>
+              <p class="text-base text-primary/80">
+                Share your pain points with our experts to see how Semagram Energy
+                can transform your solutions and services.
+              </p>
+            </div>
+            <div class="w-full px-4 lg:w-1/3">
+              <div class="mt-8 text-center lg:mt-0 lg:text-right">
+                <a href="mailto:contact@semagram.energy"
+                  class="inline-block rounded-md bg-primary px-8 py-3 text-center text-base font-medium text-accent hover:bg-opacity-90">Contact
+                  Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
     <!-- Footer -->
@@ -917,24 +888,20 @@
       <div class="container">
         <!-- Footer Top -->
         <div class="scroll-revealed -mx-4 flex flex-wrap justify-between items-start mb-10">
-          
+
           <!-- Column 1: Logo -->
           <div class="w-full px-4 lg:w-3/12 mb-8 lg:mb-0">
             <div class="max-w-[360px]">
               <a href="#" class="mb-6 inline-block">
-                <img
-                  src="./assets/img/semagram-text-white.png"
-                  alt="logo"
-                  class="w-50"
-              /></a>
-                <div class="mt-0">
-                  <p class="text-base text-secondary">
-                    <span class="font-semibold text-primary">Email:</span>
-                    contact@semagram.energy
-                  </p>
-                </div>
+                <img src="./assets/img/semagram-text-white.png" alt="logo" class="w-50" /></a>
+              <div class="mt-0">
+                <p class="text-base text-secondary">
+                  <span class="font-semibold text-primary">Email:</span>
+                  contact@semagram.energy
+                </p>
               </div>
             </div>
+          </div>
 
           <!-- Column 2: Links (2x2 grid) -->
           <div class="w-full px-4 sm:w-1/2 lg:w-4/12 mb-8 sm:mb-0">
@@ -942,9 +909,11 @@
               <h4 class="mb-6 text-lg font-semibold text-primary">Links</h4>
               <ul class="flex flex-wrap">
                 <li class="w-1/2"><a href="#solutions" class="footer-link">SemaOS</a></li>
-                <li class="w-1/2"><a href="https://power-agent.github.io/" target="_blank" rel="noopener noreferrer" class="footer-link">PowerAgent</a></li>
+                <li class="w-1/2"><a href="https://power-agent.github.io/" target="_blank" rel="noopener noreferrer"
+                    class="footer-link">PowerAgent</a></li>
                 <li class="w-1/2"><a href="#solutions" class="footer-link">SemaWF</a></li>
-                <li class="w-1/2"><a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.174918210.07854858" target="_blank" rel="noopener noreferrer" class="footer-link">Research</a></li>
+                <li class="w-1/2"><a href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.174918210.07854858"
+                    target="_blank" rel="noopener noreferrer" class="footer-link">Research</a></li>
               </ul>
             </div>
           </div>
@@ -954,26 +923,33 @@
             <div class="">
               <h4 class="mb-6 text-lg font-semibold text-primary">Stay Updated</h4>
               <p class="text-base text-secondary mb-4">Subscribe to our newsletter for updates and announcements.</p>
-              <form id="subscribe-form" target="_blank" action="https://docs.google.com/forms/d/e/1FAIpQLSfW93GmaOHHSm_447kk_mQgSN9ZudPFCV7CROQ9bdPrAMMtLA/formResponse" method="POST">
+              <form id="subscribe-form" target="_blank"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSfW93GmaOHHSm_447kk_mQgSN9ZudPFCV7CROQ9bdPrAMMtLA/formResponse"
+                method="POST">
                 <div class="relative">
-                  <input type="email" name="entry.1572849290" id="email" placeholder="Enter your email" required class="w-full rounded-md border border-border-color bg-background-light py-3 pl-4 pr-12 text-secondary placeholder-secondary focus:border-accent focus:outline-none">
-                  <button type="submit" class="absolute right-0 top-0 h-full w-12 flex items-center justify-center text-secondary hover:text-accent transition-colors duration-300" aria-label="Subscribe">
+                  <input type="email" name="entry.1572849290" id="email" placeholder="Enter your email" required
+                    class="w-full rounded-md border border-border-color bg-background-light py-3 pl-4 pr-12 text-secondary placeholder-secondary focus:border-accent focus:outline-none">
+                  <button type="submit"
+                    class="absolute right-0 top-0 h-full w-12 flex items-center justify-center text-secondary hover:text-accent transition-colors duration-300"
+                    aria-label="Subscribe">
                     <i class="lni lni-arrow-right"></i>
                   </button>
-            </div>
+                </div>
               </form>
+            </div>
           </div>
-              </div>
         </div>
 
         <!-- Footer Bottom -->
         <div class="border-t border-white/10 pt-8 mt-8">
-            <div class="text-center">
-                <p class="text-base text-secondary mb-4">
-                    With support from the <a href="https://pai.seas.harvard.edu/" target="_blank" rel="noopener noreferrer" class="font-semibold text-accent hover:text-primary transition-colors duration-300">Power and AI Initiative (PAI) at Harvard SEAS</a>.
-                </p>
-                <p class="text-sm text-secondary/80">&#169; 2025 Semagram Energy. All rights reserved.</p>
-                <p class="text-sm text-secondary/80 mb-2">125 Western Ave, Allston, MA 02134</p>
+          <div class="text-center">
+            <p class="text-base text-secondary mb-4">
+              With support from the <a href="https://pai.seas.harvard.edu/" target="_blank" rel="noopener noreferrer"
+                class="font-semibold text-accent hover:text-primary transition-colors duration-300">Power and AI
+                Initiative (PAI) at Harvard SEAS</a>.
+            </p>
+            <p class="text-sm text-secondary/80">&#169; 2026 Semagram Energy. All rights reserved.</p>
+            <p class="text-sm text-secondary/80 mb-2">125 Western Ave, Allston, MA 02134</p>
           </div>
         </div>
       </div>
@@ -985,22 +961,21 @@
         display: inline-block;
         margin-bottom: 0.75rem;
         font-size: 1rem;
-        color: #9ca3af; /* text-secondary */
+        color: #9ca3af;
+        /* text-secondary */
         transition: color 0.3s ease;
       }
+
       .footer-link:hover {
-        color: #ffffff; /* text-primary */
+        color: #ffffff;
+        /* text-primary */
       }
     </style>
 
     <!-- Back to top button -->
-    <a
-      href="javascript:void(0)"
-      class="back-to-top fixed bottom-8 right-8 z-[999] h-10 w-10 items-center justify-center rounded-full bg-accent text-primary shadow-md transition duration-300 ease-in-out hover:bg-opacity-80"
-    >
-      <span
-        class="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-primary"
-      ></span>
+    <a href="javascript:void(0)"
+      class="back-to-top fixed bottom-8 right-8 z-[999] h-10 w-10 items-center justify-center rounded-full bg-accent text-primary shadow-md transition duration-300 ease-in-out hover:bg-opacity-80">
+      <span class="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-primary"></span>
     </a>
 
     <script src="./assets/js/main.js"></script>
@@ -1009,10 +984,10 @@
       function streamText(elementId, text, delay = 50) {
         const element = document.getElementById(elementId);
         if (!element) return;
-        
+
         element.textContent = '';
         let i = 0;
-        
+
         function typeWriter() {
           if (i < text.length) {
             element.textContent += text.charAt(i);
@@ -1020,13 +995,13 @@
             setTimeout(typeWriter, delay);
           }
         }
-        
+
         // Start after a short delay to allow page to load
         setTimeout(typeWriter, 500);
       }
 
       // Initialize streaming text on page load
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         streamText('streaming-text', 'Agentic Intelligence to Accelerate Grids Planning and Operation', 80);
       });
 
@@ -1084,5 +1059,6 @@
         },
       });
     </script>
-  </body>
+</body>
+
 </html>
