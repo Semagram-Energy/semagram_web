@@ -45,14 +45,8 @@ if (header) {
   });
 }
 
-// Force dark mode
+// Theme initialization (removed forced dark mode)
 const html = document.querySelector("html");
-
-window.addEventListener("load", function () {
-  // Always set dark mode
-  html.dataset.webTheme = "dark";
-  localStorage.setItem("Semagram_WebTheme", "dark");
-});
 
 // Scrollspy
 function scrollspy(event) {
@@ -116,59 +110,65 @@ window.addEventListener("scroll", () => {
 });
 
 // Tabs
-const tabs = document.querySelectorAll(".tabs");
+const initTabs = () => {
+  const tabs = document.querySelectorAll(".tabs");
 
-tabs.forEach((tab) => {
-  const links = tab.querySelectorAll(".tabs-nav .tabs-link"),
-    contents = tab.querySelectorAll(".tabs-content");
+  tabs.forEach((tab) => {
+    const links = tab.querySelectorAll(".tabs-nav .tabs-link"),
+      contents = tab.querySelectorAll(".tabs-content");
 
-  if (!contents) {
-    return;
-  }
-
-  window.addEventListener("load", function () {
-    for (let i = 0; i < contents.length; i++) {
-      contents[i].classList.add("hide");
+    if (contents.length === 0) {
+      return;
     }
 
-    for (let i = 0; i < links.length; i++) {
-      links[i].classList.remove("active");
-      links[i].ariaSelected = false;
-    }
+    const activateTab = (activeLink) => {
+      const dataTarget = activeLink.dataset.webTarget,
+        targetElement = document.getElementById(dataTarget);
 
-    links[0].classList.add("active");
-    links[0].ariaSelected = true;
+      if (!targetElement) return;
 
-    const dataTarget = links[0].dataset.webTarget,
-      targetElement = this.document.getElementById(dataTarget);
-
-    targetElement.classList.remove("hide");
-  });
-
-  links.forEach((link) => {
-    const dataTarget = link.dataset.webTarget,
-      targetElement = document.getElementById(dataTarget);
-
-    if (targetElement) {
-      link.addEventListener("click", function () {
-        for (let i = 0; i < contents.length; i++) {
-          contents[i].classList.add("hide");
-        }
-
-        for (let i = 0; i < links.length; i++) {
-          links[i].classList.remove("active");
-          links[i].ariaSelected = false;
-        }
-
-        link.classList.add("active");
-        link.ariaSelected = true;
-        targetElement.classList.remove("hide");
+      contents.forEach(content => content.classList.add("hidden"));
+      links.forEach(link => {
+        link.classList.remove("active", "bg-gradient-to-r", "from-accent", "to-blue-600", "text-white", "shadow-lg");
+        link.classList.add("bg-background-dark", "text-primary", "hover:bg-background-dark/80");
+        link.ariaSelected = false;
       });
-    } else {
-      link.disabled = true;
-    }
+
+      activeLink.classList.remove("bg-background-dark", "text-primary", "hover:bg-background-dark/80");
+      activeLink.classList.add("active", "bg-gradient-to-r", "from-accent", "to-blue-600", "text-white", "shadow-lg");
+      activeLink.ariaSelected = true;
+      targetElement.classList.remove("hidden");
+    };
+
+    // Initialize first tab
+    activateTab(links[0]);
+
+    links.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        activateTab(link);
+      });
+    });
+
+    // Add mouse-following glow
+    tab.addEventListener("mousemove", (e) => {
+      const rect = tab.getBoundingClientRect(),
+        x = e.clientX - rect.left,
+        y = e.clientY - rect.top;
+
+      tab.querySelectorAll(".interactive-glow").forEach((glow) => {
+        glow.style.setProperty("--x", `${x}px`);
+        glow.style.setProperty("--y", `${y}px`);
+      });
+    });
   });
-});
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTabs);
+} else {
+  initTabs();
+}
 
 // Portfolio filter
 const portfolioFilters = document.querySelectorAll(".portfolio-menu button");
