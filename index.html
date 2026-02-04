@@ -109,7 +109,7 @@
 
         <!-- Action buttons -->
         <div class="flex items-center gap-2">
-          <a href="#contact"
+          <a href="mailto:contact@semagram.energy"
             class="hidden items-center justify-center rounded-md bg-accent px-5 py-2 text-center text-base font-medium text-white shadow-md hover:bg-opacity-90 sm:inline-flex"
             role="button">Contact Us</a>
 
@@ -140,23 +140,13 @@
               <div class="mb-6">
                 <img src="./assets/img/semagram-icon-white.svg" alt="Semagram Logo" class="inline-block h-16" />
               </div>
-              <h1 id="streaming-text"
-                class="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
-                style="min-height: 80px"></h1>
+              <h1 class="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+                Interconnect to the Grid Faster
+              </h1>
               <p class="mx-auto mb-9 max-w-[900px] text-base text-white/80 sm:text-lg sm:leading-relaxed">
-                Semagram Energy's Agentic AI platform empowers utilities, grid operators, consultants, and developers to
-                accelerate efficiency and ensure reliability in modern power systems
+                Reliability and Efficiency for Modern Power Systems
               </p>
-              <ul class="mb-10 flex flex-wrap items-center justify-center gap-4 md:gap-5">
-                <li>
-                  <a href="#solutions"
-                    class="flex items-center gap-4 rounded-md bg-white/10 px-5 py-3 text-base font-medium text-white hover:bg-white/20 md:px-7 md:py-[14px]"
-                    role="button">
-                    <i class="lni lni-play text-white"></i>
-                    <span>Learn More</span>
-                  </a>
-                </li>
-              </ul>
+
             </div>
           </div>
         </div>
@@ -297,9 +287,9 @@
 
                 <!-- Centered Action Button -->
                 <div class="mt-10 flex justify-center">
-                  <a href="#contact"
+                  <a href="mailto:contact@semagram.energy"
                     class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
-                    Get a Demo
+                    Contact Us
                   </a>
                 </div>
               </div>
@@ -352,65 +342,72 @@
                             d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                             clip-rule="evenodd"></path>
                         </svg>
-                        <span>Scale your services without scaling headcount</span>
+                        <span>Automate documentation and compliance reporting</span>
                       </li>
                     </ul>
                   </div>
 
-                  <!-- Animation: Scale & Reduce Workload (Funnel/Processing) -->
-                  <div
-                    class="w-full md:w-64 h-48 flex items-center justify-center flex-shrink-0 bg-background-light/50 rounded-xl border border-white/20">
+                  <!-- Animation: Workload Reduction (Chaos to Order) -->
+                  <div class="w-full md:w-64 h-48 flex items-center justify-center flex-shrink-0">
                     <svg class="w-full h-full" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <defs>
-                        <filter id="glow-scale" x="-20%" y="-20%" width="140%" height="140%">
-                          <feGaussianBlur stdDeviation="5" result="blur" />
+                        <linearGradient id="stream-grad-consult" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#3b82f6" stop-opacity="0" />
+                          <stop offset="50%" stop-color="#8b5cf6" stop-opacity="1" />
+                          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                        </linearGradient>
+                        <filter id="glow-consult" x="-20%" y="-20%" width="140%" height="140%">
+                          <feGaussianBlur stdDeviation="4" result="blur" />
                           <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
                       </defs>
-                      <rect x="220" y="110" width="60" height="80" rx="12" fill="#ffffff" stroke="#3b82f6"
-                        stroke-width="2" class="animate-pulse-slow shadow-sm" />
-                      <path d="M235 140 L265 140 M235 160 L265 160" stroke="#3b82f6" stroke-width="2"
-                        stroke-linecap="round" opacity="0.6" />
 
+                      <!-- Input: Chaotic Nodes -->
                       <g>
-                        <circle r="6" fill="#3b82f6" opacity="0.4">
-                          <animateMotion dur="2.5s" repeatCount="indefinite" path="M60,120 Q120,80 220,150" />
+                        <circle cx="50" cy="100" r="6" fill="#94a3b8" opacity="0.6">
+                          <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
                         </circle>
-                        <circle r="6" fill="#8b5cf6" opacity="0.4">
-                          <animateMotion dur="3s" repeatCount="indefinite" path="M60,180 Q120,220 220,150" />
+                        <circle cx="50" cy="150" r="6" fill="#94a3b8" opacity="0.6">
+                          <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"
+                            begin="1s" />
                         </circle>
-                        <circle r="6" fill="#3b82f6" opacity="0.4">
-                          <animateMotion dur="2.2s" repeatCount="indefinite" path="M60,150 L220,150" />
+                        <circle cx="50" cy="200" r="6" fill="#94a3b8" opacity="0.6">
+                          <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"
+                            begin="2s" />
                         </circle>
                       </g>
 
-                      <g filter="url(#glow-scale)">
-                        <rect x="280" y="145" width="40" height="10" rx="5" fill="#3b82f6">
-                          <animate attributeName="x" from="280" to="440" dur="1.2s" repeatCount="indefinite" />
-                          <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" />
-                        </rect>
-                        <rect x="280" y="115" width="30" height="8" rx="4" fill="#8b5cf6">
-                          <animate attributeName="x" from="280" to="440" dur="1.2s" begin="0.4s"
-                            repeatCount="indefinite" />
-                          <animate attributeName="opacity" values="0;1;0" dur="1.2s" begin="0.4s"
-                            repeatCount="indefinite" />
-                        </rect>
-                        <rect x="280" y="175" width="30" height="8" rx="4" fill="#3b82f6">
-                          <animate attributeName="x" from="280" to="440" dur="1.2s" begin="0.8s"
-                            repeatCount="indefinite" />
-                          <animate attributeName="opacity" values="0;1;0" dur="1.2s" begin="0.8s"
-                            repeatCount="indefinite" />
-                        </rect>
-                      </g>
+                      <!-- Processing Flow -->
+                      <path d="M60 100 C 150 100, 150 150, 250 150 S 350 150, 440 150"
+                        stroke="url(#stream-grad-consult)" stroke-width="2" fill="none" opacity="0.3" />
+                      <path d="M60 150 C 150 150, 150 150, 250 150 S 350 150, 440 150"
+                        stroke="url(#stream-grad-consult)" stroke-width="2" fill="none" opacity="0.3" />
+                      <path d="M60 200 C 150 200, 150 150, 250 150 S 350 150, 440 150"
+                        stroke="url(#stream-grad-consult)" stroke-width="2" fill="none" opacity="0.3" />
+
+                      <!-- Moving Particles (Convergence) -->
+                      <circle r="4" fill="#8b5cf6" filter="url(#glow-consult)">
+                        <animateMotion dur="2.5s" repeatCount="indefinite"
+                          path="M60 100 C 150 100, 150 150, 250 150 S 350 150, 440 150" />
+                      </circle>
+                      <circle r="4" fill="#3b82f6" filter="url(#glow-consult)">
+                        <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.5s"
+                          path="M60 200 C 150 200, 150 150, 250 150 S 350 150, 440 150" />
+                      </circle>
+
+                      <!-- Output: Organized Pulse -->
+                      <circle cx="250" cy="150" r="25" stroke="#8b5cf6" stroke-width="2" opacity="0.5"
+                        class="animate-pulse-slow" />
+
                     </svg>
                   </div>
                 </div>
 
                 <!-- Centered Action Button -->
                 <div class="mt-10 flex justify-center">
-                  <a href="#contact"
+                  <a href="mailto:contact@semagram.energy"
                     class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
-                    Get a Demo
+                    Contact Us
                   </a>
                 </div>
               </div>
@@ -499,9 +496,9 @@
 
                 <!-- Centered Action Button -->
                 <div class="mt-10 flex justify-center">
-                  <a href="#contact"
+                  <a href="mailto:contact@semagram.energy"
                     class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
-                    Get a Demo
+                    Contact Us
                   </a>
                 </div>
               </div>
@@ -630,8 +627,8 @@
                 Ready to Accelerate Your Projects?
               </h2>
               <p class="text-lg text-white/80 max-w-xl mx-auto lg:mx-0">
-                Share your pain points with our experts to see how Semagram Energy
-                can transform your solutions and services.
+                Share your pain points with our experts to see how Semagram can transform your solutions and
+                services.
               </p>
             </div>
             <div class="w-full px-4 lg:w-1/3">
@@ -656,10 +653,10 @@
         <div class="scroll-revealed -mx-4 flex flex-wrap justify-between items-start mb-10">
 
           <!-- Column 1: Logo -->
-          <div class="w-full px-4 lg:w-3/12 mb-8 lg:mb-0">
+          <div class="w-full px-4 lg:w-4/12 mb-8 lg:mb-0">
             <div class="max-w-[360px]">
               <a href="#" class="mb-3 inline-block">
-                <img src="./assets/img/semagram_text.png" alt="logo" class="w-40" /></a>
+                <img src="./assets/img/semagram_text.png" alt="logo" class="w-48" /></a>
               <div class="mt-0">
                 <p class="text-base text-secondary">
                   <span class="font-semibold text-primary">Email:</span>
@@ -669,27 +666,25 @@
             </div>
           </div>
 
-          <!-- Column 2: Links (2x2 grid) -->
-          <div class="w-full px-4 sm:w-1/2 lg:w-4/12 mb-8 sm:mb-0">
+          <!-- Column 2: Links -->
+          <div class="w-full px-4 lg:w-4/12 mb-8 lg:mb-0">
             <div class="">
               <h4 class="mb-6 text-lg font-semibold text-primary">Links</h4>
-              <ul class="flex flex-wrap">
-                <li class="w-1/2"><a href="#solutions" class="footer-link">Solutions</a></li>
-                <li class="w-1/2"><a href="https://power-agent.github.io/" target="_blank" rel="noopener noreferrer"
-                    class="footer-link">PowerAgent</a></li>
-                <li class="w-1/2"><a href="https://ieeexplore.ieee.org/abstract/document/11131348" target="_blank"
+              <ul>
+                <li class="w-full mb-3"><a href="#solutions" class="footer-link">Solutions</a></li>
+                <li class="w-full mb-3"><a href="https://power-agent.github.io/" target="_blank"
+                    rel="noopener noreferrer" class="footer-link">PowerAgent</a></li>
+                <li class="w-full"><a href="https://ieeexplore.ieee.org/abstract/document/11131348" target="_blank"
                     rel="noopener noreferrer" class="footer-link">Research</a></li>
-                <li class="w-1/2"><a href="https://pai.seas.harvard.edu/" target="_blank" rel="noopener noreferrer"
-                    class="footer-link">Initiative</a></li>
               </ul>
             </div>
           </div>
 
           <!-- Column 3: Subscription -->
-          <div class="w-full px-4 lg:w-5/12">
+          <div class="w-full px-4 lg:w-4/12">
             <div class="">
               <h4 class="mb-6 text-lg font-semibold text-primary">Stay Updated</h4>
-              <p class="text-base text-secondary mb-4">Subscribe to our newsletter for updates and announcements.
+              <p class="text-base text-secondary mb-4">Subscribe for updates and announcements.
               </p>
               <form id="subscribe-form" target="_blank"
                 action="https://docs.google.com/forms/d/e/1FAIpQLSfW93GmaOHHSm_447kk_mQgSN9ZudPFCV7CROQ9bdPrAMMtLA/formResponse"
@@ -749,30 +744,8 @@
 
     <script src="./assets/js/main.js"></script>
     <script>
-      // Streaming text effect
-      function streamText(elementId, text, delay = 50) {
-        const element = document.getElementById(elementId);
-        if (!element) return;
+      // Streaming text removed
 
-        element.textContent = '';
-        let i = 0;
-
-        function typeWriter() {
-          if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, delay);
-          }
-        }
-
-        // Start after a short delay to allow page to load
-        setTimeout(typeWriter, 500);
-      }
-
-      // Initialize streaming text on page load
-      document.addEventListener('DOMContentLoaded', function () {
-        streamText('streaming-text', 'Accelerating Access to Power Grids', 80);
-      });
 
       // Scroll Reveal
       const sr = ScrollReveal({
