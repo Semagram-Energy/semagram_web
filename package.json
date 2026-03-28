@@ -9,7 +9,7 @@
     "tw-minify": "npx tailwindcss -o ./assets/css/main.min.css --minify",
     "build-css": "npx tailwindcss -i ./src/css/tailwind.css -o ./assets/css/main.css",
     "build": "npx tailwindcss -i ./src/css/tailwind.css -o ./assets/css/main.css && rm -rf dist && mkdir -p dist && cp index.html dist/ && cp -r assets dist/ && cp -r semagram_logo dist/",
-    "deploy": "npm run build && npx wrangler versions upload",
+    "deploy": "npm run build && npx wrangler deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
