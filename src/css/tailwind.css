@@ -254,6 +254,18 @@
     @apply transition-all duration-300;
   }
 
+  .menu-show .navbar-toggler span:nth-child(1) {
+    @apply translate-y-2 rotate-45;
+  }
+
+  .menu-show .navbar-toggler span:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .menu-show .navbar-toggler span:nth-child(3) {
+    @apply -translate-y-2 -rotate-45;
+  }
+
   .section-area {
     @apply relative py-12 md:py-16;
   }

@@ -27,10 +27,7 @@ navbarToggler.addEventListener("click", function () {
   }
 
   navbar.classList.toggle("menu-show");
-  this.ariaExpanded = !isExpanded;
-  navbarToggler.innerHTML = navbar.classList.contains("menu-show")
-    ? '<i class="lni lni-close"></i>'
-    : '<i class="lni lni-menu"></i>';
+  this.setAttribute("aria-expanded", String(!isExpanded));
 });
 
 // Sticky Header
@@ -94,9 +91,7 @@ pageLink.forEach((link) => {
     }
 
     navbar.classList.remove("menu-show");
-    navbarToggler.innerHTML = navbar.classList.contains("menu-show")
-      ? '<i class="lni lni-close"></i>'
-      : '<i class="lni lni-menu"></i>';
+    navbarToggler.setAttribute("aria-expanded", "false");
   });
 });
 
@@ -105,7 +100,6 @@ window.addEventListener("scroll", () => {
   if (navbar.classList.contains("menu-show")) {
     navbar.classList.remove("menu-show");
     navbarToggler.setAttribute("aria-expanded", "false");
-    navbarToggler.innerHTML = '<i class="lni lni-menu"></i>';
   }
 });
 
