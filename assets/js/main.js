@@ -423,3 +423,14 @@ if (st) {
     T(() => { goInteractive(); }, total + 700);
   });
 })();
+
+// Pillar card cursor glow (reuses .interactive-glow --x/--y vars)
+document.querySelectorAll(".pillar-card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const glow = card.querySelector(".interactive-glow");
+    if (!glow) return;
+    glow.style.setProperty("--x", (e.clientX - rect.left) + "px");
+    glow.style.setProperty("--y", (e.clientY - rect.top) + "px");
+  });
+});
