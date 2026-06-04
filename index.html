@@ -52,23 +52,6 @@
 </head>
 
 <body class="bg-background-light text-primary">
-  <!-- Page loading -->
-  <div
-    class="page-loading fixed top-0 bottom-0 left-0 right-0 z-[99999] flex items-center justify-center bg-primary-light-1 dark:bg-primary-dark-1 opacity-100 visible pointer-events-auto"
-    role="status" aria-live="polite" aria-atomic="true" aria-label="Loading...">
-    <div class="grid-loader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-
   <!-- Navbar -->
   <header id="header"
     class="header scroll-revealed fixed top-0 left-0 z-50 w-full bg-background-light border-b border-border-color ic-navbar">
@@ -140,26 +123,40 @@
   <main class="main relative">
     <!-- Hero section -->
     <section id="home"
-      class="relative overflow-hidden bg-background-dark pt-[120px] pb-[80px] lg:pt-[150px] lg:pb-[100px]">
-      <div class="absolute inset-0 bg-cover bg-top animate-zoom-in-out"
-        style="background-image: url('./assets/img/background.jpg')"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50"></div>
-      <div class="container relative">
-        <div class="-mx-4 flex flex-wrap">
-          <div class="w-full px-5">
-            <div class="scroll-revealed mx-auto max-w-[1100px] text-center">
-              <div class="mb-6">
-                <img src="./assets/img/semagram-icon-white.svg" alt="Semagram Logo" class="inline-block h-16" />
-              </div>
-              <h1 class="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Interconnect to the Grid Faster
-              </h1>
-              <p class="mx-auto mb-9 max-w-[900px] text-base text-white/80 sm:text-lg sm:leading-relaxed">
-                Reliability and Efficiency for Modern Power Systems
-              </p>
+      class="relative overflow-hidden bg-background-light pt-[120px] pb-[90px] lg:pt-[150px] lg:pb-[120px]">
+      <!-- grid + interactive network graph background -->
+      <div class="grid-bg pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000" data-hero-grid aria-hidden="true"></div>
+      <div class="hero-spot" data-hero-spot aria-hidden="true"></div>
+      <svg class="hero-graph pointer-events-none" data-hero-net viewBox="0 0 1000 540" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
 
-            </div>
+      <div class="container relative">
+        <div class="hero-reveal mx-auto max-w-[1100px]" data-hero-reveal>
+          <p class="eyebrow reveal-mask mb-5"><span>// from the creators of PowerAgent</span></p>
+          <h1 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary sm:text-5xl lg:text-6xl">
+            <span class="reveal-mask"><span>Building <span class="text-gradient">general intelligence</span></span></span>
+            <span class="reveal-mask"><span>for the power industry</span></span>
+          </h1>
+          <p class="reveal-mask mt-7 max-w-[560px] text-lg text-secondary">
+            <span>The canonical data and reasoning layer that sits above legacy solvers — and improves with every project.</span>
+          </p>
+          <div class="reveal-fade mt-9 flex flex-wrap gap-4">
+            <a href="mailto:contact@semagram.energy"
+              class="inline-flex items-center justify-center rounded-lg bg-accent px-7 py-3 text-base font-semibold text-white shadow-lg shadow-accent/30 transition-all hover:-translate-y-0.5 hover:bg-opacity-90">
+              Request access
+            </a>
+            <a href="#platform"
+              class="ic-page-scroll inline-flex items-center justify-center rounded-lg border border-border-color bg-background-light px-7 py-3 text-base font-semibold text-primary transition-all hover:border-accent hover:text-accent">
+              See the platform
+            </a>
           </div>
+        </div>
+      </div>
+
+      <!-- construction status readout -->
+      <div class="hero-status absolute bottom-8 left-0 right-0" data-hero-status aria-hidden="true">
+        <div class="container">
+          <span data-hero-status-text>initializing</span>
+          <span class="text-secondary" data-hero-status-pct>0%</span>
         </div>
       </div>
     </section>
