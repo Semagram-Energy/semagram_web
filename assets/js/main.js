@@ -267,15 +267,15 @@ if (st) {
   const rnd = (a, b) => a + Math.random() * (b - a);
   function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
   function mkLine(parent, x1, y1, x2, y2, color, w) { const l = document.createElementNS(NS, "line"); l.setAttribute("x1", x1); l.setAttribute("y1", y1); l.setAttribute("x2", x2); l.setAttribute("y2", y2); l.setAttribute("stroke", color); l.setAttribute("stroke-width", w); l.setAttribute("stroke-linecap", "round"); parent.appendChild(l); return l; }
-  function member(x1, y1, x2, y2, w) { const l = mkLine(world, x1, y1, x2, y2, STEEL_GREY, w); const len = Math.hypot(x2 - x1, y2 - y1); l.setAttribute("stroke-dasharray", len); l.setAttribute("stroke-dashoffset", len); l.style.transition = "stroke-dashoffset .35s ease"; steelEls.push({ el: l, mx: (x1 + x2) / 2 }); return { el: l }; }
-  function conductor(x1, y1, x2, y2, sag) { const mx = (x1 + x2) / 2, my = Math.max(y1, y2) + sag; const p = document.createElementNS(NS, "path"); p.setAttribute("d", `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`); p.setAttribute("fill", "none"); p.setAttribute("stroke", COND_GREY); p.setAttribute("stroke-width", 1.7); p.setAttribute("stroke-linecap", "round"); world.appendChild(p); const len = p.getTotalLength(); p.setAttribute("stroke-dasharray", len); p.setAttribute("stroke-dashoffset", len); p.style.transition = "stroke-dashoffset .7s ease"; const o = { el: p, len, mx: (x1 + x2) / 2, on: false }; conductors.push(o); return o; }
+  function member(x1, y1, x2, y2, w) { const l = mkLine(world, x1, y1, x2, y2, STEEL_GREY, w); const len = Math.hypot(x2 - x1, y2 - y1); l.setAttribute("stroke-dasharray", len); l.setAttribute("stroke-dashoffset", len); l.style.transition = "stroke-dashoffset .28s ease"; steelEls.push({ el: l, mx: (x1 + x2) / 2 }); return { el: l }; }
+  function conductor(x1, y1, x2, y2, sag) { const mx = (x1 + x2) / 2, my = Math.max(y1, y2) + sag; const p = document.createElementNS(NS, "path"); p.setAttribute("d", `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`); p.setAttribute("fill", "none"); p.setAttribute("stroke", COND_GREY); p.setAttribute("stroke-width", 1.7); p.setAttribute("stroke-linecap", "round"); world.appendChild(p); const len = p.getTotalLength(); p.setAttribute("stroke-dasharray", len); p.setAttribute("stroke-dashoffset", len); p.style.transition = "stroke-dashoffset .55s ease"; const o = { el: p, len, mx: (x1 + x2) / 2, on: false }; conductors.push(o); return o; }
   function disc(parent, cx2, cy2, r, fill, reg) { const c = document.createElementNS(NS, "circle"); c.setAttribute("cx", cx2); c.setAttribute("cy", cy2); c.setAttribute("r", 0); c.setAttribute("fill", fill); c.dataset.r = r; c.style.transition = "r .3s cubic-bezier(.34,1.56,.64,1)"; parent.appendChild(c); if (reg) insulEls.push({ el: c, mx: cx2 }); return c; }
 
-  const cx = 850;
+  const cx = 730;
   const lv = [{ y: 512, hw: 74 }, { y: 446, hw: 62 }, { y: 384, hw: 51 }, { y: 330, hw: 42 }, { y: 286, hw: 34 }, { y: 250, hw: 27 }];
   const arms = [{ y: 236, len: 118 }, { y: 198, len: 98 }, { y: 162, len: 78 }];
   const apex = { x: cx, y: 96 };
-  const dx = 1400, dlv = [{ y: 500, hw: 42 }, { y: 458, hw: 34 }, { y: 422, hw: 28 }, { y: 392, hw: 23 }, { y: 366, hw: 19 }], dapex = { x: dx, y: 300 };
+  const dx = 150, dlv = [{ y: 500, hw: 42 }, { y: 458, hw: 34 }, { y: 422, hw: 28 }, { y: 392, hw: 23 }, { y: 366, hw: 19 }], dapex = { x: dx, y: 300 };
   const darms = [{ y: 352, len: 58 }, { y: 326, len: 46 }];
 
   const draws = [], pops = []; let TT = 0;
@@ -321,37 +321,45 @@ if (st) {
     el("line", { x1: bx + hw, y1: by, x2: bx - hw * 0.55, y2: by - h * 0.44, stroke: col, "stroke-width": w * 0.6, opacity: op * 0.6 }, g);
     el("line", { x1: bx - hw * 0.95, y1: ay + h * 0.2, x2: bx + hw * 0.95, y2: ay + h * 0.2, stroke: col, "stroke-width": w * 0.8, opacity: op }, g);
   }
-  const FLEET_TH = 205;
+  const FLEET_TH = 160;
+  const FLEET_BATCH = 5, FLEET_MAX_CLICKS = 10;
   function initFleetNodes() {
-    const pos = [
-      { x: 760, y: 150 }, { x: 720, y: 250 }, { x: 980, y: 180 }, { x: 1010, y: 300 }, { x: 900, y: 130 },
-      { x: 740, y: 360 }, { x: 985, y: 400 }, { x: 720, y: 440 }, { x: 1015, y: 470 }, { x: 870, y: 470 },
-      { x: 800, y: 110 }, { x: 1020, y: 240 }, { x: 940, y: 330 }, { x: 700, y: 180 }, { x: 860, y: 430 }
-    ];
-    const seed = { x: 850, y: 300 };
+    // a dense scatter across the whole background — including the center, so towers also
+    // appear *behind* the main tower (fleet is painted under it). Left side is softened by
+    // the fade mask. Deterministic jitter -> stable layout.
+    const pos = [];
+    const xs = [60, 160, 270, 380, 490, 620, 720, 830, 915, 990];
+    const ys = [110, 215, 320, 420, 500];
+    for (let xi = 0; xi < xs.length; xi++) for (let yi = 0; yi < ys.length; yi++) {
+      const jx = ((xi * 7 + yi * 13) % 28) - 14, jy = ((xi * 11 + yi * 5) % 22) - 11;
+      pos.push({ x: xs[xi] + jx, y: ys[yi] + jy });
+    }
+    const seed = { x: 730, y: 300 };
     pos.forEach(n => { n.d = Math.hypot(n.x - seed.x, n.y - seed.y); });
     pos.sort((a, b) => a.d - b.d);
-    pos.forEach((n, i) => { const sc = 0.2 + (i % 3) * 0.025; n.h = 160 * sc; n.hw = 30 * sc; n.arY = n.y - n.h * 0.8; n.op = Math.min(0.3, 0.14 + (1 - Math.min(1, n.d / 720)) * 0.16); n.shown = false; });
+    pos.forEach((n, i) => { const sc = 0.16 + (i % 4) * 0.02; n.h = 160 * sc; n.hw = 30 * sc; n.arY = n.y - n.h * 0.8; n.op = Math.min(0.28, 0.11 + (1 - Math.min(1, n.d / 820)) * 0.15); n.shown = false; });
     fleetNodes = pos;
   }
   function advanceFleet() {
-    if (fleetClicks >= 5) return;
     if (!fleetNodes.length) initFleetNodes();
-    fleetClicks++; speedMul = Math.min(3, 1 + fleetClicks * 0.42);
-    const batch = 3, start = fleetIdx, end = Math.min(fleetNodes.length, start + batch);
+    if (fleetClicks >= FLEET_MAX_CLICKS || fleetIdx >= fleetNodes.length) return;
+    fleetClicks++; speedMul = Math.min(4, 1 + fleetClicks * 0.3);
+    const start = fleetIdx, end = Math.min(fleetNodes.length, start + FLEET_BATCH);
     for (let i = start; i < end; i++) { const n = fleetNodes[i]; const tg = el("g", { style: "opacity:0;transition:opacity .5s ease" }, fleet); n.g = tg;
       fleetTower(tg, n.x, n.y, n.h, n.hw, n.op);
-      T(() => { tg.style.opacity = 1; }, (i - start) * 70);
+      T(() => { tg.style.opacity = 1; }, (i - start) * 55);
       for (let j = 0; j < i; j++) { const a = fleetNodes[j]; if (!a.shown) continue; const d = Math.hypot(a.x - n.x, a.y - n.y);
         if (d < FLEET_TH) { const cg = el("g", { style: "opacity:0;transition:opacity .5s ease" }, fleet);
           el("path", { d: `M ${a.x} ${a.arY} Q ${(a.x + n.x) / 2} ${(a.arY + n.arY) / 2 + d * 0.06} ${n.x} ${n.arY}`, fill: "none", stroke: "#5b8fd6", "stroke-width": 0.8, opacity: 0.15 }, cg);
           el("circle", { cx: n.x, cy: n.arY, r: 1.4, fill: "#7dd3fc", opacity: 0.4 }, cg);
-          T(() => { cg.style.opacity = 1; }, (i - start) * 70 + 130); } }
+          T(() => { cg.style.opacity = 1; }, (i - start) * 55 + 120); } }
       n.shown = true;
     }
     fleetIdx = end;
-    if (twinBtnCap) twinBtnCap.textContent = fleetClicks >= 5 ? "grid maxed ✓" : ("expand · " + fleetClicks + "/5");
-    if (fleetClicks >= 5 && twinBtnText) twinBtnText.textContent = "GRID ↑";
+    const maxC = Math.min(FLEET_MAX_CLICKS, Math.ceil(fleetNodes.length / FLEET_BATCH));
+    const done = fleetClicks >= FLEET_MAX_CLICKS || fleetIdx >= fleetNodes.length;
+    if (twinBtnCap) twinBtnCap.textContent = done ? "grid maxed ✓" : ("expand · " + fleetClicks + "/" + maxC);
+    if (done && twinBtnText) twinBtnText.textContent = "GRID ↑";
   }
 
   function hudLabel(x, y, txt) { const dx2 = 26;
@@ -458,11 +466,12 @@ if (st) {
       return;
     }
 
-    const sf = 0.66; // build-speed factor (<1 = faster on-load construction)
-    T(() => { if (grid) grid.style.opacity = "1"; if (statusEl) statusEl.classList.add("is-on"); }, 120);
-    draws.forEach(d => T(() => d.seg.el.setAttribute("stroke-dashoffset", 0), 150 + d.t * sf));
-    pops.forEach(p => T(() => p.el.setAttribute("r", p.el.dataset.r), 150 + p.t * sf));
-    const total = 150 + TT * sf;
+    const sf = 0.52; // build-speed factor (<1 = faster on-load construction)
+    const lead = 60; // initial lead-in before construction starts (lower = snappier opening)
+    T(() => { if (grid) grid.style.opacity = "1"; if (statusEl) statusEl.classList.add("is-on"); }, 50);
+    draws.forEach(d => T(() => d.seg.el.setAttribute("stroke-dashoffset", 0), lead + d.t * sf));
+    pops.forEach(p => T(() => p.el.setAttribute("r", p.el.dataset.r), lead + p.t * sf));
+    const total = lead + TT * sf;
     const phases = ["surveying site", "raising lattice", "mounting cross-arms", "hanging insulators", "stringing conductors", "syncing digital twin"];
     let pp = 0; const iv = setInterval(() => { pp = Math.min(100, pp + Math.ceil(rnd(2, 8))); if (statusPct) statusPct.textContent = pp + "%"; if (statusText) statusText.textContent = phases[Math.min(phases.length - 1, Math.floor(pp / 100 * phases.length))]; if (pp >= 100) clearInterval(iv); }, Math.max(55, total / 48)); timers.push(iv);
     T(() => { particlesInit(); scanning = true; scanX = -160; scanBand.setAttribute("opacity", 1); scanLine.setAttribute("opacity", 0.7); startLoop(); }, total + 120);
@@ -472,8 +481,8 @@ if (st) {
   function loop() {
     tick++; const m = mouse;
     if (scanning) {
-      scanX += 8; scanBand.setAttribute("x", scanX - 60); scanLine.setAttribute("x1", scanX); scanLine.setAttribute("x2", scanX);
-      steelEls.forEach(s => { if (s.mx <= scanX) s.el.setAttribute("stroke", s.mx > scanX - 44 ? CY : STEEL); });
+      scanX += 5; scanBand.setAttribute("x", scanX - 90); scanBand.setAttribute("width", 150); scanLine.setAttribute("x1", scanX); scanLine.setAttribute("x2", scanX);
+      steelEls.forEach(s => { if (s.mx <= scanX) s.el.setAttribute("stroke", s.mx > scanX - 80 ? CY : STEEL); });
       insulEls.forEach(s => { if (s.mx <= scanX) s.el.setAttribute("fill", INSUL); });
       conductors.forEach(c => { if (c.mx <= scanX) energizeConductor(c); });
       sensors.forEach(s => { if (s.x <= scanX && !s.on) { s.on = true; s.core.setAttribute("r", s.r); } });
@@ -537,3 +546,19 @@ document.querySelectorAll(".pillar-card").forEach((card) => {
     glow.style.setProperty("--y", (e.clientY - rect.top) + "px");
   });
 });
+
+// Demo request form — submit to Google Forms without leaving the page
+const demoForm = document.getElementById("demo-form");
+if (demoForm) {
+  demoForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = new FormData(demoForm);
+    // no-cors: Google Forms returns an opaque response, so we can't read its
+    // status; treat completion as success and swap in the thank-you panel.
+    fetch(demoForm.action, { method: "POST", mode: "no-cors", body: data }).finally(() => {
+      demoForm.hidden = true;
+      const success = document.getElementById("demo-form-success");
+      if (success) success.hidden = false;
+    });
+  });
+}

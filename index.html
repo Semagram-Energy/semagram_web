@@ -54,7 +54,7 @@
 <body class="bg-background-light text-primary">
   <!-- Navbar -->
   <header id="header"
-    class="header scroll-revealed fixed top-0 left-0 z-50 w-full bg-background-light border-b border-border-color ic-navbar">
+    class="header scroll-revealed fixed top-0 left-0 z-50 w-full ic-navbar">
     <div class="container">
       <nav class="flex items-center justify-between py-3">
         <!-- Logo -->
@@ -71,41 +71,42 @@
 
           <li class="group relative">
             <a href="#platform"
-              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
               role="menuitem">Platform</a>
           </li>
           <li class="group relative">
             <a href="#pillars"
-              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
               role="menuitem">How it works</a>
           </li>
           <li class="group relative">
             <a href="#solutions"
-              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
               role="menuitem">Who it's for</a>
           </li>
           <li class="group relative">
             <a href="#community"
-              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
               role="menuitem">Community</a>
           </li>
           <li class="group relative">
             <a href="#team"
-              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
               role="menuitem">Team</a>
           </li>
           <li class="group relative">
             <a href="#contact"
-              class="ic-page-scroll mx-8 flex py-2 text-base font-medium text-primary/80 group-hover:text-primary lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
+              class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
               role="menuitem">Contact</a>
           </li>
         </ul>
 
         <!-- Action buttons -->
         <div class="flex items-center gap-2">
-          <a href="mailto:contact@semagram.energy"
-            class="hidden items-center justify-center rounded-md bg-accent px-5 py-2 text-center text-base font-medium text-white shadow-md hover:bg-opacity-90 sm:inline-flex"
-            role="button">Request access</a>
+          <a href="#contact"
+            class="ic-page-scroll group hidden items-center justify-center gap-1.5 rounded-full bg-accent px-5 py-2.5 text-center text-sm font-semibold text-white shadow-lg shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-xl hover:shadow-accent/40 sm:inline-flex"
+            role="button">Contact Us
+            <i class="lni lni-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i></a>
 
           <div class="lg:hidden">
             <button class="navbar-toggler h-10 w-10" aria-label="Toggle navigation" aria-expanded="false"
@@ -128,15 +129,25 @@
       <div class="grid-bg pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000" data-hero-grid aria-hidden="true"></div>
       <div class="hero-clight" data-hero-clight aria-hidden="true"></div>
       <div class="hero-core" data-hero-core aria-hidden="true"></div>
-      <svg class="hero-graph pointer-events-none" data-hero-net viewBox="0 0 1040 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <svg class="hero-graph pointer-events-none" data-hero-net viewBox="-80 -40 1200 646" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <filter id="hg-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           <filter id="hg-glowS" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           <linearGradient id="hg-band" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".22"/></linearGradient>
+          <!-- soft left fade: tower/mesh under the copy go faint (not hidden), full strength on the right -->
+          <linearGradient id="hg-fadegrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#fff" stop-opacity="0.1"/>
+            <stop offset="0.5" stop-color="#fff" stop-opacity="0.1"/>
+            <stop offset="0.64" stop-color="#fff" stop-opacity="1"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+          </linearGradient>
+          <mask id="hg-fade" maskUnits="userSpaceOnUse" x="-80" y="-40" width="1200" height="646">
+            <rect x="-80" y="-40" width="1200" height="646" fill="url(#hg-fadegrad)"/>
+          </mask>
         </defs>
-        <g data-hero-fleet></g>
+        <g data-hero-fleet mask="url(#hg-fade)"></g>
         <g data-hero-twin style="opacity:0"></g>
-        <g data-hero-world></g>
+        <g data-hero-world mask="url(#hg-fade)"></g>
         <rect data-hero-scanband x="-300" y="0" width="60" height="560" fill="url(#hg-band)" opacity="0"></rect>
         <line data-hero-scanline x1="-300" y1="0" x2="-300" y2="560" stroke="#22d3ee" stroke-width="2" opacity="0" filter="url(#hg-glowS)"></line>
         <g data-hero-fx></g>
@@ -156,13 +167,9 @@
             <span>The canonical data and reasoning layer that sits above legacy solvers — and improves with every project.</span>
           </div>
           <div class="reveal-fade mt-9 flex flex-wrap gap-4">
-            <a href="mailto:contact@semagram.energy"
-              class="inline-flex items-center justify-center rounded-lg bg-accent px-7 py-3 text-base font-semibold text-white shadow-lg shadow-accent/30 transition-all hover:-translate-y-0.5 hover:bg-accent/90">
-              Request access
-            </a>
-            <a href="#platform"
-              class="ic-page-scroll inline-flex items-center justify-center rounded-lg border border-border-color bg-background-light px-7 py-3 text-base font-semibold text-primary transition-all hover:border-accent hover:text-accent">
-              See the platform
+            <a href="#contact"
+              class="ic-page-scroll inline-flex items-center justify-center rounded-lg bg-accent px-7 py-3 text-base font-semibold text-white shadow-lg shadow-accent/30 transition-all hover:-translate-y-0.5 hover:bg-accent/90">
+              Contact Us
             </a>
           </div>
         </div>
@@ -199,14 +206,14 @@
           </div>
           <div class="stack-row border border-border-color bg-blue-100/60 text-primary">
             <span class="font-semibold">Structured memory layer</span>
-            <span class="ml-auto font-mono text-xs text-secondary">cross-project recall</span>
+            <span class="ml-auto font-mono text-xs text-secondary">cross-project memory</span>
           </div>
           <div class="stack-row border border-border-color bg-blue-50 text-primary">
             <span class="font-semibold">Canonical data model</span>
-            <span class="ml-auto font-mono text-xs text-secondary">interconnection &amp; planning</span>
+            <span class="ml-auto font-mono text-xs text-secondary">the unified data format for AI Agent</span>
           </div>
-          <div class="stack-row border border-dashed border-secondary/40 text-secondary">
-            <span class="font-mono text-sm">Legacy solvers &middot; PSS&#47;E &middot; PSCAD &middot; in-house tools</span>
+          <div class="stack-row justify-center border border-dashed border-secondary/40 text-secondary">
+            <span class="font-mono text-sm">Legacy Solvers &middot; In-house Knowledge Base &middot; In-house Tools</span>
           </div>
         </div>
       </div>
@@ -218,7 +225,7 @@
         <div class="scroll-revealed mx-auto mb-12 max-w-[860px] text-center">
           <p class="eyebrow mb-4">how it works</p>
           <h2 class="font-display text-3xl font-bold text-primary md:text-4xl">
-            Three layers that compound into <span class="text-gradient">general intelligence</span>
+            Three layers that compound into<br /><span class="text-gradient">general intelligence</span>
           </h2>
         </div>
 
@@ -397,8 +404,8 @@
 
                 <!-- Centered Action Button -->
                 <div class="mt-10 flex justify-center">
-                  <a href="mailto:contact@semagram.energy"
-                    class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
+                  <a href="#contact"
+                    class="ic-page-scroll inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
                     Contact Us
                   </a>
                 </div>
@@ -515,8 +522,8 @@
 
                 <!-- Centered Action Button -->
                 <div class="mt-10 flex justify-center">
-                  <a href="mailto:contact@semagram.energy"
-                    class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
+                  <a href="#contact"
+                    class="ic-page-scroll inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
                     Contact Us
                   </a>
                 </div>
@@ -606,8 +613,8 @@
 
                 <!-- Centered Action Button -->
                 <div class="mt-10 flex justify-center">
-                  <a href="mailto:contact@semagram.energy"
-                    class="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
+                  <a href="#contact"
+                    class="ic-page-scroll inline-flex items-center justify-center rounded-lg bg-accent px-8 py-3 text-center text-base font-medium text-white hover:bg-opacity-90 transition-all shadow-lg">
                     Contact Us
                   </a>
                 </div>
@@ -763,7 +770,7 @@
         <div
           class="scroll-revealed relative z-10 overflow-hidden rounded-xl bg-blue-800 px-8 py-12 lg:px-10 shadow-2xl">
           <div class="-mx-4 flex flex-wrap items-center">
-            <div class="w-full px-4 lg:w-2/3 text-center lg:text-left">
+            <div class="w-full px-4 lg:w-1/2 text-center lg:text-left">
               <h2 class="mb-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
                 Build on the intelligence layer for the grid.
               </h2>
@@ -771,12 +778,67 @@
                 Share your pain points with our experts to see how Semagram can transform your solutions and
                 services.
               </p>
-            </div>
-            <div class="w-full px-4 lg:w-1/3">
-              <div class="mt-10 text-center lg:mt-0 lg:text-right">
+              <p class="mt-6 text-base text-white/70">
+                Prefer email?
                 <a href="mailto:contact@semagram.energy"
-                  class="inline-block rounded-lg bg-blue-600 px-10 py-4 text-center text-lg font-semibold text-white hover:bg-blue-700 shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-1">Contact
-                  Us</a>
+                  class="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white">contact@semagram.energy</a>
+              </p>
+            </div>
+            <div class="mt-10 w-full px-4 lg:mt-0 lg:w-1/2">
+              <div class="relative z-10 rounded-xl bg-background-light p-6 shadow-2xl lg:p-8">
+                <h3 class="mb-1 font-display text-2xl font-bold text-primary">Request a Free Trial Demo</h3>
+                <p class="mb-6 text-sm text-secondary">Tell us a bit about you and we'll be in touch.</p>
+
+                <!-- Submits to the "Semagram — Request Free Trial Demo" Google Form;
+                     responses are recorded in its linked Google Sheet. -->
+                <form id="demo-form" method="POST"
+                  action="https://docs.google.com/forms/d/e/1FAIpQLSeZHDRYUZ_sGySp_6FrfDvJtECPaW1FcCEUbRHjMmZ-KDtvvg/formResponse">
+                  <div class="mb-4">
+                    <label for="demo-fullname" class="block mb-1.5 text-sm font-medium text-primary">Full Name
+                      <span class="text-accent">*</span></label>
+                    <input type="text" id="demo-fullname" name="entry.58663410" required
+                      placeholder="Jane Doe"
+                      class="w-full rounded-md border border-border-color bg-background-light py-3 px-4 text-primary placeholder-secondary focus:border-accent focus:outline-none">
+                  </div>
+                  <div class="mb-4">
+                    <label for="demo-email" class="block mb-1.5 text-sm font-medium text-primary">Company E-mail
+                      <span class="text-accent">*</span></label>
+                    <input type="email" id="demo-email" name="entry.1365930289" required
+                      placeholder="jane@company.com"
+                      class="w-full rounded-md border border-border-color bg-background-light py-3 px-4 text-primary placeholder-secondary focus:border-accent focus:outline-none">
+                  </div>
+                  <div class="mb-4">
+                    <label for="demo-company" class="block mb-1.5 text-sm font-medium text-primary">Company
+                      Name</label>
+                    <input type="text" id="demo-company" name="entry.1896178728"
+                      placeholder="Acme Energy"
+                      class="w-full rounded-md border border-border-color bg-background-light py-3 px-4 text-primary placeholder-secondary focus:border-accent focus:outline-none">
+                  </div>
+                  <div class="mb-4">
+                    <label for="demo-role" class="block mb-1.5 text-sm font-medium text-primary">Role</label>
+                    <input type="text" id="demo-role" name="entry.1979179765"
+                      placeholder="Grid Engineer"
+                      class="w-full rounded-md border border-border-color bg-background-light py-3 px-4 text-primary placeholder-secondary focus:border-accent focus:outline-none">
+                  </div>
+                  <div class="mb-6">
+                    <label for="demo-message" class="block mb-1.5 text-sm font-medium text-primary">Message
+                      <span class="text-secondary font-normal">(Optional)</span></label>
+                    <textarea id="demo-message" name="entry.109782449" rows="4"
+                      placeholder="What would you like to explore?"
+                      class="w-full rounded-md border border-border-color bg-background-light py-3 px-4 text-primary placeholder-secondary focus:border-accent focus:outline-none"></textarea>
+                  </div>
+                  <button type="submit"
+                    class="w-full rounded-lg bg-accent px-6 py-3 text-base font-semibold text-white hover:bg-blue-700 shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5">Submit</button>
+                </form>
+
+                <div id="demo-form-success" hidden class="py-8 text-center">
+                  <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <i class="lni lni-checkmark text-2xl"></i>
+                  </div>
+                  <h3 class="mb-2 font-display text-xl font-bold text-primary">Thanks — we'll be in touch.</h3>
+                  <p class="text-sm text-secondary">Your request has been received. Our team will reach out to
+                    your company e-mail shortly.</p>
+                </div>
               </div>
             </div>
           </div>

@@ -229,14 +229,56 @@
 
   .header,
   .ic-navbar {
-    @apply border-b border-border-color shadow-sm transition-all duration-300;
-    background-color: #fff !important;
+    @apply border-b transition-all duration-300;
+    border-color: rgba(0, 0, 0, 0.06);
+    background-color: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    backdrop-filter: saturate(160%) blur(14px);
     z-index: 60;
   }
 
+  .header nav {
+    @apply transition-all duration-300;
+  }
+
   .header.scrolled {
-    @apply shadow-lg;
-    background-color: #fff !important;
+    border-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    backdrop-filter: saturate(180%) blur(18px);
+    box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.22);
+  }
+
+  @screen lg {
+    .header.scrolled nav {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  /* Modern nav links — accent hover/active + animated underline (desktop) */
+  .nav-link {
+    @apply relative transition-colors duration-200;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    @apply text-accent;
+  }
+
+  @screen lg {
+    .nav-link::after {
+      content: "";
+      @apply absolute left-0 bottom-0 h-0.5 w-full rounded-full bg-accent;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
   }
 
   .nav-menu {
