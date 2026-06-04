@@ -123,14 +123,29 @@
   <main class="main relative">
     <!-- Hero section -->
     <section id="home"
-      class="relative overflow-hidden bg-background-light pt-[120px] pb-[90px] lg:pt-[150px] lg:pb-[120px]">
-      <!-- grid + interactive network graph background -->
+      class="hero-tower relative overflow-hidden bg-background-light pt-[120px] pb-[80px] lg:pt-[140px] lg:pb-[90px] min-h-[600px] lg:min-h-[680px]">
+      <!-- grid + transmission-tower digital-twin background -->
       <div class="grid-bg pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000" data-hero-grid aria-hidden="true"></div>
-      <div class="hero-spot" data-hero-spot aria-hidden="true"></div>
-      <svg class="hero-graph pointer-events-none" data-hero-net viewBox="0 0 1000 540" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+      <div class="hero-clight" data-hero-clight aria-hidden="true"></div>
+      <div class="hero-core" data-hero-core aria-hidden="true"></div>
+      <svg class="hero-graph pointer-events-none" data-hero-net viewBox="0 0 1040 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <filter id="hg-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="hg-glowS" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <linearGradient id="hg-band" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".22"/></linearGradient>
+        </defs>
+        <g data-hero-fleet></g>
+        <g data-hero-twin style="opacity:0"></g>
+        <g data-hero-world></g>
+        <rect data-hero-scanband x="-300" y="0" width="60" height="560" fill="url(#hg-band)" opacity="0"></rect>
+        <line data-hero-scanline x1="-300" y1="0" x2="-300" y2="560" stroke="#22d3ee" stroke-width="2" opacity="0" filter="url(#hg-glowS)"></line>
+        <g data-hero-fx></g>
+        <g data-hero-hud></g>
+        <g data-hero-bolts></g>
+      </svg>
 
-      <div class="container relative">
-        <div class="hero-reveal mx-auto max-w-[1100px]" data-hero-reveal>
+      <div class="container relative z-[2]">
+        <div class="hero-reveal max-w-[600px]" data-hero-reveal>
           <div class="eyebrow reveal-mask mb-5"><span>from the creators of PowerAgent</span></div>
           <h1 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary sm:text-5xl lg:text-6xl">
             <span class="reveal-mask"><span>Building <span class="text-gradient">general intelligence</span></span></span>
@@ -153,9 +168,9 @@
       </div>
 
       <!-- construction status readout -->
-      <div class="hero-status absolute bottom-8 left-0 right-0" data-hero-status aria-hidden="true">
+      <div class="hero-status absolute bottom-8 left-0 right-0 z-[2]" data-hero-status aria-hidden="true">
         <div class="container">
-          <span data-hero-status-text>initializing</span>
+          <span data-hero-status-text>surveying site</span>
           <span class="text-secondary" data-hero-status-pct>0%</span>
         </div>
       </div>
