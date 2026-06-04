@@ -271,11 +271,11 @@ if (st) {
   function conductor(x1, y1, x2, y2, sag) { const mx = (x1 + x2) / 2, my = Math.max(y1, y2) + sag; const p = document.createElementNS(NS, "path"); p.setAttribute("d", `M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`); p.setAttribute("fill", "none"); p.setAttribute("stroke", COND_GREY); p.setAttribute("stroke-width", 1.7); p.setAttribute("stroke-linecap", "round"); world.appendChild(p); const len = p.getTotalLength(); p.setAttribute("stroke-dasharray", len); p.setAttribute("stroke-dashoffset", len); p.style.transition = "stroke-dashoffset .7s ease"; const o = { el: p, len, mx: (x1 + x2) / 2, on: false }; conductors.push(o); return o; }
   function disc(parent, cx2, cy2, r, fill, reg) { const c = document.createElementNS(NS, "circle"); c.setAttribute("cx", cx2); c.setAttribute("cy", cy2); c.setAttribute("r", 0); c.setAttribute("fill", fill); c.dataset.r = r; c.style.transition = "r .3s cubic-bezier(.34,1.56,.64,1)"; parent.appendChild(c); if (reg) insulEls.push({ el: c, mx: cx2 }); return c; }
 
-  const cx = 730;
+  const cx = 850;
   const lv = [{ y: 512, hw: 74 }, { y: 446, hw: 62 }, { y: 384, hw: 51 }, { y: 330, hw: 42 }, { y: 286, hw: 34 }, { y: 250, hw: 27 }];
   const arms = [{ y: 236, len: 118 }, { y: 198, len: 98 }, { y: 162, len: 78 }];
   const apex = { x: cx, y: 96 };
-  const dx = 150, dlv = [{ y: 500, hw: 42 }, { y: 458, hw: 34 }, { y: 422, hw: 28 }, { y: 392, hw: 23 }, { y: 366, hw: 19 }], dapex = { x: dx, y: 300 };
+  const dx = 1400, dlv = [{ y: 500, hw: 42 }, { y: 458, hw: 34 }, { y: 422, hw: 28 }, { y: 392, hw: 23 }, { y: 366, hw: 19 }], dapex = { x: dx, y: 300 };
   const darms = [{ y: 352, len: 58 }, { y: 326, len: 46 }];
 
   const draws = [], pops = []; let TT = 0;
@@ -324,11 +324,11 @@ if (st) {
   const FLEET_TH = 205;
   function initFleetNodes() {
     const pos = [
-      { x: 556, y: 300 }, { x: 610, y: 132 }, { x: 520, y: 368 }, { x: 468, y: 206 }, { x: 600, y: 430 },
-      { x: 300, y: 248 }, { x: 250, y: 338 }, { x: 230, y: 250 }, { x: 910, y: 150 }, { x: 900, y: 332 },
-      { x: 986, y: 244 }, { x: 982, y: 392 }, { x: 872, y: 452 }, { x: 560, y: 90 }, { x: 300, y: 470 }
+      { x: 760, y: 150 }, { x: 720, y: 250 }, { x: 980, y: 180 }, { x: 1010, y: 300 }, { x: 900, y: 130 },
+      { x: 740, y: 360 }, { x: 985, y: 400 }, { x: 720, y: 440 }, { x: 1015, y: 470 }, { x: 870, y: 470 },
+      { x: 800, y: 110 }, { x: 1020, y: 240 }, { x: 940, y: 330 }, { x: 700, y: 180 }, { x: 860, y: 430 }
     ];
-    const seed = { x: 730, y: 300 };
+    const seed = { x: 850, y: 300 };
     pos.forEach(n => { n.d = Math.hypot(n.x - seed.x, n.y - seed.y); });
     pos.sort((a, b) => a.d - b.d);
     pos.forEach((n, i) => { const sc = 0.2 + (i % 3) * 0.025; n.h = 160 * sc; n.hw = 30 * sc; n.arY = n.y - n.h * 0.8; n.op = Math.min(0.3, 0.14 + (1 - Math.min(1, n.d / 720)) * 0.16); n.shown = false; });
@@ -363,7 +363,7 @@ if (st) {
   function hudShow() { hud.querySelectorAll("circle").forEach(e => e.style.opacity = "1"); hud.querySelectorAll("line").forEach(e => e.style.opacity = ".6"); hud.querySelectorAll("text").forEach(e => e.style.opacity = ".9"); }
   function jag(x1, y1, x2, y2, segs, amp) { let pts = `${x1},${y1}`; for (let i = 1; i < segs; i++) { const f = i / segs, mx = x1 + (x2 - x1) * f, my = y1 + (y2 - y1) * f; pts += ` ${mx + rnd(-amp, amp)},${my + rnd(-amp, amp)}`; } return pts + ` ${x2},${y2}`; }
   function energizeConductor(c) { if (c.on) return; c.on = true; c.el.setAttribute("stroke", COND); c.el.setAttribute("filter", GLOW); for (let i = 0; i < 2; i++) { const dot = el("circle", { r: 2.6, fill: CY, filter: GLOWS }, fx); flows.push({ path: c.el, len: c.len, dot, t: Math.random(), sp: rnd(0.0014, 0.0022) }); } }
-  function particlesInit() { for (let i = 0; i < 13; i++) { const r = rnd(0.6, 1.5); const p = el("circle", { r, fill: Math.random() < 0.5 ? CY : "#60a5fa", opacity: rnd(0.1, 0.32) }, fx); particles.push({ el: p, x: rnd(cx - 220, cx + 220), y: rnd(80, 520), vx: rnd(-0.1, 0.1), vy: rnd(-0.26, -0.05), r }); } }
+  function particlesInit() { /* floating particle field removed per design feedback */ }
 
   function build() {
     const ground = mkLine(world, 0, 524, 1040, 524, "#cbd5e1", 2); ground.setAttribute("stroke-dasharray", 1040); ground.setAttribute("stroke-dashoffset", 1040); ground.style.transition = "stroke-dashoffset .5s ease"; draws.push({ seg: { el: ground }, t: 0 });

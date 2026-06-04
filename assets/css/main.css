@@ -1328,10 +1328,6 @@ p+p{
   margin-top: 1.5rem;
 }
 
-.mt-7{
-  margin-top: 1.75rem;
-}
-
 .mt-8{
   margin-top: 2rem;
 }
@@ -1472,12 +1468,12 @@ p+p{
   max-width: 500px;
 }
 
-.max-w-\[560px\]{
-  max-width: 560px;
+.max-w-\[520px\]{
+  max-width: 520px;
 }
 
-.max-w-\[600px\]{
-  max-width: 600px;
+.max-w-\[660px\]{
+  max-width: 660px;
 }
 
 .max-w-\[800px\]{
@@ -1888,8 +1884,8 @@ p+p{
   font-weight: 600;
 }
 
-.leading-\[1\.05\]{
-  line-height: 1.05;
+.leading-\[1\.06\]{
+  line-height: 1.06;
 }
 
 .leading-tight{
@@ -2344,9 +2340,8 @@ p+p{
     text-align: right;
   }
 
-  .lg\:text-6xl{
-    font-size: 3.75rem;
-    line-height: 1;
+  .lg\:text-\[3\.4rem\]{
+    font-size: 3.4rem;
   }
 
   .lg\:shadow-none{
