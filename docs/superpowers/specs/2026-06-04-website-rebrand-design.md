@@ -59,37 +59,36 @@ Single `index.html`, `<section>` blocks with `id`s for nav anchors + scrollspy:
 - **Reusable grid-line background** utility (28px faint grid) for hero and the platform section.
 - **Type scale & spacing:** larger, tighter hero headline; uppercase mono eyebrows; more generous section whitespace for a modern-startup feel.
 
-## 6. Interactivity (cursor-reactive)
+## 6. Hero — transmission-tower digital twin (interactive)
 
-Core requirement: the background visibly reacts to cursor movement.
+The hero motif is a **detailed lattice transmission tower** (with a smaller distant tower, insulator strings, and sagging catenary conductors) rendered as inline SVG in the `#home` section, biased to the right so it clears the left-aligned copy. It builds itself on load, a single scan brings it to life, and it then stays interactive. This **replaces the earlier network-graph hero**.
 
-- **Hero Network Graph** (`#home`): inline SVG of ~12 nodes + ~15 edges on the right side (clear of the copy). Vanilla JS animation loop (`requestAnimationFrame`):
-  - Nodes spring toward their home position; when the cursor is within ~200px they drift toward it, then settle back on `pointerleave`.
-  - Edges within ~170px of the cursor shift from blue to **cyan** and brighten/thicken by proximity.
-  - A soft radial **spotlight** div follows the cursor and reveals the grid.
-  - A continuous **data pulse** (cyan dot) travels edge-to-edge along the network.
-  - Mouse coords normalized to the SVG viewBox; uses `pointermove`/`pointerleave`.
-- **Platform section:** a lighter version of the spotlight-grid reveal (no node physics) for cohesion.
-- **Pillar cards & tabs:** reuse the existing `--x`/`--y` cursor-glow pattern already in `.tabs`.
-- **Performance/accessibility:** single shared rAF loop, throttled via the loop (no per-event layout thrash); disable node physics + pulse under `prefers-reduced-motion`; graph is decorative (`aria-hidden`).
+Interactions (after the intro, via one `requestAnimationFrame` loop):
+- **Cursor light:** a glowing cyan orb + hot white core follows the cursor (HTML divs, screen blend); short **crackling arcs** spark off it and a **bolt jumps to the nearest sensor node** when close. The native cursor is hidden over the hero (`cursor:none`); links re-enable the pointer.
+- **Click → energy surge:** clicking the hero fires shockwave **rings** and a bright **surge** that races down every conductor (cyan, thickened) and decays. Clicks on links/buttons are ignored (they navigate normally).
+- **Sensor nodes** (~5) on key joints pulse; **data packets** travel the conductors; ambient **particle field** drifts and is pushed by the cursor.
+- **Telemetry HUD:** two faint labels with leader lines — `500 kV` and a live `LOAD %`.
+- **Parallax:** the tower group shifts subtly toward the cursor.
+- Mouse → viewBox coords via `svg.getScreenCTM().inverse()` (accurate under `preserveAspectRatio="xMidYMid slice"`).
+- **Pillar cards & tabs:** reuse the existing `--x`/`--y` cursor-glow pattern.
+- **Performance/accessibility:** single shared rAF loop; an `IntersectionObserver` pauses it when the hero scrolls off-screen; decorative SVG is `aria-hidden`; reduced-motion renders a static finished tower (no loop, no cursor physics — see §6a).
 
-## 6a. Entrance animation — graph self-construction
+### Background digital-twin screen + "SPEED UP"
+A small, **transparent dark monitor** sits in the clear gap below the central conductors, revealed after the scan; it brightens on hover. Its left shows a mini schematic of both towers; its right is a **`SPEED UP` button**. Each click reveals another batch (~3) of faint **network-mesh towers** expanding outward in the background (connected by hairline conductors, placed in clear zones to avoid overlapping the hero/copy), and nudges the energy-flow speed up — up to **5 clicks**, then the button relabels `GRID ↑`. The button is hit-tested at the section level (the SVG is `pointer-events:none`).
 
-The page-load intro **replaces the current grid-loader overlay** and *is* the network graph building itself — the brand motif and the preloader are the same thing.
+## 6a. Entrance animation — tower self-construction + colorizing scan
 
-Sequence (on first load):
-1. Faint grid background fades in; a **mono status readout** (JetBrains Mono, accent blue) appears bottom-left with a live `%` counter, cycling phases tied to the pillars: `indexing grid topology → linking interconnection projects → aligning to canonical model → memory layer online`.
-2. **Nodes pop into place** one by one with a springy ease (`cubic-bezier(.34,1.56,.64,1)`), staggered.
-3. **Edges draw themselves** sequentially between nodes via `stroke-dasharray`/`stroke-dashoffset` animation.
-4. A **cyan data pulse** fires once through the completed network; the status readout fades out.
-5. The **hero copy reveals** — eyebrow, headline lines, and subhead slide up from clip-path masks (staggered, `cubic-bezier(.16,1,.3,1)`); CTAs fade up.
-6. The same SVG **transitions into the live cursor-reactive state** (§6) — no second graph; the constructed graph becomes the interactive one.
+The page-load intro **replaces the old grid-loader overlay** and *is* the tower building itself:
+
+1. Faint grid fades in; a **mono status readout** (bottom-left) shows a live `%` counter cycling: `surveying site → raising lattice → mounting cross-arms → hanging insulators → stringing conductors → syncing digital twin`.
+2. **Foundations → lattice rises panel-by-panel** (legs, beams, X-bracing draw via `stroke-dasharray`), then cross-arms, **insulator strings drop in**, and **conductors string across** to the distant tower / off-frame — all in **grey**.
+3. A **single cyan scan band sweeps across once**, recoloring the grey tower into its energized "current" state as it passes (cyan wavefront leaving colored steel + blue conductors behind; sensors light up; conductors begin flowing).
+4. When the scan completes, the **hero copy reveals** (eyebrow, headline lines, subhead slide up from masks; CTAs fade up), the telemetry HUD and twin screen appear, and the loop hands off to the interactive state (§6).
 
 Implementation notes:
-- One inline SVG reused for both construction and the live hero. A JS state flag flips from "building" to "interactive" when construction completes, at which point the rAF cursor loop takes over.
-- Total construction is ~2–2.7s; tunable. Timings driven by `setTimeout` chains + one `setInterval` for the counter, all cancelable on replay.
-- Under `prefers-reduced-motion`: skip the staggered build and pulse — render the finished graph immediately and do a simple fade-in of the hero copy (no node physics, no traveling pulse).
-- Decorative SVG is `aria-hidden`; the loader must never trap focus or block content for assistive tech (hero text present in DOM from the start, just visually masked).
+- One inline SVG; grey build → scan recolor → interactive, driven by `setTimeout` chains + one `setInterval` (counter). Build runs at ~0.66× for a brisk open.
+- Under `prefers-reduced-motion`: render the finished, colored tower immediately (no construction, no scan, no perpetual loop, no cursor physics); reveal copy via a plain fade.
+- Decorative SVG is `aria-hidden`; hero text is in the DOM from the start (visually masked), so it never blocks assistive tech.
 
 ## 7. Technical approach
 
@@ -97,7 +96,7 @@ Respects the existing build (per CLAUDE.md):
 
 - Single static `index.html` + Tailwind + vanilla JS, deployed via Wrangler. No framework.
 - **Tailwind:** add `electric` color + `font-display`/`font-mono` families + any new keyframes (e.g. `pulse-travel`, `spotlight`) to `tailwind.config.js theme.extend`. Add reusable component/utility classes (`.grid-bg`, `.eyebrow`, pillar card, stack-diagram) to `src/css/tailwind.css` under `@layer`. **Must run `npm run build-css`** after changes — the browser loads committed `assets/css/main.css`. Tailwind `content` scan is only `./index.html`, so any class used must appear in `index.html`.
-- **JS:** add the graph self-construction intro + hero network-graph + spotlight logic to `assets/js/main.js` (hand-written, no modules), guarded so it no-ops if the `#home` SVG is absent. The construction sequence replaces the existing `.page-loading` grid-loader overlay. Keep the rest of the existing wiring (navbar toggle, sticky header, scrollspy, tabs, portfolio filter, scroll-to-top).
+- **JS:** add the transmission-tower digital-twin intro (build → colorizing scan → interactive cursor light / click surge / sensors / HUD / particles / background mesh + SPEED UP) to `assets/js/main.js` as a self-contained IIFE, guarded so it no-ops if the `#home` SVG is absent. It replaces the old `.page-loading` grid-loader overlay. Keep the rest of the existing wiring (navbar toggle, sticky header, scrollspy, tabs, portfolio filter, scroll-to-top).
 - Keep ScrollReveal / Swiper / GLightbox CDN setup as-is; add Google Fonts `<link>`s.
 - Update `<head>` meta/OG/Twitter copy to the new tagline.
 
@@ -105,7 +104,7 @@ Respects the existing build (per CLAUDE.md):
 
 1. **Design tokens** — `tailwind.config.js` colors, fonts, keyframes.
 2. **CSS layer** — grid-bg utility, eyebrow/mono label, pillar card, stack diagram, gradient-text helper, section spacing.
-3. **Hero + entrance** — markup + graph self-construction intro (replaces grid-loader) that hands off to the cursor-reactive network-graph JS + spotlight; reduced-motion fallback.
+3. **Hero + entrance** — markup + transmission-tower digital-twin intro (build → colorizing scan → interactive cursor light / click surge / sensors / HUD / particles / background mesh + SPEED UP); replaces grid-loader; reduced-motion fallback; off-screen rAF pause.
 4. **Platform/Stack section** — markup + stack diagram + light spotlight grid.
 5. **3 Pillars section** — three cards, copy, hover glow.
 6. **Solutions (who it's for)** — restyle existing tabs, reframe headings.

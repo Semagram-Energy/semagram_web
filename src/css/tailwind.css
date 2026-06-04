@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -229,14 +229,56 @@
 
   .header,
   .ic-navbar {
-    @apply border-b border-border-color shadow-sm transition-all duration-300;
-    background-color: #fff !important;
+    @apply border-b transition-all duration-300;
+    border-color: rgba(0, 0, 0, 0.06);
+    background-color: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    backdrop-filter: saturate(160%) blur(14px);
     z-index: 60;
   }
 
+  .header nav {
+    @apply transition-all duration-300;
+  }
+
   .header.scrolled {
-    @apply shadow-lg;
-    background-color: #fff !important;
+    border-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    backdrop-filter: saturate(180%) blur(18px);
+    box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.22);
+  }
+
+  @screen lg {
+    .header.scrolled nav {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  /* Modern nav links — accent hover/active + animated underline (desktop) */
+  .nav-link {
+    @apply relative transition-colors duration-200;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    @apply text-accent;
+  }
+
+  @screen lg {
+    .nav-link::after {
+      content: "";
+      @apply absolute left-0 bottom-0 h-0.5 w-full rounded-full bg-accent;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
   }
 
   .nav-menu {
@@ -370,6 +412,90 @@
   .tabs-content:not(.hidden) .tab-list-item {
     @apply opacity-100 translate-y-0;
   }
+
+  /* ---- Rebrand: grid background, labels, hero graph, pillars, stack ---- */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs font-medium tracking-wider text-accent uppercase;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    /* #2563eb = accent token, #22d3ee = electric token — keep in sync with tailwind.config.js */
+    background-image: linear-gradient(90deg, #2563eb, #22d3ee);
+  }
+
+  /* Hero entrance: copy starts masked, slides up when .is-revealed is set */
+  .reveal-mask {
+    @apply block overflow-hidden;
+  }
+  .reveal-mask > span {
+    @apply block;
+    transform: translateY(110%);
+  }
+  .is-revealed .reveal-mask > span {
+    transform: translateY(0);
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-fade {
+    @apply opacity-0 translate-y-3;
+  }
+  .is-revealed .reveal-fade {
+    @apply opacity-100 translate-y-0;
+    transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+  }
+
+  /* Hero transmission-tower layers */
+  .hero-graph {
+    @apply absolute inset-0 h-full w-full;
+  }
+  /* hide native cursor over the hero so the custom light reads (links re-enable pointer) */
+  .hero-tower {
+    cursor: none;
+  }
+  .hero-clight {
+    @apply pointer-events-none absolute rounded-full opacity-0;
+    width: 240px;
+    height: 240px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.5) 0%, rgba(37, 99, 235, 0.2) 26%, rgba(37, 99, 235, 0) 64%);
+    mix-blend-mode: screen;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+  }
+  .hero-core {
+    @apply pointer-events-none absolute rounded-full opacity-0;
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #ffffff 0%, #7df0ff 45%, rgba(34, 211, 238, 0) 75%);
+    box-shadow: 0 0 18px #22d3ee;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+  }
+  .hero-status {
+    @apply font-mono text-xs text-accent opacity-0;
+    transition: opacity 0.4s ease;
+  }
+  .hero-status.is-on {
+    @apply opacity-100;
+  }
+
+  /* Pillar cards */
+  .pillar-card {
+    @apply relative overflow-hidden rounded-2xl border border-border-color bg-background-light p-8 shadow-card-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-2;
+  }
+
+  /* Stack diagram rows (platform section) */
+  .stack-row {
+    @apply flex items-center rounded-xl px-5 py-4 font-medium;
+  }
 }
 
 @layer utilities {
@@ -435,5 +561,18 @@
 
   .col-12 {
     @apply w-full;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .is-revealed .reveal-mask > span,
+    .is-revealed .reveal-fade {
+      transition: none;
+    }
+    .reveal-mask > span {
+      transform: translateY(0);
+    }
+    .reveal-fade {
+      @apply opacity-100 translate-y-0;
+    }
   }
 }
