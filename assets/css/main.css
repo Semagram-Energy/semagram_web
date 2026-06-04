@@ -1961,6 +1961,10 @@ p+p{
   border-color: rgb(37 99 235 / var(--tw-border-opacity, 1));
 }
 
+.hover\:bg-accent\/90:hover{
+  background-color: rgb(37 99 235 / 0.9);
+}
+
 .hover\:bg-background-dark\/80:hover{
   background-color: rgb(241 245 249 / 0.8);
 }
