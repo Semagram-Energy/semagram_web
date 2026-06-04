@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        display: ["Space Grotesk", "Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
       colors: {
         "background-dark": "#f1f5f9",
@@ -17,6 +19,7 @@ module.exports = {
         primary: "#0f172a",
         secondary: "#475569",
         accent: "#2563eb",
+        electric: "#22d3ee",
         "border-color": "rgba(0, 0, 0, 0.1)",
       },
       boxShadow: {
