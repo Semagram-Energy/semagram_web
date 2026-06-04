@@ -73,13 +73,31 @@ Core requirement: the background visibly reacts to cursor movement.
 - **Pillar cards & tabs:** reuse the existing `--x`/`--y` cursor-glow pattern already in `.tabs`.
 - **Performance/accessibility:** single shared rAF loop, throttled via the loop (no per-event layout thrash); disable node physics + pulse under `prefers-reduced-motion`; graph is decorative (`aria-hidden`).
 
+## 6a. Entrance animation — graph self-construction
+
+The page-load intro **replaces the current grid-loader overlay** and *is* the network graph building itself — the brand motif and the preloader are the same thing.
+
+Sequence (on first load):
+1. Faint grid background fades in; a **mono status readout** (JetBrains Mono, accent blue) appears bottom-left with a live `%` counter, cycling phases tied to the pillars: `indexing grid topology → linking interconnection projects → aligning to canonical model → memory layer online`.
+2. **Nodes pop into place** one by one with a springy ease (`cubic-bezier(.34,1.56,.64,1)`), staggered.
+3. **Edges draw themselves** sequentially between nodes via `stroke-dasharray`/`stroke-dashoffset` animation.
+4. A **cyan data pulse** fires once through the completed network; the status readout fades out.
+5. The **hero copy reveals** — eyebrow, headline lines, and subhead slide up from clip-path masks (staggered, `cubic-bezier(.16,1,.3,1)`); CTAs fade up.
+6. The same SVG **transitions into the live cursor-reactive state** (§6) — no second graph; the constructed graph becomes the interactive one.
+
+Implementation notes:
+- One inline SVG reused for both construction and the live hero. A JS state flag flips from "building" to "interactive" when construction completes, at which point the rAF cursor loop takes over.
+- Total construction is ~2–2.7s; tunable. Timings driven by `setTimeout` chains + one `setInterval` for the counter, all cancelable on replay.
+- Under `prefers-reduced-motion`: skip the staggered build and pulse — render the finished graph immediately and do a simple fade-in of the hero copy (no node physics, no traveling pulse).
+- Decorative SVG is `aria-hidden`; the loader must never trap focus or block content for assistive tech (hero text present in DOM from the start, just visually masked).
+
 ## 7. Technical approach
 
 Respects the existing build (per CLAUDE.md):
 
 - Single static `index.html` + Tailwind + vanilla JS, deployed via Wrangler. No framework.
 - **Tailwind:** add `electric` color + `font-display`/`font-mono` families + any new keyframes (e.g. `pulse-travel`, `spotlight`) to `tailwind.config.js theme.extend`. Add reusable component/utility classes (`.grid-bg`, `.eyebrow`, pillar card, stack-diagram) to `src/css/tailwind.css` under `@layer`. **Must run `npm run build-css`** after changes — the browser loads committed `assets/css/main.css`. Tailwind `content` scan is only `./index.html`, so any class used must appear in `index.html`.
-- **JS:** add the hero network-graph + spotlight logic to `assets/js/main.js` (hand-written, no modules), guarded so it no-ops if `#home` SVG is absent. Keep existing wiring (loader, navbar toggle, sticky header, scrollspy, tabs, portfolio filter, scroll-to-top).
+- **JS:** add the graph self-construction intro + hero network-graph + spotlight logic to `assets/js/main.js` (hand-written, no modules), guarded so it no-ops if the `#home` SVG is absent. The construction sequence replaces the existing `.page-loading` grid-loader overlay. Keep the rest of the existing wiring (navbar toggle, sticky header, scrollspy, tabs, portfolio filter, scroll-to-top).
 - Keep ScrollReveal / Swiper / GLightbox CDN setup as-is; add Google Fonts `<link>`s.
 - Update `<head>` meta/OG/Twitter copy to the new tagline.
 
@@ -87,7 +105,7 @@ Respects the existing build (per CLAUDE.md):
 
 1. **Design tokens** — `tailwind.config.js` colors, fonts, keyframes.
 2. **CSS layer** — grid-bg utility, eyebrow/mono label, pillar card, stack diagram, gradient-text helper, section spacing.
-3. **Hero** — markup + cursor-reactive network-graph JS + spotlight.
+3. **Hero + entrance** — markup + graph self-construction intro (replaces grid-loader) that hands off to the cursor-reactive network-graph JS + spotlight; reduced-motion fallback.
 4. **Platform/Stack section** — markup + stack diagram + light spotlight grid.
 5. **3 Pillars section** — three cards, copy, hover glow.
 6. **Solutions (who it's for)** — restyle existing tabs, reframe headings.
@@ -99,6 +117,7 @@ Respects the existing build (per CLAUDE.md):
 ## 9. Success criteria
 
 - New narrative is unmistakable above the fold; the 3 pillars are the page's spine.
+- On load, the network graph visibly constructs itself (nodes pop, edges draw, status readout, pulse) then hands off to the live hero; reduced-motion renders the finished graph immediately.
 - Hero background visibly and smoothly reacts to the cursor (nodes, edge highlight, spotlight, pulse) at 60fps on a typical laptop; degrades gracefully under reduced-motion.
 - Space Grotesk / Inter / JetBrains Mono render correctly; cyan accent used sparingly.
 - All kept sections (clients, community, support, team, contact, newsletter) present and functioning.
