@@ -265,6 +265,7 @@ if (st) {
   const mouse = { x: -9999, y: -9999 };
   let interactive = false;
   let raf = null;
+  let running = false;
 
   // Build SVG: lines first (under nodes), then nodes.
   edges.forEach((e) => {
@@ -314,11 +315,14 @@ if (st) {
 
   // Live cursor-reactive loop.
   let pulseEdge = 0, pulseT = 0, pulseDot = null;
+  // Tuning constants below: 200 = cursor attraction radius (viewBox units); 170 = edge
+  // highlight radius; 0.02 = spring stiffness toward home; 0.86 = velocity damping;
+  // 0.012 = pulse speed (fraction of an edge per frame at ~60fps).
   function loop() {
     nodes.forEach((n) => {
       let ax = (n.ox - n.x) * 0.02, ay = (n.oy - n.y) * 0.02;
       const d = dist(n.x, n.y, mouse.x, mouse.y);
-      if (d < 200) {
+      if (d > 0 && d < 200) {
         const f = ((200 - d) / 200) * 0.55;
         ax += ((mouse.x - n.x) / d) * f;
         ay += ((mouse.y - n.y) / d) * f;
@@ -353,16 +357,35 @@ if (st) {
     raf = requestAnimationFrame(loop);
   }
 
-  function goInteractive() {
-    interactive = true;
+  function startLoop() {
+    if (running) return;
+    running = true;
     loop();
   }
+  function stopLoop() {
+    running = false;
+    if (raf) cancelAnimationFrame(raf);
+  }
+  function goInteractive() {
+    interactive = true;
+    startLoop();
+    // Pause the perpetual loop while the hero is scrolled off-screen (saves battery on mobile).
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) startLoop();
+          else stopLoop();
+        });
+      }, { threshold: 0 });
+      io.observe(section);
+    }
+  }
 
-  // Reduced motion: show finished graph + copy immediately, no construction.
+  // Reduced motion: render the finished graph statically — no construction, no perpetual
+  // motion loop, no cursor physics (honors prefers-reduced-motion).
   if (reduceMotion) {
     if (grid) grid.style.opacity = "1";
     if (reveal) reveal.classList.add("is-revealed");
-    goInteractive();
     return;
   }
 
