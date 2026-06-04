@@ -370,6 +370,74 @@
   .tabs-content:not(.hidden) .tab-list-item {
     @apply opacity-100 translate-y-0;
   }
+
+  /* ---- Rebrand: grid background, labels, hero graph, pillars, stack ---- */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs font-medium tracking-wider text-accent uppercase;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #2563eb, #22d3ee);
+  }
+
+  /* Hero entrance: copy starts masked, slides up when .is-revealed is set */
+  .reveal-mask {
+    @apply block overflow-hidden;
+  }
+  .reveal-mask > span {
+    @apply block;
+    transform: translateY(110%);
+  }
+  .is-revealed .reveal-mask > span {
+    transform: translateY(0);
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-fade {
+    @apply opacity-0 translate-y-3;
+  }
+  .is-revealed .reveal-fade {
+    @apply opacity-100 translate-y-0;
+    transition: all 0.7s ease 0.15s;
+  }
+
+  /* Hero network graph layers */
+  .hero-graph {
+    @apply absolute inset-0 h-full w-full;
+  }
+  .hero-spot {
+    @apply pointer-events-none absolute rounded-full opacity-0;
+    width: 520px;
+    height: 520px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(34, 211, 238, 0.05) 35%, transparent 70%);
+    mix-blend-mode: multiply;
+    transition: opacity 0.3s ease;
+  }
+  .hero-status {
+    @apply font-mono text-xs text-accent opacity-0;
+    transition: opacity 0.4s ease;
+  }
+  .hero-status.is-on {
+    @apply opacity-100;
+  }
+
+  /* Pillar cards */
+  .pillar-card {
+    @apply group relative overflow-hidden rounded-2xl border border-border-color bg-background-light p-8 shadow-card-1 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-2;
+  }
+
+  /* Stack diagram rows (platform section) */
+  .stack-row {
+    @apply flex items-center rounded-xl px-5 py-4 font-medium;
+  }
 }
 
 @layer utilities {
@@ -435,5 +503,12 @@
 
   .col-12 {
     @apply w-full;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .is-revealed .reveal-mask > span,
+    .is-revealed .reveal-fade {
+      transition: none;
+    }
   }
 }

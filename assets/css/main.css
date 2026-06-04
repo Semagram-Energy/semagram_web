@@ -1085,6 +1085,16 @@ p+p{
   opacity: 1;
 }
 
+/* ---- Rebrand: grid background, labels, hero graph, pillars, stack ---- */
+
+/* Hero entrance: copy starts masked, slides up when .is-revealed is set */
+
+/* Hero network graph layers */
+
+/* Pillar cards */
+
+/* Stack diagram rows (platform section) */
+
 .pointer-events-auto{
   pointer-events: auto;
 }
