@@ -273,7 +273,7 @@ if (st) {
   const arms = [{ y: 236, len: 118 }, { y: 198, len: 98 }, { y: 162, len: 78 }];
   const apex = { x: cx, y: 96 };
   const dx = 150, dlv = [{ y: 500, hw: 42 }, { y: 458, hw: 34 }, { y: 422, hw: 28 }, { y: 392, hw: 23 }, { y: 366, hw: 19 }], dapex = { x: dx, y: 300 };
-  const darms = [{ y: 352, len: 58 }, { y: 326, len: 46 }];
+  const darms = [{ y: 356, len: 58 }, { y: 334, len: 47 }, { y: 312, len: 36 }];
 
   const draws = [], pops = []; let TT = 0;
   function schedDraw(seg, dt) { draws.push({ seg, t: TT }); TT += dt; }
@@ -415,7 +415,7 @@ if (st) {
     // tie the main tower into its nearest backbone nodes
     back.map(n => ({ n, d: Math.hypot(n.x - SEED_BUS.x, n.y - SEED_BUS.y) })).sort((p, q) => p.d - q.d).slice(0, 3).forEach(c => addEdge(-1, c.n.idx, false));
     // 3) radial load spurs off ~half the backbone nodes
-    const loadTypes = ["dc", "factory", "city", "ev", "dc", "factory", "dc", "city"]; let li = 0;
+    const loadTypes = ["dc", "factory", "dc", "ev", "dc", "factory", "dc", "city"]; let li = 0;
     back.forEach(n => {
       if (R() >= 0.55) return;
       const ang = Math.atan2(n.y - SEED_BUS.y, n.x - SEED_BUS.x) + (R() - 0.5) * 1.2, dist = 48 + R() * 36;
@@ -431,7 +431,7 @@ if (st) {
       if (n.role === "load") { loadSize(n); return; }
       // backbone junctions get a varied mix — mostly towers, the rare gas generator, plus a few
       // chip/city hubs; ordinary backbone nodes stay towers.
-      const hub = ["tower", "dc", "tower", "city", "gen", "dc", "tower", "city"];
+      const hub = ["tower", "dc", "tower", "dc", "gen", "dc", "tower", "city"];
       n.type = n.deg >= 3 ? hub[(Math.round(n.x) * 3 + Math.round(n.y)) % hub.length] : "tower";
       if (n.type === "gen") { n.r = 10 + (n.idx % 2) * 2; n.by = n.y - n.r * 1.7 - 5; }
       else if (n.type === "tower") { n.h = 46 + (n.idx % 3) * 8; n.hw = n.h * 0.2; n.by = n.y - n.h * 0.82; }
@@ -454,7 +454,7 @@ if (st) {
   function advanceFleet() {
     if (!fleetNodes.length) buildFleetGraph();
     if (fleetClicks >= FLEET_MAX_CLICKS || fleetIdx >= fleetOrder.length) return;
-    fleetClicks++; speedMul = Math.min(4, 1 + fleetClicks * 0.3);
+    fleetClicks++;
     const end = Math.min(fleetOrder.length, fleetIdx + FLEET_BATCH);
     for (let k = fleetIdx; k < end; k++) { const n = fleetNodes[fleetOrder[k]]; const tg = fleetGlyph(n), step = (k - fleetIdx) * 70; T(() => { tg.style.opacity = 1; }, step + 80); n.shown = true; }
     fleetIdx = end;
@@ -538,7 +538,7 @@ if (st) {
     schedDraw(member(dx - sMidHw, sMidY, dapex.x, dapex.y, 1.5), 18);
     schedDraw(member(dx + sMidHw, sMidY, dapex.x, dapex.y, 1.5), 22);
     schedPop(disc(world, dapex.x, dapex.y - 2, 2, STEEL_DK), 20);
-    const dattach = [], sArmHw = [sw.hw, sMidHw];
+    const dattach = [], sArmHw = [sw.hw - 2, sMidHw, 9];
     darms.forEach((arm, k) => { const ah = sArmHw[k] || sMidHw;
       schedDraw(member(dx - ah, arm.y, dx - arm.len, arm.y, 1.5), 18);
       schedDraw(member(dx + ah, arm.y, dx + arm.len, arm.y, 1.5), 18);
@@ -608,6 +608,7 @@ if (st) {
     tick++; const m = mouse;
     const boost = (1 + surge * 2.4) * speedMul;
     currentPaths.forEach(p => { p.off -= p.sp * boost; p.el.setAttribute("stroke-dashoffset", p.off); });
+    if (speedMul > 1.001) speedMul = 1 + (speedMul - 1) * 0.992; // clicks rev the current up; it coasts back down
     if (surge > 0.01) { conductors.forEach(c => { if (c.on) { c.el.setAttribute("stroke", surge > 0.5 ? CY : COND); c.el.setAttribute("stroke-width", 1.7 + surge * 1.6); } }); surge *= 0.945; }
     else if (scanDone) conductors.forEach(c => { if (c.on) c.el.setAttribute("stroke-width", 1.7); });
     particles.forEach(p => { p.x += p.vx; p.y += p.vy; if (m.on) { const dx3 = p.x - m.x, dy3 = p.y - m.y, d = Math.hypot(dx3, dy3); if (d < 90 && d > 0) { const force = (90 - d) / 90 * 1.4; p.x += dx3 / d * force; p.y += dy3 / d * force; } } if (p.y < 70) { p.y = 520; p.x = rnd(cx - 220, cx + 220); } if (p.x < cx - 260) p.x = cx + 260; if (p.x > cx + 260) p.x = cx - 260; p.el.setAttribute("cx", p.x); p.el.setAttribute("cy", p.y); });
@@ -639,7 +640,7 @@ if (st) {
     for (let k = 0; k < 2; k++) { const c = el("circle", { cx: mx, cy: my, fill: "none", stroke: CY, "stroke-width": 2 - k * 0.6, filter: GLOW }, fx); rings.push({ el: c, rad: 4 + k * 8, spd: 6 - k * 1.5, life: 1 }); }
   });
   // grid expansion: every click anywhere on the page grows the background fleet (and pulses current)
-  document.addEventListener("pointerdown", () => { if (energized) { advanceFleet(); surge = 1; } });
+  document.addEventListener("pointerdown", () => { if (energized) { advanceFleet(); surge = 1; speedMul = Math.min(5, speedMul + 0.6); } });
   if (world) world.style.transition = "transform .25s ease-out";
 
   // pause the perpetual loop while the hero is scrolled off-screen (saves battery)
