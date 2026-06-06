@@ -52,6 +52,8 @@
 </head>
 
 <body class="bg-background-light text-primary">
+  <div class="hero-clight" data-hero-clight aria-hidden="true"></div>
+  <div class="hero-core" data-hero-core aria-hidden="true"></div>
   <!-- Navbar -->
   <header id="header"
     class="header scroll-revealed fixed top-0 left-0 z-50 w-full ic-navbar">
@@ -83,11 +85,6 @@
             <a href="#solutions"
               class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
               role="menuitem">Who it's for</a>
-          </li>
-          <li class="group relative">
-            <a href="#community"
-              class="ic-page-scroll nav-link mx-8 flex py-2 text-base font-medium text-primary/80 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-              role="menuitem">Community</a>
           </li>
           <li class="group relative">
             <a href="#team"
@@ -127,18 +124,15 @@
       class="hero-tower relative overflow-hidden bg-background-light pt-[120px] pb-[80px] lg:pt-[140px] lg:pb-[90px] min-h-[600px] lg:min-h-[680px]">
       <!-- grid + transmission-tower digital-twin background -->
       <div class="grid-bg pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000" data-hero-grid aria-hidden="true"></div>
-      <div class="hero-clight" data-hero-clight aria-hidden="true"></div>
-      <div class="hero-core" data-hero-core aria-hidden="true"></div>
       <svg class="hero-graph pointer-events-none" data-hero-net viewBox="-80 -40 1200 646" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <filter id="hg-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           <filter id="hg-glowS" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <linearGradient id="hg-band" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset="1" stop-color="#22d3ee" stop-opacity=".22"/></linearGradient>
           <!-- soft left fade: tower/mesh under the copy go faint (not hidden), full strength on the right -->
           <linearGradient id="hg-fadegrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#fff" stop-opacity="0.1"/>
-            <stop offset="0.5" stop-color="#fff" stop-opacity="0.1"/>
-            <stop offset="0.64" stop-color="#fff" stop-opacity="1"/>
+            <stop offset="0" stop-color="#fff" stop-opacity="0.34"/>
+            <stop offset="0.45" stop-color="#fff" stop-opacity="0.44"/>
+            <stop offset="0.62" stop-color="#fff" stop-opacity="1"/>
             <stop offset="1" stop-color="#fff" stop-opacity="1"/>
           </linearGradient>
           <mask id="hg-fade" maskUnits="userSpaceOnUse" x="-80" y="-40" width="1200" height="646">
@@ -146,25 +140,22 @@
           </mask>
         </defs>
         <g data-hero-fleet mask="url(#hg-fade)"></g>
-        <g data-hero-twin style="opacity:0"></g>
         <g data-hero-world mask="url(#hg-fade)"></g>
-        <rect data-hero-scanband x="-300" y="0" width="60" height="560" fill="url(#hg-band)" opacity="0"></rect>
-        <line data-hero-scanline x1="-300" y1="0" x2="-300" y2="560" stroke="#22d3ee" stroke-width="2" opacity="0" filter="url(#hg-glowS)"></line>
         <g data-hero-fx></g>
         <g data-hero-hud></g>
         <g data-hero-bolts></g>
       </svg>
 
       <div class="container relative z-[2]">
-        <div class="hero-reveal max-w-[660px]" data-hero-reveal>
-          <div class="eyebrow reveal-mask mb-5"><span>from the creators of PowerAgent</span></div>
+        <div class="hero-reveal max-w-[600px] lg:ml-8 xl:ml-20 2xl:ml-28" data-hero-reveal>
+          <div class="eyebrow reveal-mask mb-5"><span class="whitespace-nowrap">from the creators of PowerAgent</span></div>
           <h1 class="font-display text-4xl font-bold leading-[1.06] tracking-tight text-primary sm:text-5xl lg:text-[3.4rem]">
             <span class="reveal-mask"><span>Building</span></span>
             <span class="reveal-mask"><span class="text-gradient">general intelligence</span></span>
             <span class="reveal-mask"><span>for the power industry</span></span>
           </h1>
           <div class="reveal-mask mt-6 max-w-[520px] text-lg text-secondary">
-            <span>The canonical data and reasoning layer that sits above legacy solvers — and improves with every project.</span>
+            <span>The data and reasoning layer that sits above legacy solvers and improves with every project</span>
           </div>
           <div class="reveal-fade mt-9 flex flex-wrap gap-4">
             <a href="#contact"
@@ -191,11 +182,10 @@
         <div class="scroll-revealed mx-auto mb-12 max-w-[860px] text-center">
           <p class="eyebrow mb-4">the platform</p>
           <h2 class="font-display text-3xl font-bold text-primary md:text-4xl">
-            One intelligence layer <span class="text-gradient">above your solvers</span>
+            One intelligence layer <span class="text-gradient">above your systems</span>
           </h2>
           <p class="mx-auto mt-4 max-w-2xl text-lg text-secondary">
-            Semagram doesn't replace PSS&#47;E, PSCAD, or your in-house tools. It sits above them — orchestrating the
-            right workflows for each project, modeling from scratch where needed, and getting smarter with every study.
+            Semagram doesn't replace PSS&#47;E, PSCAD or your in-house tools. Instead, our platform orchestrates the right workflows and tools for each project, modeling from scratch when needed, and getting smarter with every study.
           </p>
         </div>
 
@@ -578,6 +568,14 @@
                         </svg>
                         <span>Improve reliability and grid stability</span>
                       </li>
+                      <li class="flex items-start gap-3 text-primary">
+                        <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                        <span>Perform transmission planning and grid expansion studies</span>
+                      </li>
                     </ul>
                   </div>
 
@@ -622,23 +620,23 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Clients section -->
-    <section id="clients" class="section-area bg-background-medium">
+    <!-- Clients + Supporters unified section -->
+    <section id="clients" class="section-area bg-white">
       <div class="container">
-        <div class="scroll-revealed mx-auto mb-10 max-w-[1000px] text-center">
-          <h2 class="mb-4 font-display text-3xl font-bold text-primary">
+        <div class="scroll-revealed mx-auto mb-6 max-w-[1000px] text-center">
+          <h2 class="mb-2 font-display text-3xl font-bold text-primary">
             Trusted by Engineers at
           </h2>
           <p class="text-secondary max-w-2xl mx-auto">
-            Our solutions are built on combined experience from
-            utilities and grid operators.
+            Our solutions are built on combined experience from utilities and grid operators.
           </p>
         </div>
-        <div class="mx-auto max-w-6xl bg-white p-12 rounded-2xl shadow-sm border border-border-color">
-          <div class="scroll-revealed grid grid-cols-1 place-items-center gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mx-auto max-w-6xl p-8 mb-8">
+          <div class="scroll-revealed grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <img src="./assets/img/brand/ercot.png" alt="ERCOT Logo"
               style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
               class="object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0" />
@@ -653,50 +651,17 @@
               class="object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0" />
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Community Section -->
-    <section id="community" class="section-area relative bg-background-light">
-      <div class="container">
-        <div class="scroll-revealed mx-auto mb-12 max-w-[900px] text-center">
-          <h6 class="eyebrow mb-6 block text-base">
-            Our Ecosystem
-          </h6>
-          <div class="mb-4">
-            <img src="./assets/img/poweragent_logo_dark.png" alt="PowerAgent Logo" class="inline-block h-32 mb-0" />
-          </div>
-          <p class="text-secondary">
-            PowerAgent is the first open-source Agentic AI community for the power industry — and the foundation
-            Semagram is built on.
-          </p>
-
-        </div>
-        <div class="scroll-revealed mx-auto max-w-[500px] text-center mt-6">
-          <a href="https://power-agent.github.io/" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-7 py-3 text-center text-base font-medium text-white shadow-lg hover:bg-opacity-90"
-            role="button">
-            <i class="lni lni-github-original"></i>
-            <span>View on GitHub</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Supported by section -->
-    <section id="support" class="section-area bg-background-light">
-      <div class="container">
-        <div class="scroll-revealed mx-auto mb-10 max-w-[820px] text-center">
-          <h2 class="mb-4 font-display text-3xl font-bold text-primary">
+        <div class="scroll-revealed mx-auto mb-6 max-w-[820px] text-center">
+          <h2 class="mb-2 font-display text-3xl font-bold text-primary">
             Supported by
           </h2>
           <p class="text-secondary">
             Backed by leading research, innovation, and venture communities.
           </p>
         </div>
-
-        <div class="mx-auto max-w-6xl bg-white p-12 rounded-2xl shadow-sm border border-border-color">
-          <div class="grid grid-cols-1 place-items-center gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mx-auto max-w-6xl p-8">
+          <div class="grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <a href="https://pai.seas.harvard.edu/" target="_blank" rel="noopener noreferrer" class="scroll-revealed flex items-center justify-center">
               <img src="./assets/img/support/pailogo_black.png" alt="Power and AI Initiative Logo"
                 style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
@@ -704,7 +669,7 @@
             </a>
             <a href="https://www.grid.harvard.edu/" target="_blank" rel="noopener noreferrer" class="scroll-revealed flex items-center justify-center">
               <img src="./assets/img/support/harvard_grid_logo_globe_sm.jpg.webp" alt="Harvard Grid Logo"
-                style="max-height: 80px; max-width: 250px; height: auto; width: auto;"
+                style="max-height: 115px; max-width: 250px; height: auto; width: auto;"
                 class="object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0" />
             </a>
             <a href="https://innovationlabs.harvard.edu/" target="_blank" rel="noopener noreferrer" class="scroll-revealed flex items-center justify-center">
@@ -760,6 +725,30 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- PowerAgent — the open-source foundation -->
+        <div class="scroll-revealed mx-auto mt-20 max-w-4xl">
+          <div class="pa-panel">
+            <span class="pa-spark" aria-hidden="true"></span>
+            <div class="relative z-10 flex flex-col items-center gap-7 px-8 py-9 text-center sm:flex-row sm:gap-9 sm:px-12 sm:text-left">
+              <div class="pa-node flex-shrink-0">
+                <img src="./assets/img/poweragent_logo_dark.png" alt="PowerAgent" class="h-16 w-auto" />
+              </div>
+              <div class="flex-1">
+                <p class="eyebrow mb-2">Our Ecosystem</p>
+                <p class="text-base text-secondary">
+                  <span class="font-semibold text-primary">PowerAgent</span> is the first open-source Agentic AI
+                  community for the power industry — the foundation Semagram is built on.
+                </p>
+              </div>
+              <a href="https://power-agent.github.io/" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/90">
+                <i class="lni lni-github-original text-base"></i>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -875,7 +864,7 @@
               <h4 class="mb-6 text-lg font-semibold text-primary">Links</h4>
               <ul>
                 <li class="w-full mb-3"><a href="#solutions" class="footer-link">Who it's for</a></li>
-                <li class="w-full mb-3"><a href="#support" class="footer-link">Supported by</a></li>
+                <li class="w-full mb-3"><a href="#clients" class="footer-link">Supported by</a></li>
                 <li class="w-full mb-3"><a href="https://power-agent.github.io/" target="_blank"
                     rel="noopener noreferrer" class="footer-link">PowerAgent</a></li>
                 <li class="w-full"><a href="https://ieeexplore.ieee.org/abstract/document/11131348" target="_blank"
@@ -916,7 +905,6 @@
                 Initiative (PAI) at Harvard SEAS</a>.
             </p>
             <p class="text-sm text-secondary/80">&#169; 2026 Semagram Energy. All rights reserved.</p>
-            <p class="text-sm text-secondary/80 mb-2">125 Western Ave, Allston, MA 02134</p>
           </div>
         </div>
       </div>

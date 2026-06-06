@@ -1068,6 +1068,94 @@ p+p{
   background-size: 28px 28px;
 }
 
+/* PowerAgent foundation panel — blueprint / HUD aesthetic */
+
+.pa-panel{
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  box-shadow: 0 14px 36px -22px rgba(15, 23, 42, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pa-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 52px -24px rgba(34, 211, 238, 0.4);
+}
+
+/* HUD corner brackets (top-left + bottom-right) */
+
+.pa-panel::before,
+  .pa-panel::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #22d3ee;
+  border-style: solid;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.pa-panel::before {
+  top: 12px;
+  left: 12px;
+  border-width: 2px 0 0 2px;
+}
+
+.pa-panel::after {
+  right: 12px;
+  bottom: 12px;
+  border-width: 0 2px 2px 0;
+}
+
+/* energized top edge — a cyan current streak flowing left -> right */
+
+.pa-spark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #22d3ee 35%, #bdf5ff 50%, #22d3ee 65%, transparent);
+  background-size: 45% 100%;
+  background-repeat: no-repeat;
+  animation: pa-flow 3.4s linear infinite;
+  z-index: 6;
+}
+
+@keyframes pa-flow {
+  0% {
+    background-position: -50% 0;
+  }
+
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+/* logo node — subtle cyan glow halo */
+
+.pa-node {
+  display: grid;
+  place-items: center;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: radial-gradient(circle at 50% 45%, rgba(34, 211, 238, 0.12), transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pa-spark {
+    animation: none;
+    opacity: 0.55;
+  }
+}
+
 .eyebrow{
   font-family: JetBrains Mono, ui-monospace, monospace;
   font-size: 0.75rem;
@@ -1134,7 +1222,7 @@ p+p{
 
 .hero-clight{
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   border-radius: 9999px;
   opacity: 0;
   width: 240px;
@@ -1143,12 +1231,12 @@ p+p{
   background: radial-gradient(circle, rgba(34, 211, 238, 0.5) 0%, rgba(37, 99, 235, 0.2) 26%, rgba(37, 99, 235, 0) 64%);
   mix-blend-mode: screen;
   transition: opacity 0.25s ease;
-  z-index: 1;
+  z-index: 30;
 }
 
 .hero-core{
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   border-radius: 9999px;
   opacity: 0;
   width: 14px;
@@ -1157,7 +1245,7 @@ p+p{
   background: radial-gradient(circle, #ffffff 0%, #7df0ff 45%, rgba(34, 211, 238, 0) 75%);
   box-shadow: 0 0 18px #22d3ee;
   transition: opacity 0.2s ease;
-  z-index: 1;
+  z-index: 30;
 }
 
 .hero-status{
@@ -1314,10 +1402,6 @@ p+p{
   margin-bottom: 0.375rem;
 }
 
-.mb-0{
-  margin-bottom: 0px;
-}
-
 .mb-1{
   margin-bottom: 0.25rem;
 }
@@ -1372,6 +1456,10 @@ p+p{
 
 .mt-10{
   margin-top: 2.5rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
 }
 
 .mt-3{
@@ -1434,12 +1522,12 @@ p+p{
   height: 3.5rem;
 }
 
-.h-3{
-  height: 0.75rem;
+.h-16{
+  height: 4rem;
 }
 
-.h-32{
-  height: 8rem;
+.h-3{
+  height: 0.75rem;
 }
 
 .h-48{
@@ -1506,6 +1594,10 @@ p+p{
   width: 150px;
 }
 
+.w-auto{
+  width: auto;
+}
+
 .w-full{
   width: 100%;
 }
@@ -1530,16 +1622,12 @@ p+p{
   max-width: 360px;
 }
 
-.max-w-\[500px\]{
-  max-width: 500px;
-}
-
 .max-w-\[520px\]{
   max-width: 520px;
 }
 
-.max-w-\[660px\]{
-  max-width: 660px;
+.max-w-\[600px\]{
+  max-width: 600px;
 }
 
 .max-w-\[800px\]{
@@ -1552,10 +1640,6 @@ p+p{
 
 .max-w-\[860px\]{
   max-width: 860px;
-}
-
-.max-w-\[900px\]{
-  max-width: 900px;
 }
 
 .max-w-xl{
@@ -1639,6 +1723,10 @@ p+p{
   gap: 1.5rem;
 }
 
+.gap-7{
+  gap: 1.75rem;
+}
+
 .gap-8{
   gap: 2rem;
 }
@@ -1659,6 +1747,10 @@ p+p{
 
 .scroll-smooth{
   scroll-behavior: smooth;
+}
+
+.whitespace-nowrap{
+  white-space: nowrap;
 }
 
 .rounded-2xl{
@@ -1794,10 +1886,6 @@ p+p{
      object-fit: cover;
 }
 
-.p-12{
-  padding: 3rem;
-}
-
 .p-6{
   padding: 1.5rem;
 }
@@ -1864,6 +1952,11 @@ p+p{
 .py-8{
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-9{
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .pb-10{
@@ -2062,12 +2155,6 @@ p+p{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-sm{
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-accent\/30{
   --tw-shadow-color: rgb(37 99 235 / 0.3);
   --tw-shadow: var(--tw-shadow-colored);
@@ -2257,6 +2344,23 @@ p+p{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:flex-row{
+    flex-direction: row;
+  }
+
+  .sm\:gap-9{
+    gap: 2.25rem;
+  }
+
+  .sm\:px-12{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .sm\:text-left{
+    text-align: left;
+  }
+
   .sm\:text-4xl{
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -2324,6 +2428,10 @@ p+p{
 
   .lg\:mb-0{
     margin-bottom: 0px;
+  }
+
+  .lg\:ml-8{
+    margin-left: 2rem;
   }
 
   .lg\:mr-0{
@@ -2451,5 +2559,15 @@ p+p{
 @media (min-width: 1280px){
   .xl\:right-auto{
     right: auto;
+  }
+
+  .xl\:ml-20{
+    margin-left: 5rem;
+  }
+}
+
+@media (min-width: 1536px){
+  .\32xl\:ml-28{
+    margin-left: 7rem;
   }
 }

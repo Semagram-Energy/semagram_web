@@ -421,6 +421,75 @@
     background-size: 28px 28px;
   }
 
+  /* PowerAgent foundation panel — blueprint / HUD aesthetic */
+  .pa-panel {
+    @apply relative overflow-hidden rounded-xl border border-border-color bg-white;
+    box-shadow: 0 14px 36px -22px rgba(15, 23, 42, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pa-panel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 26px 52px -24px rgba(34, 211, 238, 0.4);
+  }
+  /* HUD corner brackets (top-left + bottom-right) */
+  .pa-panel::before,
+  .pa-panel::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: #22d3ee;
+    border-style: solid;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .pa-panel::before {
+    top: 12px;
+    left: 12px;
+    border-width: 2px 0 0 2px;
+  }
+  .pa-panel::after {
+    right: 12px;
+    bottom: 12px;
+    border-width: 0 2px 2px 0;
+  }
+  /* energized top edge — a cyan current streak flowing left -> right */
+  .pa-spark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #22d3ee 35%, #bdf5ff 50%, #22d3ee 65%, transparent);
+    background-size: 45% 100%;
+    background-repeat: no-repeat;
+    animation: pa-flow 3.4s linear infinite;
+    z-index: 6;
+  }
+  @keyframes pa-flow {
+    0% {
+      background-position: -50% 0;
+    }
+    100% {
+      background-position: 150% 0;
+    }
+  }
+  /* logo node — subtle cyan glow halo */
+  .pa-node {
+    display: grid;
+    place-items: center;
+    padding: 14px 20px;
+    border-radius: 14px;
+    background: radial-gradient(circle at 50% 45%, rgba(34, 211, 238, 0.12), transparent 70%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pa-spark {
+      animation: none;
+      opacity: 0.55;
+    }
+  }
+
   .eyebrow {
     @apply font-mono text-xs font-medium tracking-wider text-accent uppercase;
   }
@@ -460,24 +529,24 @@
     cursor: none;
   }
   .hero-clight {
-    @apply pointer-events-none absolute rounded-full opacity-0;
+    @apply pointer-events-none fixed rounded-full opacity-0;
     width: 240px;
     height: 240px;
     transform: translate(-50%, -50%);
     background: radial-gradient(circle, rgba(34, 211, 238, 0.5) 0%, rgba(37, 99, 235, 0.2) 26%, rgba(37, 99, 235, 0) 64%);
     mix-blend-mode: screen;
     transition: opacity 0.25s ease;
-    z-index: 1;
+    z-index: 30;
   }
   .hero-core {
-    @apply pointer-events-none absolute rounded-full opacity-0;
+    @apply pointer-events-none fixed rounded-full opacity-0;
     width: 14px;
     height: 14px;
     transform: translate(-50%, -50%);
     background: radial-gradient(circle, #ffffff 0%, #7df0ff 45%, rgba(34, 211, 238, 0) 75%);
     box-shadow: 0 0 18px #22d3ee;
     transition: opacity 0.2s ease;
-    z-index: 1;
+    z-index: 30;
   }
   .hero-status {
     @apply font-mono text-xs text-accent opacity-0;
