@@ -1,29 +1,15 @@
-<svg viewBox="20 20 60 60" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Gradient for the top shape -->
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="50%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
-    </linearGradient>
-    <!-- Gradient for the bottom shape -->
-    <linearGradient id="grad2" x1="100%" y1="50%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-
-  <!-- A more dynamic, stylized 'S' mark suggesting flow and intelligence -->
-
-  <!-- Top, dynamic shape -->
-  <path d="M 80 20
-           C 60 20, 55 35, 50 50
-           L 20 20 Z"
-        fill="url(#grad1)" />
-
-  <!-- Bottom, dynamic shape -->
-  <path d="M 20 80
-           C 40 80, 45 65, 50 50
-           L 80 80 Z"
-        fill="url(#grad2)" />
-        
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="44.348 42.174 35.217 40.435">
+  <g fill="none" stroke="#000000" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M47.826 62.772L75.217 62.772"/>
+    <path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M59.023 71.616L78.496 71.55" stroke-width="3"/>
+    <path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M63.2 63.553L82.718 63.958" stroke-width="3"/>
+    <path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M42.337 65.749L61.809 65.683" stroke-width="3"/>
+    <path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M46.696 57.932L66.17 57.867" stroke-width="3"/>
+    <path transform="translate(7.85 -7.94) rotate(8.4)" d="M59.181 54.402C56.193 63.561 63.385 65.181 67.368 55.007" stroke-width="3"/>
+    <path transform="translate(91.87 150.19) rotate(-147.1)" d="M73.571 50.047C74.022 54.386 76.008 54.655 79.098 52.761" stroke-width="3"/>
+    <path transform="translate(5.48 -15.94) rotate(19)" d="M80.995 49.594C80.432 55.306 83.04 54.868 87.903 52.964" stroke-width="3"/>
+    <path transform="translate(108.81 131.74) rotate(-169.3)" d="M55.602 48.638C51.172 62.779 59.154 62.496 63.441 49.766" stroke-width="3"/>
+    <path transform="translate(108.81 131.74) rotate(-169.3)" d="M52.931 58.203L53.48 59.772" stroke-width="3"/>
+    <path transform="translate(108.81 131.74) rotate(-169.3)" d="M65.182 59.018L65.731 60.587" stroke-width="3"/>
+  </g>
 </svg>

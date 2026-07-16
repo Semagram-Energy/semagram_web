@@ -1084,7 +1084,7 @@ p+p{
 
 .pa-panel:hover {
   transform: translateY(-3px);
-  box-shadow: 0 26px 52px -24px rgba(34, 211, 238, 0.4);
+  box-shadow: 0 26px 52px -24px rgba(38, 99, 235, 0.4);
 }
 
 /* HUD corner brackets (top-left + bottom-right) */
@@ -1095,7 +1095,7 @@ p+p{
   position: absolute;
   width: 18px;
   height: 18px;
-  border-color: #22d3ee;
+  border-color: #2663EB;
   border-style: solid;
   opacity: 0.7;
   pointer-events: none;
@@ -1114,7 +1114,7 @@ p+p{
   border-width: 0 2px 2px 0;
 }
 
-/* energized top edge — a cyan current streak flowing left -> right */
+/* energized top edge — a blue current streak flowing left -> right */
 
 .pa-spark {
   position: absolute;
@@ -1122,7 +1122,7 @@ p+p{
   left: 0;
   height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, transparent, #22d3ee 35%, #bdf5ff 50%, #22d3ee 65%, transparent);
+  background: linear-gradient(90deg, transparent, #2663EB 35%, #7CA1F4 50%, #2663EB 65%, transparent);
   background-size: 45% 100%;
   background-repeat: no-repeat;
   animation: pa-flow 3.4s linear infinite;
@@ -1139,14 +1139,14 @@ p+p{
   }
 }
 
-/* logo node — subtle cyan glow halo */
+/* logo node — subtle blue glow halo */
 
 .pa-node {
   display: grid;
   place-items: center;
   padding: 14px 20px;
   border-radius: 14px;
-  background: radial-gradient(circle at 50% 45%, rgba(34, 211, 238, 0.12), transparent 70%);
+  background: radial-gradient(circle at 50% 45%, rgba(38, 99, 235, 0.12), transparent 70%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1211,10 +1211,14 @@ p+p{
   width: 100%;
 }
 
-/* hide native cursor over the hero so the custom light reads (links re-enable pointer) */
+/* hide native cursor over the hero so the custom light reads (links re-enable pointer) — */
 
-.hero-tower {
-  cursor: none;
+/* only on devices with a real mouse; touch has no cursor to hide */
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-tower {
+    cursor: none;
+  }
 }
 
 .hero-clight{
@@ -1692,10 +1696,6 @@ p+p{
   justify-content: space-between;
 }
 
-.gap-1\.5{
-  gap: 0.375rem;
-}
-
 .gap-12{
   gap: 3rem;
 }
@@ -1896,11 +1896,6 @@ p+p{
   padding-right: 1rem;
 }
 
-.px-5{
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
 .px-6{
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1929,11 +1924,6 @@ p+p{
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-2\.5{
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
 }
 
 .py-3{
@@ -2205,12 +2195,6 @@ p+p{
   transition-duration: 150ms;
 }
 
-.transition-transform{
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .duration-1000{
   transition-duration: 1000ms;
 }
@@ -2299,17 +2283,6 @@ p+p{
   opacity: 1;
 }
 
-.hover\:shadow-xl:hover{
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.hover\:shadow-accent\/40:hover{
-  --tw-shadow-color: rgb(38 99 235 / 0.4);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
 .hover\:grayscale-0:hover{
   --tw-grayscale: grayscale(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2325,16 +2298,7 @@ p+p{
   outline-offset: 2px;
 }
 
-.group:hover .group-hover\:translate-x-1{
-  --tw-translate-x: 0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 @media (min-width: 640px){
-  .sm\:inline-flex{
-    display: inline-flex;
-  }
-
   .sm\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
