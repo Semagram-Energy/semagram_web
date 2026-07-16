@@ -522,9 +522,12 @@
   .hero-graph {
     @apply absolute inset-0 h-full w-full;
   }
-  /* hide native cursor over the hero so the custom light reads (links re-enable pointer) */
-  .hero-tower {
-    cursor: none;
+  /* hide native cursor over the hero so the custom light reads (links re-enable pointer) — */
+  /* only on devices with a real mouse; touch has no cursor to hide */
+  @media (hover: hover) and (pointer: fine) {
+    .hero-tower {
+      cursor: none;
+    }
   }
   .hero-clight {
     @apply pointer-events-none fixed rounded-full opacity-0;

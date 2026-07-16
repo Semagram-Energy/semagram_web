@@ -1211,10 +1211,14 @@ p+p{
   width: 100%;
 }
 
-/* hide native cursor over the hero so the custom light reads (links re-enable pointer) */
+/* hide native cursor over the hero so the custom light reads (links re-enable pointer) — */
 
-.hero-tower {
-  cursor: none;
+/* only on devices with a real mouse; touch has no cursor to hide */
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-tower {
+    cursor: none;
+  }
 }
 
 .hero-clight{

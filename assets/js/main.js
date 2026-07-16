@@ -629,10 +629,12 @@ if (st) {
   });
   section.addEventListener("pointerleave", () => { mouse.on = false; mouse.x = mouse.y = -9999; if (world) world.style.transform = ""; });
   document.addEventListener("pointermove", e => {
+    if (e.pointerType !== "mouse") return; // touch/pen drags fire pointermove too, but never a matching pointerleave
     if (clight) { clight.style.opacity = "1"; clight.style.left = e.clientX + "px"; clight.style.top = e.clientY + "px"; }
     if (core) { core.style.opacity = "1"; core.style.left = e.clientX + "px"; core.style.top = e.clientY + "px"; }
   });
   document.addEventListener("pointerleave", () => { if (clight) clight.style.opacity = "0"; if (core) core.style.opacity = "0"; });
+  document.addEventListener("pointerup", e => { if (e.pointerType !== "mouse") { if (clight) clight.style.opacity = "0"; if (core) core.style.opacity = "0"; } });
   section.addEventListener("pointerdown", e => {
     if (!energized) return; if (e.target.closest("a,button")) return;
     const v = toVB(e.clientX, e.clientY); if (!v) return; const mx = v.x, my = v.y;
