@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -246,7 +246,7 @@
     background-color: rgba(255, 255, 255, 0.85);
     -webkit-backdrop-filter: saturate(180%) blur(18px);
     backdrop-filter: saturate(180%) blur(18px);
-    box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.22);
+    box-shadow: 0 10px 30px -14px rgba(27, 27, 18, 0.22);
   }
 
   @screen lg {
@@ -373,7 +373,7 @@
 
   .interactive-glow {
     @apply absolute inset-0 pointer-events-none z-0 transition-opacity duration-700 opacity-0;
-    background: radial-gradient(600px circle at var(--x) var(--y), rgba(37, 99, 235, 0.08), transparent 40%);
+    background: radial-gradient(600px circle at var(--x) var(--y), rgba(38, 99, 235, 0.08), transparent 40%);
   }
 
   .group:hover .interactive-glow {
@@ -416,15 +416,15 @@
   /* ---- Rebrand: grid background, labels, hero graph, pillars, stack ---- */
   .grid-bg {
     background-image:
-      linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(27, 27, 18, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(27, 27, 18, 0.05) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 
   /* PowerAgent foundation panel — blueprint / HUD aesthetic */
   .pa-panel {
     @apply relative overflow-hidden rounded-xl border border-border-color bg-white;
-    box-shadow: 0 14px 36px -22px rgba(15, 23, 42, 0.25);
+    box-shadow: 0 14px 36px -22px rgba(27, 27, 18, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .pa-panel:hover {
@@ -495,9 +495,7 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent;
-    /* #2563eb = accent token, #22d3ee = electric token — keep in sync with tailwind.config.js */
-    background-image: linear-gradient(90deg, #2563eb, #22d3ee);
+    @apply text-accent;
   }
 
   /* Hero entrance: copy starts masked, slides up when .is-revealed is set */
@@ -533,7 +531,7 @@
     width: 240px;
     height: 240px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(34, 211, 238, 0.5) 0%, rgba(37, 99, 235, 0.2) 26%, rgba(37, 99, 235, 0) 64%);
+    background: radial-gradient(circle, rgba(124, 161, 244, 0.5) 0%, rgba(38, 99, 235, 0.2) 26%, rgba(38, 99, 235, 0) 64%);
     mix-blend-mode: screen;
     transition: opacity 0.25s ease;
     z-index: 30;
@@ -543,8 +541,8 @@
     width: 14px;
     height: 14px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, #ffffff 0%, #7df0ff 45%, rgba(34, 211, 238, 0) 75%);
-    box-shadow: 0 0 18px #22d3ee;
+    background: radial-gradient(circle, #ffffff 0%, #BFD2FA 45%, rgba(38, 99, 235, 0) 75%);
+    box-shadow: 0 0 18px #2663EB;
     transition: opacity 0.2s ease;
     z-index: 30;
   }

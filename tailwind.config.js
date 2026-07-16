@@ -9,18 +9,22 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        display: ["Space Grotesk", "Inter", "sans-serif"],
+        display: ["Inter", "sans-serif"],
         mono: ["JetBrains Mono", "ui-monospace", "monospace"],
       },
       colors: {
-        "background-dark": "#f1f5f9",
-        "background-light": "#ffffff",
-        "background-medium": "#f8fafc",
-        primary: "#0f172a",
-        secondary: "#475569",
-        accent: "#2563eb",
+        "background-dark": "#FFFFFF",
+        "background-light": "#FFFFFF",
+        "background-medium": "#FFFFFF",
+        primary: "#1B1B12",
+        secondary: "#4A4A3D",
+        muted: "#84846C",
+        accent: "#2663EB",
+        "accent-deep": "#1B4FD0",
+        emerald: "#0FA06B",
+        "emerald-deep": "#0B7A50",
         electric: "#22d3ee",
-        "border-color": "rgba(0, 0, 0, 0.1)",
+        "border-color": "rgba(27, 27, 18, 0.12)",
       },
       boxShadow: {
         "card-1": "0px 0px 40px 0px rgba(0, 0, 0, 0.08)",
@@ -40,8 +44,8 @@ module.exports = {
           "50%": { transform: "translateY(-10px)" },
         },
         "glow": {
-          "0%, 100%": { boxShadow: '0 0 15px rgba(37, 99, 235, 0.4)' },
-          "50%": { boxShadow: '0 0 30px rgba(37, 99, 235, 0.8)' },
+          "0%, 100%": { boxShadow: '0 0 15px rgba(38, 99, 235, 0.4)' },
+          "50%": { boxShadow: '0 0 30px rgba(38, 99, 235, 0.8)' },
         },
       },
       animation: {
