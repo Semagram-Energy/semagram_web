@@ -60,10 +60,9 @@
     <div class="container">
       <nav class="flex items-center justify-between py-3">
         <!-- Logo -->
-        <a href="index.html" class="w-[150px]">
-          <figure class="w-full">
-            <img src="./assets/img/semagram_text.png" alt="Logo" class="w-full" />
-          </figure>
+        <a href="index.html" class="inline-flex items-center gap-[0.15em] text-2xl text-accent" aria-label="Semagram">
+          <svg viewBox="44.348 42.174 35.217 40.435" style="height:1em" class="w-auto shrink-0" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M47.826 62.772L75.217 62.772"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M59.023 71.616L78.496 71.55" stroke-width="3"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M63.2 63.553L82.718 63.958" stroke-width="3"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M42.337 65.749L61.809 65.683" stroke-width="3"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M46.696 57.932L66.17 57.867" stroke-width="3"/><path transform="translate(7.85 -7.94) rotate(8.4)" d="M59.181 54.402C56.193 63.561 63.385 65.181 67.368 55.007" stroke-width="3"/><path transform="translate(91.87 150.19) rotate(-147.1)" d="M73.571 50.047C74.022 54.386 76.008 54.655 79.098 52.761" stroke-width="3"/><path transform="translate(5.48 -15.94) rotate(19)" d="M80.995 49.594C80.432 55.306 83.04 54.868 87.903 52.964" stroke-width="3"/><path transform="translate(108.81 131.74) rotate(-169.3)" d="M55.602 48.638C51.172 62.779 59.154 62.496 63.441 49.766" stroke-width="3"/><path transform="translate(108.81 131.74) rotate(-169.3)" d="M52.931 58.203L53.48 59.772" stroke-width="3"/><path transform="translate(108.81 131.74) rotate(-169.3)" d="M65.182 59.018L65.731 60.587" stroke-width="3"/></g></svg>
+          <span class="font-normal lowercase tracking-[-0.02em]">semagram</span>
         </a>
 
         <!-- Menu -->
@@ -100,11 +99,6 @@
 
         <!-- Action buttons -->
         <div class="flex items-center gap-2">
-          <a href="#contact"
-            class="ic-page-scroll group hidden items-center justify-center gap-1.5 rounded-full bg-accent px-5 py-2.5 text-center text-sm font-semibold text-white shadow-lg shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-xl hover:shadow-accent/40 sm:inline-flex"
-            role="button">Contact Us
-            <i class="lni lni-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i></a>
-
           <div class="lg:hidden">
             <button class="navbar-toggler h-10 w-10" aria-label="Toggle navigation" aria-expanded="false"
               data-web-toggle="navbar-collapse" data-web-target="nav-menu">
@@ -176,7 +170,7 @@
     </section>
 
     <!-- Platform / How it works -->
-    <section id="platform" class="section-area relative overflow-hidden bg-background-medium">
+    <section id="platform" class="section-area relative overflow-hidden bg-background-light">
       <div class="grid-bg pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="container relative z-10">
         <div class="scroll-revealed mx-auto mb-12 max-w-[860px] text-center">
@@ -190,20 +184,20 @@
         </div>
 
         <div class="scroll-revealed mx-auto flex max-w-2xl flex-col gap-3">
-          <div class="stack-row bg-gradient-to-r from-accent to-blue-600 text-white shadow-lg">
+          <div class="stack-row bg-gradient-to-r from-accent to-accent-deep text-white shadow-lg">
             <span class="font-display text-base font-bold">Self-improving agent</span>
             <span class="ml-auto font-mono text-xs text-white/70">orchestration</span>
           </div>
-          <div class="stack-row border border-border-color bg-blue-100/60 text-primary">
+          <div class="stack-row border border-border-color bg-[#BFD2FA]/60 text-primary">
             <span class="font-semibold">Structured memory layer</span>
             <span class="ml-auto font-mono text-xs text-secondary">cross-project memory</span>
           </div>
-          <div class="stack-row border border-border-color bg-blue-50 text-primary">
+          <div class="stack-row border border-border-color bg-[#EAF0FE] text-primary">
             <span class="font-semibold">Canonical data model</span>
             <span class="ml-auto font-mono text-xs text-secondary">the unified data format for AI Agent</span>
           </div>
           <div class="stack-row justify-center border border-dashed border-secondary/40 text-secondary">
-            <span class="font-mono text-sm">Legacy Solvers &middot; In-house Knowledge Base &middot; In-house Tools</span>
+            <span class="text-sm">Legacy Solvers &middot; In-house Knowledge Base &middot; In-house Tools</span>
           </div>
         </div>
       </div>
@@ -261,7 +255,7 @@
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="section-area relative bg-background-medium">
+    <section id="solutions" class="section-area relative bg-background-light">
       <div class="container relative z-10">
         <!-- Section Header -->
         <div class="scroll-revealed mx-auto mb-12 max-w-[1000px] text-center">
@@ -280,7 +274,7 @@
           <!-- Tab Navigation -->
           <div class="tabs-nav scroll-revealed flex flex-wrap justify-center gap-2 mb-12">
             <button
-              class="tabs-link flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 active bg-gradient-to-r from-accent to-blue-600 text-white shadow-lg"
+              class="tabs-link flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 active bg-gradient-to-r from-accent to-accent-deep text-white shadow-lg"
               data-web-target="tab-developers" role="tab" aria-selected="true" aria-controls="tab-developers">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -290,7 +284,7 @@
               Developers
             </button>
             <button
-              class="tabs-link flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-background-dark text-primary hover:bg-background-dark/80"
+              class="tabs-link flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 border border-border-color bg-background-dark text-primary hover:bg-background-dark/80"
               data-web-target="tab-consulting" role="tab" aria-selected="false" aria-controls="tab-consulting">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -300,7 +294,7 @@
               Consulting
             </button>
             <button
-              class="tabs-link flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 bg-background-dark text-primary hover:bg-background-dark/80"
+              class="tabs-link flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 border border-border-color bg-background-dark text-primary hover:bg-background-dark/80"
               data-web-target="tab-utilities" role="tab" aria-selected="false" aria-controls="tab-utilities">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
@@ -369,25 +363,25 @@
                       xmlns="http://www.w3.org/2000/svg">
                       <defs>
                         <linearGradient id="stream-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stop-color="#3C82F6" stop-opacity="0" />
-                          <stop offset="50%" stop-color="#2563eb" stop-opacity="1" />
-                          <stop offset="100%" stop-color="#3C82F6" stop-opacity="0" />
+                          <stop offset="0%" stop-color="#2663EB" stop-opacity="0" />
+                          <stop offset="50%" stop-color="#2663EB" stop-opacity="1" />
+                          <stop offset="100%" stop-color="#2663EB" stop-opacity="0" />
                         </linearGradient>
                         <filter id="glow-dev" x="-20%" y="-20%" width="140%" height="140%">
                           <feGaussianBlur stdDeviation="4" result="blur" />
                           <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
                       </defs>
-                      <circle cx="250" cy="150" r="80" stroke="rgba(37,99,235,0.1)" stroke-width="1" />
+                      <circle cx="250" cy="150" r="80" stroke="rgba(38,99,235,0.1)" stroke-width="1" />
                       <path d="M50 150 C150 150, 150 50, 250 150 C350 250, 350 150, 450 150" stroke="url(#stream-grad)"
                         stroke-width="2" fill="none" opacity="0.5" />
-                      <circle r="4" fill="#2563eb" filter="url(#glow-dev)">
+                      <circle r="4" fill="#2663EB" filter="url(#glow-dev)">
                         <animateMotion dur="2.5s" repeatCount="indefinite"
                           path="M50 150 C150 150, 150 50, 250 150 C350 250, 350 150, 450 150" />
                       </circle>
-                      <circle cx="250" cy="150" r="20" fill="#f1f5f9" stroke="#2563eb" stroke-width="2"
+                      <circle cx="250" cy="150" r="20" fill="#F3F3EC" stroke="#2663EB" stroke-width="2"
                         class="animate-pulse-slow" />
-                      <circle cx="250" cy="150" r="6" fill="#2563eb" filter="url(#glow-dev)" />
+                      <circle cx="250" cy="150" r="6" fill="#2663EB" filter="url(#glow-dev)" />
                     </svg>
                   </div>
                 </div>
@@ -459,9 +453,9 @@
                     <svg class="w-full h-full" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <defs>
                         <linearGradient id="stream-grad-consult" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stop-color="#3b82f6" stop-opacity="0" />
-                          <stop offset="50%" stop-color="#8b5cf6" stop-opacity="1" />
-                          <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+                          <stop offset="0%" stop-color="#2663EB" stop-opacity="0" />
+                          <stop offset="50%" stop-color="#2663EB" stop-opacity="1" />
+                          <stop offset="100%" stop-color="#2663EB" stop-opacity="0" />
                         </linearGradient>
                         <filter id="glow-consult" x="-20%" y="-20%" width="140%" height="140%">
                           <feGaussianBlur stdDeviation="4" result="blur" />
@@ -471,14 +465,14 @@
 
                       <!-- Input: Chaotic Nodes -->
                       <g>
-                        <circle cx="50" cy="100" r="6" fill="#94a3b8" opacity="0.6">
+                        <circle cx="50" cy="100" r="6" fill="#84846C" opacity="0.6">
                           <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
                         </circle>
-                        <circle cx="50" cy="150" r="6" fill="#94a3b8" opacity="0.6">
+                        <circle cx="50" cy="150" r="6" fill="#84846C" opacity="0.6">
                           <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"
                             begin="1s" />
                         </circle>
-                        <circle cx="50" cy="200" r="6" fill="#94a3b8" opacity="0.6">
+                        <circle cx="50" cy="200" r="6" fill="#84846C" opacity="0.6">
                           <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"
                             begin="2s" />
                         </circle>
@@ -493,17 +487,17 @@
                         stroke="url(#stream-grad-consult)" stroke-width="2" fill="none" opacity="0.3" />
 
                       <!-- Moving Particles (Convergence) -->
-                      <circle r="4" fill="#8b5cf6" filter="url(#glow-consult)">
+                      <circle r="4" fill="#1B4FD0" filter="url(#glow-consult)">
                         <animateMotion dur="2.5s" repeatCount="indefinite"
                           path="M60 100 C 150 100, 150 150, 250 150 S 350 150, 440 150" />
                       </circle>
-                      <circle r="4" fill="#3b82f6" filter="url(#glow-consult)">
+                      <circle r="4" fill="#2663EB" filter="url(#glow-consult)">
                         <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.5s"
                           path="M60 200 C 150 200, 150 150, 250 150 S 350 150, 440 150" />
                       </circle>
 
                       <!-- Output: Organized Pulse -->
-                      <circle cx="250" cy="150" r="25" stroke="#8b5cf6" stroke-width="2" opacity="0.5"
+                      <circle cx="250" cy="150" r="25" stroke="#1B4FD0" stroke-width="2" opacity="0.5"
                         class="animate-pulse-slow" />
 
                     </svg>
@@ -589,21 +583,21 @@
                           <feComposite in="SourceGraphic" in2="blur" operator="over" />
                         </filter>
                         <linearGradient id="shield-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                          <stop offset="0%" stop-color="#34d399" stop-opacity="0.2" />
-                          <stop offset="100%" stop-color="#059669" stop-opacity="0" />
+                          <stop offset="0%" stop-color="#0FA06B" stop-opacity="0.2" />
+                          <stop offset="100%" stop-color="#0B7A50" stop-opacity="0" />
                         </linearGradient>
                       </defs>
                       <path d="M250 50 L350 90 V170 C350 230 250 270 250 270 C250 270 150 230 150 170 V90 L250 50 Z"
-                        fill="url(#shield-grad)" stroke="#34d399" stroke-width="2" filter="url(#glow-util)" />
-                      <line x1="150" y1="90" x2="350" y2="90" stroke="#34d399" stroke-width="2" stroke-opacity="0.6">
+                        fill="url(#shield-grad)" stroke="#0FA06B" stroke-width="2" filter="url(#glow-util)" />
+                      <line x1="150" y1="90" x2="350" y2="90" stroke="#0FA06B" stroke-width="2" stroke-opacity="0.6">
                         <animate attributeName="y1" values="50;270;50" dur="2.5s" repeatCount="indefinite" />
                         <animate attributeName="y2" values="50;270;50" dur="2.5s" repeatCount="indefinite" />
                       </line>
                       <g transform="translate(250, 160)" class="animate-pulse-slow">
-                        <rect x="-20" y="-15" width="40" height="30" rx="5" fill="#34d399" filter="url(#glow-util)" />
-                        <path d="M-10 -15 V-30 C-10 -36 10 -36 10 -30 V-15" stroke="#34d399" stroke-width="3"
+                        <rect x="-20" y="-15" width="40" height="30" rx="5" fill="#0FA06B" filter="url(#glow-util)" />
+                        <path d="M-10 -15 V-30 C-10 -36 10 -36 10 -30 V-15" stroke="#0FA06B" stroke-width="3"
                           fill="none" />
-                        <circle cx="0" cy="0" r="4" fill="#f1f5f9" />
+                        <circle cx="0" cy="0" r="4" fill="#F3F3EC" />
                       </g>
                     </svg>
                   </div>
@@ -688,7 +682,7 @@
     </section>
 
     <!-- Team section -->
-    <section id="team" class="section-area bg-background-medium">
+    <section id="team" class="section-area bg-background-light">
       <div class="container">
         <div class="scroll-revealed mx-auto mb-12 max-w-[800px] text-center">
           <h6 class="eyebrow mb-2 block text-base">
@@ -757,7 +751,7 @@
     <section id="contact" class="bg-background-light py-16">
       <div class="container">
         <div
-          class="scroll-revealed relative z-10 overflow-hidden rounded-xl bg-blue-800 px-8 py-12 lg:px-10 shadow-2xl">
+          class="scroll-revealed relative z-10 overflow-hidden rounded-xl bg-accent-deep px-8 py-12 lg:px-10 shadow-2xl">
           <div class="-mx-4 flex flex-wrap items-center">
             <div class="w-full px-4 lg:w-1/2 text-center lg:text-left">
               <h2 class="mb-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
@@ -817,7 +811,7 @@
                       class="w-full rounded-md border border-border-color bg-background-light py-3 px-4 text-primary placeholder-secondary focus:border-accent focus:outline-none"></textarea>
                   </div>
                   <button type="submit"
-                    class="w-full rounded-lg bg-accent px-6 py-3 text-base font-semibold text-white hover:bg-blue-700 shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5">Submit</button>
+                    class="w-full rounded-lg bg-accent px-6 py-3 text-base font-semibold text-white hover:bg-accent-deep shadow-lg shadow-accent/30 transition-all hover:-translate-y-0.5">Submit</button>
                 </form>
 
                 <div id="demo-form-success" hidden class="py-8 text-center">
@@ -832,8 +826,8 @@
             </div>
           </div>
           <!-- Decorative glow -->
-          <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl"></div>
-          <div class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-blue-800/20 blur-3xl"></div>
+          <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
+          <div class="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-accent-deep/20 blur-3xl"></div>
         </div>
       </div>
     </section>
@@ -847,8 +841,9 @@
           <!-- Column 1: Logo -->
           <div class="w-full px-4 lg:w-4/12 mb-8 lg:mb-0">
             <div class="max-w-[360px]">
-              <a href="#" class="mb-3 inline-block">
-                <img src="./assets/img/semagram_text.png" alt="logo" class="w-48" /></a>
+              <a href="#" class="mb-3 inline-flex items-center gap-[0.15em] text-4xl text-accent" aria-label="Semagram">
+                <svg viewBox="44.348 42.174 35.217 40.435" style="height:1em" class="w-auto shrink-0" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M47.826 62.772L75.217 62.772"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M59.023 71.616L78.496 71.55" stroke-width="3"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M63.2 63.553L82.718 63.958" stroke-width="3"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M42.337 65.749L61.809 65.683" stroke-width="3"/><path transform="translate(86.28 149.44) rotate(-60) scale(1 -1)" d="M46.696 57.932L66.17 57.867" stroke-width="3"/><path transform="translate(7.85 -7.94) rotate(8.4)" d="M59.181 54.402C56.193 63.561 63.385 65.181 67.368 55.007" stroke-width="3"/><path transform="translate(91.87 150.19) rotate(-147.1)" d="M73.571 50.047C74.022 54.386 76.008 54.655 79.098 52.761" stroke-width="3"/><path transform="translate(5.48 -15.94) rotate(19)" d="M80.995 49.594C80.432 55.306 83.04 54.868 87.903 52.964" stroke-width="3"/><path transform="translate(108.81 131.74) rotate(-169.3)" d="M55.602 48.638C51.172 62.779 59.154 62.496 63.441 49.766" stroke-width="3"/><path transform="translate(108.81 131.74) rotate(-169.3)" d="M52.931 58.203L53.48 59.772" stroke-width="3"/><path transform="translate(108.81 131.74) rotate(-169.3)" d="M65.182 59.018L65.731 60.587" stroke-width="3"/></g></svg>
+                <span class="font-normal lowercase tracking-[-0.02em]">semagram</span></a>
               <div class="mt-0">
                 <p class="text-base text-secondary">
                   <span class="font-semibold text-primary">Email:</span>
@@ -916,13 +911,13 @@
         display: inline-block;
         margin-bottom: 0.75rem;
         font-size: 1rem;
-        color: #0f172a;
-        /* text-primary (black for light mode) */
+        color: #1B1B12;
+        /* text-primary (ink) */
         transition: color 0.3s ease;
       }
 
       .footer-link:hover {
-        color: #2563eb;
+        color: #2663EB;
         /* text-accent (blue on hover) */
       }
     </style>

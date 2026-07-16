@@ -119,13 +119,13 @@ const initTabs = () => {
 
       contents.forEach(content => content.classList.add("hidden"));
       links.forEach(link => {
-        link.classList.remove("active", "bg-gradient-to-r", "from-accent", "to-blue-600", "text-white", "shadow-lg");
-        link.classList.add("bg-background-dark", "text-primary", "hover:bg-background-dark/80");
+        link.classList.remove("active", "bg-gradient-to-r", "from-accent", "to-accent-deep", "text-white", "shadow-lg");
+        link.classList.add("border", "border-border-color", "bg-background-dark", "text-primary", "hover:bg-background-dark/80");
         link.ariaSelected = false;
       });
 
-      activeLink.classList.remove("bg-background-dark", "text-primary", "hover:bg-background-dark/80");
-      activeLink.classList.add("active", "bg-gradient-to-r", "from-accent", "to-blue-600", "text-white", "shadow-lg");
+      activeLink.classList.remove("border", "border-border-color", "bg-background-dark", "text-primary", "hover:bg-background-dark/80");
+      activeLink.classList.add("active", "bg-gradient-to-r", "from-accent", "to-accent-deep", "text-white", "shadow-lg");
       activeLink.ariaSelected = true;
       targetElement.classList.remove("hidden");
     };
@@ -251,7 +251,7 @@ if (st) {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const STEEL_GREY = "#9aa3b2", STEEL = "#3f4f6b", STEEL_DK = "#1e293b",
-    COND_GREY = "#aeb6c2", COND = "#3b6fe0", INSUL_GREY = "#aeb6c2", INSUL = "#64748b", CY = "#22d3ee";
+    COND_GREY = "#aeb6c2", COND = "#2663EB", INSUL_GREY = "#aeb6c2", INSUL = "#64748b", CY = "#7CA1F4";
 
   let timers = [], raf = null, running = false;
   let steelEls = [], conductors = [], insulEls = [], currentPaths = [], particles = [], sensors = [], rings = [], packets = [];
@@ -301,7 +301,7 @@ if (st) {
       [-aw, -aw * 0.5, aw * 0.5, aw].forEach(dx => el("line", { x1: bx + dx, y1: ya, x2: bx + dx, y2: ya + h * 0.05, stroke: col, "stroke-width": w * 0.55, opacity: op * 0.8 }, g));
     });
   }
-  const FLEET_COL = "#6c83a8", FLEET_FILL = "#e9f0fb", FLEET_FEED = "#5b8fd6";
+  const FLEET_COL = "#6c83a8", FLEET_FILL = "#e9f0fb", FLEET_FEED = "#2663EB";
   // a datacenter / compute load — a microchip: square package with pins on all four sides, an
   // inner die and a glowing core. y is the base; the top riser tip is the bus point.
   function fleetChip(g, x, y, s, op) {
@@ -316,7 +316,7 @@ if (st) {
     el("rect", { x: x0, y: y0, width: s, height: s, rx: s * 0.12, fill: FLEET_FILL, "fill-opacity": op * 0.85, stroke: FLEET_COL, "stroke-width": 0.9, opacity: body }, g);
     const ds = s * 0.5, dx = x - ds / 2, dy = y0 + (s - ds) / 2;
     el("rect", { x: dx, y: dy, width: ds, height: ds, rx: ds * 0.14, fill: "none", stroke: FLEET_COL, "stroke-width": 0.6, opacity: op * 1.1 }, g);
-    el("circle", { cx: x, cy: y0 + s / 2, r: 1.5, fill: "#22d3ee", opacity: Math.min(0.85, op * 2.8) }, g);
+    el("circle", { cx: x, cy: y0 + s / 2, r: 1.5, fill: "#7CA1F4", opacity: Math.min(0.85, op * 2.8) }, g);
     el("line", { x1: x, y1: y0 - pin, x2: x, y2: y0 - pin - 5, stroke: FLEET_COL, "stroke-width": 0.85, opacity: op }, g);
   }
   // a factory load — a hall with a north-light (sawtooth) roof, windows and a smoking chimney
@@ -342,7 +342,7 @@ if (st) {
         if (wy < y - 2) el("circle", { cx: bx0 + bwi * (0.3 + c * 0.42), cy: wy, r: 0.7, fill: FLEET_COL, opacity: op * 0.8 }, g);
       }
     });
-    el("circle", { cx: x0 + bw * 1.3, cy: y - w * 0.82, r: 0.9, fill: "#22d3ee", opacity: Math.min(0.7, op * 2.2) }, g);
+    el("circle", { cx: x0 + bw * 1.3, cy: y - w * 0.82, r: 0.9, fill: "#7CA1F4", opacity: Math.min(0.7, op * 2.2) }, g);
     const peakY = y - w * 0.95;
     el("line", { x1: x, y1: peakY, x2: x, y2: peakY - 5, stroke: FLEET_COL, "stroke-width": 0.85, opacity: op }, g);
   }
@@ -353,7 +353,7 @@ if (st) {
     el("rect", { x: x0, y: y0, width: pw, height: ph, rx: pw * 0.3, fill: FLEET_FILL, "fill-opacity": op * 0.85, stroke: FLEET_COL, "stroke-width": 0.85, opacity: body }, g);
     el("rect", { x: x0 + pw * 0.2, y: y0 + ph * 0.12, width: pw * 0.6, height: ph * 0.2, rx: 1, fill: "none", stroke: FLEET_COL, "stroke-width": 0.5, opacity: op * 0.9 }, g);
     const cy = y0 + ph * 0.62, bw = pw * 0.34, bh = ph * 0.3;
-    el("path", { d: `M ${x + bw * 0.15} ${cy - bh / 2} L ${x - bw * 0.45} ${cy + bh * 0.1} L ${x} ${cy + bh * 0.05} L ${x - bw * 0.15} ${cy + bh / 2} L ${x + bw * 0.45} ${cy - bh * 0.1} L ${x} ${cy - bh * 0.05} Z`, fill: "#22d3ee", opacity: Math.min(0.85, op * 2.6) }, g);
+    el("path", { d: `M ${x + bw * 0.15} ${cy - bh / 2} L ${x - bw * 0.45} ${cy + bh * 0.1} L ${x} ${cy + bh * 0.05} L ${x - bw * 0.15} ${cy + bh / 2} L ${x + bw * 0.45} ${cy - bh * 0.1} L ${x} ${cy - bh * 0.05} Z`, fill: "#7CA1F4", opacity: Math.min(0.85, op * 2.6) }, g);
     el("path", { d: `M ${x0 + pw} ${y0 + ph * 0.3} q ${pw * 0.7} ${ph * 0.1} ${pw * 0.5} ${ph * 0.5}`, fill: "none", stroke: FLEET_COL, "stroke-width": 0.6, opacity: op * 0.85 }, g);
     el("line", { x1: x, y1: y0, x2: x, y2: y0 - 5, stroke: FLEET_COL, "stroke-width": 0.85, opacity: op }, g);
   }
@@ -376,7 +376,7 @@ if (st) {
   function fleetSpan(g, ax, ay, bx, by, feed, op) {
     const d = Math.hypot(bx - ax, by - ay), mx = (ax + bx) / 2, my = (ay + by) / 2 + d * 0.12;
     el("path", { d: `M ${ax} ${ay} Q ${mx} ${my} ${bx} ${by}`, fill: "none", stroke: feed ? FLEET_FEED : FLEET_COL, "stroke-width": feed ? 0.9 : 0.75, opacity: feed ? op + 0.06 : op }, g);
-    el("circle", { cx: bx, cy: by, r: 1.4, fill: "#7dd3fc", opacity: Math.min(0.55, op + 0.22) }, g);
+    el("circle", { cx: bx, cy: by, r: 1.4, fill: "#BFD2FA", opacity: Math.min(0.55, op + 0.22) }, g);
   }
   const FLEET_BATCH = 4, FLEET_MAX_CLICKS = 12;
   const SEED_BUS = { x: 720, y: 300 }; // the main tower ties into the mesh as a source node
@@ -475,7 +475,7 @@ if (st) {
   function hudLabel(x, y, txt) { const dx2 = 26;
     const dot = document.createElementNS(NS, "circle"); dot.setAttribute("cx", x); dot.setAttribute("cy", y); dot.setAttribute("r", 2); dot.setAttribute("fill", CY); dot.style.opacity = "0"; dot.style.transition = "opacity .8s"; hud.appendChild(dot);
     const ln = mkLine(hud, x, y, x + dx2, y - 12, CY, 0.8); ln.setAttribute("opacity", 0); ln.style.transition = "opacity .8s";
-    const t = document.createElementNS(NS, "text"); t.setAttribute("x", x + dx2 + 3); t.setAttribute("y", y - 14); t.setAttribute("fill", "#0f172a"); t.setAttribute("font-family", "'JetBrains Mono',monospace"); t.setAttribute("font-size", "10"); t.setAttribute("font-weight", "500"); t.textContent = txt; t.style.opacity = "0"; t.style.transition = "opacity .8s"; hud.appendChild(t);
+    const t = document.createElementNS(NS, "text"); t.setAttribute("x", x + dx2 + 3); t.setAttribute("y", y - 14); t.setAttribute("fill", "#1B1B12"); t.setAttribute("font-family", "'JetBrains Mono',monospace"); t.setAttribute("font-size", "10"); t.setAttribute("font-weight", "500"); t.textContent = txt; t.style.opacity = "0"; t.style.transition = "opacity .8s"; hud.appendChild(t);
     return { dot, ln, t };
   }
   function hudShow() { hud.querySelectorAll("circle").forEach(e => e.style.opacity = "1"); hud.querySelectorAll("line").forEach(e => e.style.opacity = ".6"); hud.querySelectorAll("text").forEach(e => e.style.opacity = ".9"); }
@@ -560,7 +560,7 @@ if (st) {
       const c = el("circle", { cx: s.x, cy: s.y, r: 0, fill: CY, filter: GLOWS }, fx);
       sensors.push({ x: s.x, y: s.y, core: c, r: s.big ? 3.2 : 2.4, ph: i * 1.3, on: false }); });
 
-    for (let i = 0; i < 3; i++) { const pl = el("polyline", { fill: "none", stroke: "#aef3ff", "stroke-width": 1.1, opacity: 0, filter: GLOWS }, bolts); crackleEls.push(pl); }
+    for (let i = 0; i < 3; i++) { const pl = el("polyline", { fill: "none", stroke: "#BFD2FA", "stroke-width": 1.1, opacity: 0, filter: GLOWS }, bolts); crackleEls.push(pl); }
     sboltEl = el("polyline", { fill: "none", stroke: CY, "stroke-width": 1.3, opacity: 0, filter: GLOW }, bolts);
 
     if (reduceMotion) {
@@ -699,12 +699,12 @@ if (demoForm) {
 
   document.addEventListener("pointerdown", e => {
     const x = e.clientX, y = e.clientY, parts = [];
-    const ring = elNS("circle", { cx: x, cy: y, r: 4, fill: "none", stroke: "#22d3ee", "stroke-width": 2, filter: "url(#spark-glow)" }, svg);
+    const ring = elNS("circle", { cx: x, cy: y, r: 4, fill: "none", stroke: "#2663EB", "stroke-width": 2, filter: "url(#spark-glow)" }, svg);
     parts.push({ ring: true, el: ring, r: 4 });
     const n = 5, base = rnd(0, Math.PI * 2);
     for (let i = 0; i < n; i++) {
       const ang = base + (i / n) * Math.PI * 2 + rnd(-0.3, 0.3), len = rnd(18, 40);
-      const pl = elNS("polyline", { points: jag(x, y, x + Math.cos(ang) * len, y + Math.sin(ang) * len, 4, 5), fill: "none", stroke: i % 2 ? "#bdf5ff" : "#22d3ee", "stroke-width": rnd(1.2, 2), "stroke-linecap": "round", filter: "url(#spark-glow)" }, svg);
+      const pl = elNS("polyline", { points: jag(x, y, x + Math.cos(ang) * len, y + Math.sin(ang) * len, 4, 5), fill: "none", stroke: i % 2 ? "#7CA1F4" : "#2663EB", "stroke-width": rnd(1.2, 2), "stroke-linecap": "round", filter: "url(#spark-glow)" }, svg);
       parts.push({ el: pl, ang, len });
     }
     let life = 1;
